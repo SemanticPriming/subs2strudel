@@ -12,10 +12,10 @@ library(tm)
 library(plyr)
 
 # settings
-download_file <- TRUE # if you want to download the file directly
+download_file <- FALSE # if you want to download the file directly
 language <- "ko" #two letter language code
 model_language <- "korean-gsd" #what language for POS 
-download_model <- TRUE
+download_model <- FALSE
 
 # Import Subtitle Data ----------------------------------------------------
 
@@ -43,10 +43,11 @@ if(download_file){
              suf = "part", win = TRUE)
 }
 
-file_names <- list.files(path = "data", pattern = "part",
+file_names <- list.files(path = "data", 
+                         pattern = paste0(language, "_part"),
                          full.names = T)
 
-for (file in file_names){
+for (file in file_names[1:1]){
   # Preprocess text ---------------------------------------------------------
   
   data.text <- readLines(file,
