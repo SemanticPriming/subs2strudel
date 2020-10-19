@@ -16,6 +16,7 @@ download_file <- TRUE # if you want to download the file directly
 language <- "af" #two letter language code
 model_language <- "afrikaans-afribooms" #what language for POS 
 download_model <- TRUE
+mac <- TRUE
 
 # Import Subtitle Data ----------------------------------------------------
 
@@ -31,9 +32,13 @@ if(download_file){
                language, ".gz", sep="")
   # download the file
   download.file(con, 
-                destfile = paste0("data", language, ".gz"))
+                destfile = paste0("data/", language, ".gz"),
+                mode = "wb")
   
-  file.split(paste0("data/", language, ".gz"),
+  text_file <- gunzip(filename = paste0("data/", language, ".gz"),
+                      destname = paste0("data/", language, ".txt"))
+  
+  file.split(text_file,
              size = 100000,
              same.dir = TRUE, verbose = TRUE,
              suf = "part", win = TRUE)
@@ -44,11 +49,12 @@ file_names <- list.files(path = "data", pattern = "part",
 
 for (file in file_names){
   # Preprocess text ---------------------------------------------------------
+  
   data.text <- readLines(file,
-                         encoding = "utf8")
+                         encoding = "UTF-8")
+  
   data.text <- tolower(data.text)
   data.text <- tm::stripWhitespace(data.text)
-  
   
   # Annotate the Text -------------------------------------------------------
   #  Download the language model 
@@ -123,7 +129,8 @@ for (file in file_names){
   
   write.csv(count_df, 
             file = paste0("concept-feature/", language_write_out, "_concept_features.csv"),
-            row.names = F)
+            row.names = F,
+            fileEncoding = "UTF-8")
 }
 
 

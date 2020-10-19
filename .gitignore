@@ -3,6 +3,7 @@ concept-feature/*.csv
 
 # data
 data/*.gz
+data/*.txt
 
 # models 
 *.udpipe 
