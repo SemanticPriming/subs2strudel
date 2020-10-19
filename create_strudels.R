@@ -13,10 +13,9 @@ library(plyr)
 
 # settings
 download_file <- TRUE # if you want to download the file directly
-language <- "af" #two letter language code
-model_language <- "afrikaans-afribooms" #what language for POS 
+language <- "ko" #two letter language code
+model_language <- "korean-gsd" #what language for POS 
 download_model <- TRUE
-mac <- TRUE
 
 # Import Subtitle Data ----------------------------------------------------
 
