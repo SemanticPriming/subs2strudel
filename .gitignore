@@ -1,3 +1,12 @@
+# concept-feature
+concept-feature/*.csv
+
+# data
+data/*.gz
+
+# models 
+*.udpipe 
+
 # History files
 .Rhistory
 .Rapp.history
