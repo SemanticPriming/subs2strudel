@@ -13,9 +13,8 @@ library(plyr)
 
 # settings
 download_file <- TRUE # if you want to download the file directly
-language <- "en" #two letter language code
-file_name <- "data/en.gz" #name of file if already downloaded 
-model_language <- "english" #what language for POS 
+language <- "af" #two letter language code
+model_language <- "afrikaans-afribooms" #what language for POS 
 download_model <- TRUE
 
 # Import Subtitle Data ----------------------------------------------------
@@ -32,7 +31,7 @@ if(download_file){
                language, ".gz", sep="")
   # download the file
   download.file(con, 
-                destfile = paste0("data/", language, ".gz"))
+                destfile = paste0("data", language, ".gz"))
   
   file.split(paste0("data/", language, ".gz"),
              size = 100000,
@@ -40,7 +39,7 @@ if(download_file){
              suf = "part", win = TRUE)
 }
 
-file_names <- list.files(path = "data/", pattern = "part",
+file_names <- list.files(path = "data", pattern = "part",
                          full.names = T)
 
 for (file in file_names){
@@ -48,7 +47,6 @@ for (file in file_names){
   data.text <- readLines(file,
                          encoding = "utf8")
   data.text <- tolower(data.text)
-  data.text <- iconv(data.text, "latin1", "ASCII", sub = " ")
   data.text <- tm::stripWhitespace(data.text)
   
   
