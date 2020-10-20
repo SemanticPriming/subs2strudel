@@ -11,12 +11,13 @@ library(NCmisc)
 library(tm)
 library(plyr)
 library(R.utils)
+library(readr)
 
 # settings
-download_file <- TRUE # if you want to download the file directly
-language <- "ko" #two letter language code
-model_language <- "korean-gsd" #what language for POS 
-download_model <- TRUE
+download_file <- FALSE # if you want to download the file directly
+language <- "af" #two letter language code
+model_language <- "afrikaans-afribooms" #what language for POS 
+download_model <- FALSE
 
 # Import Subtitle Data ----------------------------------------------------
 
@@ -129,9 +130,8 @@ for (file in file_names[1:1]){
   
   
   write_csv(count_df, 
-            file = paste0("concept-feature/", language_write_out, "_concept_features.csv"),
-            row.names = F,
-            fileEncoding = "UTF-8")
+            file = paste0("concept-feature/", 
+                          language_write_out, "_concept_features.csv"))
 }
 
 
