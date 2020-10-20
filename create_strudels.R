@@ -10,12 +10,13 @@ library(udpipe)
 library(NCmisc)
 library(tm)
 library(plyr)
+library(R.utils)
 
 # settings
-download_file <- FALSE # if you want to download the file directly
+download_file <- TRUE # if you want to download the file directly
 language <- "ko" #two letter language code
 model_language <- "korean-gsd" #what language for POS 
-download_model <- FALSE
+download_model <- TRUE
 
 # Import Subtitle Data ----------------------------------------------------
 
