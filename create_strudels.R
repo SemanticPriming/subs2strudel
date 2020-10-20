@@ -128,7 +128,7 @@ for (file in file_names[1:1]){
   }
   
   
-  write.csv(count_df, 
+  write_csv(count_df, 
             file = paste0("concept-feature/", language_write_out, "_concept_features.csv"),
             row.names = F,
             fileEncoding = "UTF-8")
