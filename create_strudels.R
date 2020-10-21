@@ -15,8 +15,8 @@ library(readr)
 
 # settings
 download_file <- FALSE # if you want to download the file directly
-language <- "af" #two letter language code
-model_language <- "afrikaans-afribooms" #what language for POS 
+language <- "en" #two letter language code
+model_language <- "english" #what language for POS 
 download_model <- FALSE
 
 # Import Subtitle Data ----------------------------------------------------
@@ -49,7 +49,7 @@ file_names <- list.files(path = "data",
                          pattern = paste0(language, "_part"),
                          full.names = T)
 
-for (file in file_names[1:1]){
+for (file in file_names[501:700]){
   # Preprocess text ---------------------------------------------------------
   
   data.text <- readLines(file,
