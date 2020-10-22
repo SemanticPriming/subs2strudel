@@ -8,9 +8,10 @@ setwd(here())
 # libraries
 library(plyr)
 library(rio)
+library(readr)
 
 # settings
-language <- "eu" #two letter code
+language <- "lv" #two letter code
 
 # Read in files -----------------------------------------------------------
 
@@ -32,6 +33,5 @@ count_df <- plyr::count(imported_files,
                         var = colnames(imported_files)[-length(colnames(imported_files))], 
                         wt_var = "freq")
 
-write.csv(count_df, 
-          file = paste0("concept-feature/", language, "_concept_features.csv"),
-          row.names = F)
+write_csv(count_df, 
+          path = paste0("concept-feature/", language, "_concept_features.csv"))

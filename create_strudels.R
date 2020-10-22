@@ -14,10 +14,10 @@ library(R.utils)
 library(readr)
 
 # settings
-download_file <- FALSE # if you want to download the file directly
-language <- "en" #two letter language code
-model_language <- "english" #what language for POS 
-download_model <- FALSE
+download_file <- TRUE # if you want to download the file directly
+language <- "uk" #two letter language code
+model_language <- "ukrainian-iu" #what language for POS 
+download_model <- TRUE
 
 # Import Subtitle Data ----------------------------------------------------
 
@@ -49,7 +49,7 @@ file_names <- list.files(path = "data",
                          pattern = paste0(language, "_part"),
                          full.names = T)
 
-for (file in file_names[501:700]){
+for (file in file_names){
   # Preprocess text ---------------------------------------------------------
   
   data.text <- readLines(file,
@@ -130,7 +130,7 @@ for (file in file_names[501:700]){
   
   
   write_csv(count_df, 
-            file = paste0("concept-feature/", 
+            path = paste0("concept-feature/", 
                           language_write_out, "_concept_features.csv"))
 }
 
