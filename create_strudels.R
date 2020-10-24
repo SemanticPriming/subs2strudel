@@ -14,10 +14,10 @@ library(R.utils)
 library(readr)
 
 # settings
-download_file <- TRUE # if you want to download the file directly
-language <- "uk" #two letter language code
-model_language <- "ukrainian-iu" #what language for POS 
-download_model <- TRUE
+download_file <- FALSE # if you want to download the file directly
+language <- "en" #two letter language code
+model_language <- "english" #what language for POS 
+download_model <- FALSE
 
 # Import Subtitle Data ----------------------------------------------------
 

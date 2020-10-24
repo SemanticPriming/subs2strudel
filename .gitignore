@@ -1,9 +1,11 @@
 # concept-feature
 concept-feature/*.csv
+concept-feature/*.zip
 
 # data
 data/*.gz
 data/*.txt
+data/*.zip
 
 # models 
 *.udpipe 

@@ -11,7 +11,7 @@ library(rio)
 library(readr)
 
 # settings
-language <- "lv" #two letter code
+language <- "fa" #two letter code
 
 # Read in files -----------------------------------------------------------
 
