@@ -1,0 +1,239 @@
+---
+author: "Erin Buchanan, Mark Newman"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+Add in all the libraries we use for this project
+
+```{r libraries}
+library(here)
+library(udpipe)
+library(R.utils)
+library(NCmisc)
+library(tm)
+```
+
+Setup the configuration.
+
+* Look up the `language` and the `model_language` from the `~/data/udpipe_languages.csv` file.
+* Decide on how many sub processes you want.
+  Each sub process takes one core and ~2GB of RAM.
+
+```{r config}
+language <- "lt"
+model_language <- "lithuanian-alksnis"
+sub_process_count <- 10
+```
+
+Set the working directory so that relative pathing works as expected.
+This assumes you are dealing with a _project_ or launched the _RMD_ from the root folder.
+
+```{r}
+setwd(here())
+```
+
+Collect the data needed.
+This includes:
+
+* The subtitle data
+* The udpipe language model
+
+```{r data}
+con <-
+  paste0("http://opus.nlpl.eu/download.php?f=OpenSubtitles/v2018/mono/OpenSubtitles.", language, ".gz")
+
+download.file(
+  con,
+  destfile = paste0("data/", language, ".gz"),
+  mode = "wb")
+
+text_file <-
+  gunzip(
+    filename = paste0("data/", language, ".gz"),
+    destname = paste0("data/", language, ".txt"))
+
+file.split(
+  text_file,
+  size = 100000,
+  same.dir = TRUE,
+  verbose = TRUE,
+  suf = "part",
+  win = .Platform$OS.type == 'windows')
+
+dl <- udpipe_download_model(language = model_language)
+
+rm(con, text_file, dl)
+```
+
+Make the sub process
+
+```{r sub-process}
+make_strudels <- function(root, model, file) {
+  setwd(root)
+  
+  require(tm)
+  require(udpipe)
+  require(plyr)
+  require(readr)
+  
+  data.text <-
+    readLines(
+      file,
+      encoding = "UTF-8")
+  
+  # Preprocess text
+  data.text <- tolower(data.text)
+  data.text <- tm::stripWhitespace(data.text)
+  
+  # Annotate the Text
+  annotate <- udpipe(data.text, model) 
+  annotated_df <- as.data.frame(annotate)
+  
+  # make a unique id of doc, token_id - this tells you the original word in the sentence
+  token_dictionary <- annotated_df[ , c("token", "lemma", "doc_id", "token_id", "upos") ]
+  token_dictionary$unique_id <- paste0(token_dictionary$doc_id, "-", token_dictionary$token_id)
+  token_dictionary <- token_dictionary[ , c("token", "lemma", "unique_id", "upos")]
+  
+  # make a unique id of doc, head_token_id - this tells you the head id
+  annotated_df$unique_id <- paste0(annotated_df$doc_id, "-", annotated_df$head_token_id)
+  
+  # merge those together to get the head for each original token 
+  annotated_df_lemma <- merge(annotated_df, token_dictionary, by = "unique_id")
+  
+  # filter out columns we no longer need
+  annotated_df_lemma <-
+    annotated_df_lemma[ , c(
+      "token.x",
+      "lemma.x",
+      "upos.x",
+      "feats",
+      "dep_rel",
+      "token.y",
+      "lemma.y",
+      "upos.y")]
+  
+  # rename for clarity
+  colnames(annotated_df_lemma) <- c(
+    "feature_token",
+    "feature_lemma",
+    "feature_pos",
+    "characteristics",
+    "dependency_relation",
+    "concept_token",
+    "concept_lemma",
+    "concept_pos")
+  
+  # take all nouns, verbs, adjectives
+  # look at all the nouns, verbs, and adjectives that modify them 
+  subset_df <-
+    subset(
+      annotated_df_lemma,
+      concept_pos == "NOUN" | concept_pos == "VERB" | concept_pos == "ADJ")
+  
+  subset_df <-
+    subset(
+      subset_df, 
+      feature_pos == "NOUN" | feature_pos == "VERB" | feature_pos == "ADJ")
+  
+  # figure out the dependency parsing modifiers that are interesting
+  # head is concept, other word is property
+  # remember use regular expressions to deal with the pass
+  # nsubj, nmod, obj, iobj, amod. obl, 
+  # root is the overall head word, which was eliminated earlier
+  use_deps <- c("nsubj", "nmod", "obj", "iobj", "amod", "obl")
+  
+  subset_df <-
+    subset(
+      subset_df,
+      dependency_relation %in% use_deps)
+  
+  # tally that up 
+  count_df <- plyr::count(subset_df, colnames(subset_df))
+  
+  language_write_out <- gsub("data/", "", file)
+  language_write_out <- gsub(".gz", "", language_write_out)
+  
+  write_csv(
+    count_df,
+    path = paste0("concept-feature/", language_write_out, "_concept_features.csv"))
+  
+  paste0('(', model, '): ', root, '/', file)
+}
+```
+
+Create helpers to manage the sub processes.
+
+```{r sub-process-helpers}
+lapply_background <-
+  function(X, func, size = getOption('pool.size', 10), poll = getOption('pool.poll', 10)) {
+    if(is.null(X) | typeof(X) != 'list' | is.null(func) | typeof(func) != 'closure' | size < 1 | poll < 1) {
+      throw('bad parameters') }
+    
+    X_i <- 1
+    X_ret <- vector('list', length = length(X))
+    X_ret_i <- 1
+    size <- min(size, length(X))
+    pool <- vector('list', length = size)
+    
+    for(i in 1:size) {
+      pool[[i]] <- callr::r_bg(func, args = X[[X_i]])
+      X_i <- X_i + 1 }
+    rm(i)
+
+    while(X_i <= length(X)) {
+      processx::poll(pool, 1000 * poll)
+      for(i in 1:size) {
+        bgp <- pool[[i]]
+        if(!bgp$is_alive()) {
+          X_ret[[X_ret_i]] <- paste0(bgp$get_exit_status(), ' <- ', bgp$get_result())
+          X_ret_i <- X_ret_i + 1
+          rm(bgp)
+          pool[[i]] <- callr::r_bg(func, args = X[[X_i]])
+          X_i <- X_i + 1
+          break
+        }
+      }
+      rm(i)
+    }
+    
+    for(i in 1:size) {
+      bgp <- pool[[i]]
+      bgp$wait()
+      X_ret[[X_ret_i]] <- paste0(bgp$get_exit_status(), ' <- ', bgp$get_result())
+      X_ret_i <- X_ret_i + 1
+      rm(bgp) }
+    rm(i, pool)
+    
+    rm(X_i, X_ret_i)
+    rm(X, func, size, poll)
+    X_ret
+}
+```
+
+Create a list of all the parameters we want to process.
+
+```{r make-tasks}
+file_names <-
+  list.files(
+    path = "data",
+    pattern = paste0(language, "_part"),
+    full.names = T)
+
+tasks <- vector('list', length = length(file_names))
+for(i in 1:length(file_names)) {
+  tasks[[i]] = list(here(), model_language, file_names[i]) }
+
+rm(file_names, i)
+rm(language, model_language)
+```
+
+Run the queue
+
+```{r run-sub-process}
+res <- lapply_background(tasks, make_strudels, size = sub_process_count)
+rm(tasks, sub_process_count)
+```
+
+
