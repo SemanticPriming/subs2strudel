@@ -8,11 +8,13 @@ editor_options:
 Add in all the libraries we use for this project
 
 ```{r libraries}
-library(here)
 library(udpipe)
 library(R.utils)
 library(NCmisc)
 library(tm)
+library(rio)
+library(readr)
+library(here)
 ```
 
 Setup the configuration.
@@ -32,6 +34,8 @@ This assumes you are dealing with a _project_ or launched the _RMD_ from the roo
 
 ```{r}
 setwd(here())
+dir.create(paste0('data/', language), showWarnings = F)
+dir.create(paste0('concept-feature/', language), showWarnings = F)
 ```
 
 Collect the data needed.
@@ -46,13 +50,13 @@ con <-
 
 download.file(
   con,
-  destfile = paste0("data/", language, ".gz"),
+  destfile = paste0("data/", language, '/', language, ".gz"),
   mode = "wb")
 
 text_file <-
   gunzip(
-    filename = paste0("data/", language, ".gz"),
-    destname = paste0("data/", language, ".txt"))
+    filename = paste0("data/", language, '/', language, ".gz"),
+    destname = paste0("data/", language, '/', language, ".txt"))
 
 file.split(
   text_file,
@@ -62,9 +66,12 @@ file.split(
   suf = "part",
   win = .Platform$OS.type == 'windows')
 
-dl <- udpipe_download_model(language = model_language)
+dl <-
+  udpipe_download_model(
+    language = model_language,
+    model_dir = paste0("data/", language))
 
-rm(con, text_file, dl)
+rm(con, text_file, model_language)
 ```
 
 Make the sub process
@@ -152,12 +159,12 @@ make_strudels <- function(root, model, file) {
   # tally that up 
   count_df <- plyr::count(subset_df, colnames(subset_df))
   
-  language_write_out <- gsub("data/", "", file)
-  language_write_out <- gsub(".gz", "", language_write_out)
+  file <- gsub("data/", "concept-feature/", file, fixed = T)
+  file <- paste0(file, "_concept_features.csv")
   
   write_csv(
     count_df,
-    path = paste0("concept-feature/", language_write_out, "_concept_features.csv"))
+    file = file)
   
   paste0('(', model, '): ', root, '/', file)
 }
@@ -217,23 +224,54 @@ Create a list of all the parameters we want to process.
 ```{r make-tasks}
 file_names <-
   list.files(
-    path = "data",
+    path = paste0("data/", language),
     pattern = paste0(language, "_part"),
     full.names = T)
 
 tasks <- vector('list', length = length(file_names))
 for(i in 1:length(file_names)) {
-  tasks[[i]] = list(here(), model_language, file_names[i]) }
+  tasks[[i]] = list(here(), dl$file_model, file_names[i]) }
 
 rm(file_names, i)
-rm(language, model_language)
+rm(dl)
 ```
 
-Run the queue
+Run `lapply_background()` on all the background tasks
 
 ```{r run-sub-process}
 res <- lapply_background(tasks, make_strudels, size = sub_process_count)
-rm(tasks, sub_process_count)
+print(paste0(res))
+rm(tasks, sub_process_count, res)
+rm(lapply_background, make_strudels)
 ```
 
+Combine all the files
+
+```{r combine-files}
+file_names <-
+  list.files(
+    path = paste0("concept-feature/", language),
+    pattern = language,
+    full.names = T)
+
+# import and put together
+imported_files <-
+  import_list(
+    file_names,
+    rbind = TRUE,
+    rbind_fill = TRUE)
+
+# drop the file column
+imported_files$`_file` <- NULL
+
+count_df <-
+  plyr::count(
+    imported_files,
+    var = colnames(imported_files)[-length(colnames(imported_files))],
+    wt_var = "freq")
+
+write_csv(
+  count_df,
+  file = paste0("concept-feature/", language, '/', language, "_concept_features.csv"))
+```
 
