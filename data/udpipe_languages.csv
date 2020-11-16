@@ -1,7 +1,7 @@
 ﻿language,files,tokens,sentences,Language,Udpipe Model,Completed,Notes
 af,63,0.4M,61.3k,Afrikaans,afrikaans-afribooms,Yes,
 ar,"94,093",458.4M,83.6M,Arabic,arabic-padt,Yes,
-bg,"107,923",617.8M,94.6M,Bulgarian,bulgarian-btb,RUNNING,
+bg,"107,923",617.8M,94.6M,Bulgarian,bulgarian-btb,Yes,
 bn,542,3.7M,0.7M,Bengali,NA,NA,
 br,32,0.2M,23.1k,Brenton,NA,NA,
 bs,"37,309",215.4M,34.1M,Bosnian,NA,NA,
