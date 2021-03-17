@@ -1,0 +1,453 @@
+---
+title: "English Example"
+author: "Erin M. Buchanan"
+date: "3/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rio)
+```
+
+# Data
+
+Load the big datasets but subset them so they are more workable for this example. 
+
+```{r eval = FALSE}
+english <- import("en_concept_features.csv.zip")
+
+# load other norms
+erin <- import("final words 2017.csv")
+
+# words
+words <- c("art", "band", "concert", "radio")
+
+# subsets
+english <- subset(english,
+                  feature_lemma %in% words | concept_lemma %in% words)
+
+erin <- subset(erin,
+               cue %in% words & where == "b")
+erin$id <- paste(erin$cue,
+                 erin$translated)
+
+english_forward <- subset(english,
+                          feature_lemma %in% words)
+english_forward$id <- paste(english_forward$feature_lemma, 
+                           english_forward$concept_lemma)
+
+english_backward <- subset(english, concept_lemma %in% words)
+english_backward$id <- paste(english_backward$concept_lemma, 
+                             english_backward$feature_lemma)
+
+write.csv(erin, "participant_norms.csv", row.names = F)
+write.csv(english_forward, "english_forward.csv", row.names = F)
+write.csv(english_backward, "english_backward.csv", row.names = F)
+```
+
+# Example Issue
+
+```{r}
+erin <- import("participant_norms.csv")
+english_forward <- import("english_forward.csv")
+english_backward <- import("english_backward.csv")
+```
+
+Here's the cue-feature list provided by participants for the word night.
+
+```{r}
+erin$id[erin$cue == "art"]
+length(erin$id[erin$cue == "art"])
+```
+
+Here's the cue-feature combinations when night is used as the head word.
+
+```{r}
+head(english_forward$id[english_forward$feature_lemma == "art"])
+length(english_forward$id[english_forward$feature_lemma == "art"])
+```
+
+Here's the cue-feature combinations when night is the child word.
+
+```{r}
+head(english_backward$id[english_backward$concept_lemma == "art"])
+length(english_backward$id[english_backward$concept_lemma == "art"])
+```
+
+# Clean up the Data
+
+Clean out all punctuation.
+
+```{r}
+english_forward$concept_lemma <- gsub("[[:punct:]]", "", english_forward$concept_lemma)
+
+english_backward$feature_lemma <- gsub("[[:punct:]]", "", english_backward$feature_lemma)
+```
+
+Let's get rid of stop words:
+
+```{r}
+library(stopwords)
+stoplist <- stopwords(language = "en")
+
+english_forward <- subset(english_forward, 
+                          !(concept_lemma %in% stoplist))
+
+english_backward <- subset(english_backward, 
+                           !(feature_lemma %in% stoplist))
+```
+
+Get rid of less than two characters:
+
+```{r}
+english_forward <- subset(english_forward, 
+                          nchar(concept_lemma) > 2)
+
+english_backward <- subset(english_backward, 
+                          nchar(feature_lemma) > 2)
+```
+
+Get rid of symbols:
+
+```{r}
+library(stringi)
+
+english_forward$concept_lemma <- stri_trans_general(str = english_forward$concept_lemma, id = "latin-ascii")
+
+english_backward$feature_lemma <- stri_trans_general(str = english_backward$feature_lemma, id = "latin-ascii")
+```
+
+Mostly numbers like 10th did not make it through, so exclude those. May need some work converting these to words here:
+
+```{r}
+english_forward <- subset(english_forward,
+                          !(grepl("[0-9]+", english_forward$concept_lemma)))
+
+english_backward <- subset(english_backward,
+                          !(grepl("[0-9]+", english_backward$feature_lemma)))
+```
+
+Recreate IDs:
+
+```{r}
+english_forward$id <- paste(english_forward$feature_lemma, 
+                           english_forward$concept_lemma)
+
+english_backward$id <- paste(english_backward$concept_lemma, 
+                             english_backward$feature_lemma)
+```
+
+Merge down the duplicates:
+
+```{r}
+library(dplyr)
+forward_freq <- 
+  english_forward %>% 
+  group_by(id) %>% 
+  summarize(freq = sum(freq))
+
+backward_freq <- english_backward %>% 
+  group_by(id) %>% 
+  summarize(freq = sum(freq))
+
+english_forward <- merge(english_forward,
+                         forward_freq, 
+                         by = "id")
+
+english_backward <- merge(english_backward,
+                         backward_freq, 
+                         by = "id")
+
+english_forward <- subset(english_forward, 
+                          !(duplicated(id)))
+
+english_backward <- subset(english_backward, 
+                          !(duplicated(id)))
+
+english_forward$freq <- english_forward$freq.y
+english_backward$freq <- english_backward$freq.y
+```
+
+Merge the datasets: 
+
+```{r}
+english_forward_merge <- merge(english_forward[ , c("id", "freq", "feature_lemma") ],
+                               unique(erin[ , c("id", "normalized_translated") ]), 
+                               by = "id", all = T)
+
+
+english_backward_merge <- merge(english_backward[ , c("id", "freq", "concept_lemma") ],
+                               unique(erin[ , c("id", "normalized_translated") ]), 
+                               by = "id", all = T)
+
+#get normalized frequency
+english_forward_totals <- tapply(english_forward$freq, 
+                                 english_forward$feature_lemma,
+                                 sum)
+
+english_backward_totals <- tapply(english_backward$freq, 
+                                  english_backward$concept_lemma,
+                                 sum)
+
+english_forward_merge$freq_normal <- 0
+english_backward_merge$freq_normal <- 0
+english_forward_merge$freq[is.na(english_forward_merge$freq)] <- 0
+english_backward_merge$freq[is.na(english_backward_merge$freq)] <- 0
+
+#fill in empty IDs
+english_forward_merge$feature_lemma <- as.data.frame(str_split_fixed(english_forward_merge$id, " ", 2))$V1
+english_backward_merge$concept_lemma <- as.data.frame(str_split_fixed(english_backward_merge$id, " ", 2))$V1
+
+#create normalized frequencies
+words <- c("art", "band", "concert", "radio")
+
+for (word in words){
+  english_forward_merge$freq_normal[english_forward_merge$feature_lemma == word] <- 
+    english_forward_merge$freq[english_forward_merge$feature_lemma == word] / 
+    english_forward_totals[word] * 100
+  
+  english_backward_merge$freq_normal[english_backward_merge$concept_lemma == word] <- 
+    english_backward_merge$freq[english_backward_merge$concept_lemma == word] / 
+    english_backward_totals[word] * 100
+}
+
+english_forward_merge$normalized_translated[is.na(english_forward_merge$normalized_translated)] <- 0
+english_backward_merge$normalized_translated[is.na(english_backward_merge$normalized_translated)] <- 0
+```
+
+# Comparison
+
+Here's what happens if we start relating the participant norms directly to the subs norms. I am calculating the cosine value between participants and subs, varying the level of noise I allow by excluding the lower proportion of frequencies with my cutoffs. I used up to 3 because normalized frequencies are very low. 
+
+As we can see in the final plot, the direct relationship between the subs and the participants is pretty low, except for the word band. 
+
+```{r}
+cutoffs <- seq(0, 3, .1)
+
+library(lsa)
+
+answers <- data.frame(word = character(),
+                      cutoff = numeric(),
+                      cosine = numeric(),
+                      forward = character())
+
+for (cut in cutoffs){
+  
+  for (word in words){
+    
+    temp <- subset(english_forward_merge,
+                   feature_lemma == word &
+                     freq_normal >= cut)
+    
+    temp2 <- subset(english_backward_merge,
+                   concept_lemma == word &
+                     freq_normal >= cut)
+    
+    answers <- rbind(answers, 
+                     c(
+                       word, cut,
+                       cosine(temp$normalized_translated, temp$freq_normal),
+                       "backward" # I labeled this backwards
+                       #forward dataset is feature to concept
+                       #feature to concept is dependent to head
+                     ))
+    answers <- rbind(answers,
+                     c(
+                       word, cut,
+                       cosine(temp2$normalized_translated, temp2$freq_normal),
+                       "forward" # labeled this backwards
+                       #backward dataset is concept to feature
+                       #concept to feature is head to dependent 
+                     ))
+  }
+  
+}
+
+colnames(answers) <- c("word", "cutoff", "cosine", "forward")
+
+answers$cosine <- as.numeric(answers$cosine)
+answers <- subset(answers,
+                  cosine > 0)
+
+colnames(answers)[1] <- "Concept"
+colnames(answers)[4] <- "Direction"
+
+library(ggplot2)
+ggplot(answers, aes(cutoff, cosine, color = Concept)) + 
+  geom_point(aes(shape = Direction)) +
+  theme_classic() +
+  xlab("Cut off Percentage") +
+  ylab("Cosine")
+```
+
+Maybe instead of one dependent direction, we can try both directions at once.
+
+```{r}
+colnames(english_backward_merge)[3] <- "feature_lemma"
+english <- rbind(english_forward_merge, english_backward_merge)
+
+total_freq <- 
+  english %>% 
+  group_by(id) %>% 
+  summarize(freq = sum(freq))
+
+
+english <- merge(english, 
+                 total_freq,
+                 by = "id")
+                         
+english <- subset(english,
+                  !(duplicated(id)))
+
+english$freq <- english$freq.y
+
+#get normalized frequency
+english_totals <- tapply(english$freq, english$feature_lemma, sum)
+
+
+#create normalized frequencies
+for (word in words){
+  english$freq_normal[english$feature_lemma == word] <- 
+    english$freq[english$feature_lemma == word] / 
+    english_totals[word] * 100
+}
+
+answers <- data.frame(word = character(),
+                      cutoff = numeric(),
+                      cosine = numeric())
+
+for (cut in cutoffs){
+  
+  for (word in words){
+    
+    temp <- subset(english,
+                   feature_lemma == word &
+                     freq_normal >= cut)
+    
+    answers <- rbind(answers, 
+                     c(word, cut,
+                       cosine(temp$normalized_translated, temp$freq_normal)))
+  }
+  
+}
+
+colnames(answers) <- c("word", "cutoff", "cosine")
+
+answers$cosine <- as.numeric(answers$cosine)
+answers <- subset(answers,
+                  cosine > 0)
+
+colnames(answers)[1] <- "Concept"
+
+library(ggplot2)
+ggplot(answers, aes(cutoff, cosine, color = Concept)) + 
+  geom_point() +
+  theme_classic() +
+  xlab("Cut off Percentage") +
+  ylab("Cosine")
+```
+
+# Another Approach
+
+Let's instead try calculating cosine within each database separately. 
+
+```{r}
+#gold standard
+library(tidyr)
+library(stringr)
+second_word <- as.data.frame(str_split_fixed(english$id, " ", 2))
+english$feature <- second_word$V2
+
+english_wide <- 
+  pivot_wider(english,
+            id_cols = feature,
+            names_from = feature_lemma,
+            values_from = normalized_translated,
+            values_fill = 0)
+
+english_wide$sum <- apply(english_wide[ , -1], 1, sum)
+
+english_wide <- subset(english_wide,
+                       sum > 0) 
+
+cosine(english_wide$art, english_wide$band)
+cosine(english_wide$art, english_wide$concert)
+cosine(english_wide$art, english_wide$radio)
+cosine(english_wide$band, english_wide$concert)
+cosine(english_wide$band, english_wide$radio)
+cosine(english_wide$concert, english_wide$radio)
+```
+
+```{r}
+english_wide2 <- 
+  pivot_wider(english,
+            id_cols = feature,
+            names_from = feature_lemma,
+            values_from = freq_normal,
+            values_fill = 0)
+
+answers <- data.frame(word = character(),
+                      word2 = character(),
+                      cutoff = numeric(),
+                      cosine = numeric())
+
+for (cut in cutoffs){
+  
+  for (word in words){
+    
+    for (word2 in words){
+      
+      temp <- english_wide2[ , c(word, word2) ]
+      temp <- temp[ temp[ , word] > cut | 
+                      temp[ , word2] > cut, ]
+      temp <- as.data.frame(temp)
+      
+      answers <- rbind(answers, 
+                     c(word, word2,
+                       cut,
+                       cosine(as.vector(temp[ , word]),
+                              as.vector(temp[ , word2]))))
+      
+    }
+    
+  }
+  
+}
+
+colnames(answers) <- c("Word", "Word2", "Cutoff", "Cosine")
+answers <- subset(answers, Word != Word2)
+
+answers$gold <- 0
+answers$gold[ answers$Word == "art" & answers$Word2 == "band"] <- cosine(english_wide$art, english_wide$band)
+
+answers$gold[ answers$Word == "art" & answers$Word2 == "concert"] <- cosine(english_wide$art, english_wide$concert)
+
+answers$gold[ answers$Word == "art" & answers$Word2 == "radio"] <- cosine(english_wide$art, english_wide$radio)
+
+answers$gold[ answers$Word == "band" & answers$Word2 == "concert"] <- cosine(english_wide$band, english_wide$concert)
+
+answers$gold[ answers$Word == "band" & answers$Word2 == "radio"] <- cosine(english_wide$band, english_wide$radio)
+
+answers$gold[ answers$Word == "concert" & answers$Word2 == "radio"] <- cosine(english_wide$concert, english_wide$radio)
+
+answers$Cutoff <- as.numeric(answers$Cutoff)
+answers$Cosine <- as.numeric(answers$Cosine)
+answers$residual <- answers$gold - answers$Cosine
+
+#get rid of backwards
+answers <- subset(answers, gold > 0)
+
+ggplot(answers, aes(Cutoff, residual, color = Word)) + 
+  geom_point() +
+  theme_classic() +
+  xlab("Cut off Percentage") +
+  ylab("Residual") 
+
+avg_residuals <- tapply(answers$residual, answers$Cutoff, mean)
+
+avg_residuals
+min(abs(avg_residuals))
+```
+
+
