@@ -7,6 +7,9 @@ archive/data/*/*.gz
 archive/data/*/*.txt
 archive/data/*/*.zip
 
+# raw subtitle corpus samples (large, not ours to redistribute)
+data/subs/
+
 # models
 *.udpipe
 

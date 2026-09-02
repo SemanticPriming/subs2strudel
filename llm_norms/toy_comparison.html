@@ -186,6 +186,8 @@
   .col-label.human .dot { background: var(--accent-human); }
   .col-label.elicit { color: var(--accent-elicit); }
   .col-label.elicit .dot { background: var(--accent-elicit); }
+  .col-label.corpus { color: var(--accent-corpus); }
+  .col-label.corpus .dot { background: var(--accent-corpus); }
 
   .feat-row {
     display: grid;
@@ -281,6 +283,44 @@
   }
   .diagnosis strong { color: var(--ink); }
 
+  .aside {
+    border: 1px dashed var(--border-strong);
+    border-radius: 8px;
+    padding: 22px 26px;
+    background: var(--surface-2);
+    margin-top: 34px;
+  }
+  .aside .eyebrow { margin-bottom: 8px; }
+  .aside h3 { font-size: 17px; margin-bottom: 10px; }
+  .aside p { font-size: 14px; color: var(--ink-dim); max-width: 66ch; }
+  .aside .cand-table { margin-top: 14px; font-size: 13px; }
+
+  .sent-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .sent-table th {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding: 10px 14px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .sent-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .sent-table tr:last-child td { border-bottom: none; }
+  .sent-table .sent-text { color: var(--ink-dim); font-style: italic; }
+  .sent-table .sent-feat { font-family: var(--font-mono); color: var(--accent-corpus); white-space: nowrap; }
+  .sent-table .sent-flag { font-family: var(--font-mono); font-size: 10.5px; color: var(--bad); }
+
   .questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
   .questions li {
     background: var(--surface);
@@ -308,10 +348,10 @@
     <p class="eyebrow">subs2strudel &middot; pilot memo &middot; for colleague reaction</p>
     <h1>Beyond Strudel: two LLM routes to concept&#8209;feature norms</h1>
     <p class="dek">
-      Strudel's pattern-grammar and a first pass at UDPipe dependency parsing both worked, but
-      neither scaled cleanly to new languages or produced features that read like something a
-      person would actually say. This is a small pilot testing two LLM-based replacements against
-      real human norms &mdash; not a finished pipeline, just early signal to react to.
+      Strudel's hand-built pattern-grammar worked, but doesn't scale cleanly to new languages, and
+      an earlier pass at reusing pre-parsed dependency data turned out to be a dead end (see the
+      aside in Section 02). This pilot tests two LLM-based replacements against real human norms
+      &mdash; not a finished pipeline, just early signal to react to.
     </p>
   </header>
 
@@ -349,50 +389,82 @@ Now give the comma-separated list of properties for: {concept}</span>
   </section>
 
   <section>
-    <div class="section-head"><span class="section-num">02</span><h2>LLM as corpus cleaner</h2></div>
+    <div class="section-head"><span class="section-num">02</span><h2>LLM reading real corpus sentences</h2></div>
     <p class="section-intro">
-      The other route keeps the corpus grounding but drops Strudel's hand-built pattern-grammar.
-      It reuses counts already sitting in <code>archive/example/english_backward.csv</code> &mdash;
-      words dependency-parsed as modifying a concept noun in the existing subs2vec-derived corpus
-      &mdash; and asks the same model to separate genuine semantic properties from parsing noise
-      (fixed-phrase collocations, unrelated modifiers), then rescales by the surviving frequency mass.
+      Strudel scans a window of tokens around each marked concept in the corpus and applies a
+      hand-written pattern-grammar to decide whether a nearby word is a property, and how it's
+      connected (see the archived <code>strudel_sups/strudel_report.pdf</code>, Section&nbsp;3).
+      This route does the same job &mdash; concept in, candidate property out &mdash; but asks
+      <code>llama3.1</code> to make that call directly from the raw sentence, in place of the
+      regex-based connector-pattern grammar.
     </p>
 
     <div class="method-box" style="--accent: var(--accent-corpus)">
-      <strong>What "dependency-parsed" means here</strong>
+      <strong>Corpus</strong>
       <p style="margin: 8px 0 0; font-size: 14px;">
-        A dependency parser reads a sentence and labels which words grammatically attach to which
-        other word, and how. In <em>"a martial art class,"</em> it says <code>martial</code> is an
-        <code>amod</code> (adjectival modifier) of <code>art</code>. Run over every sentence in the
-        corpus that contains a concept, this gives a list of every word ever attached to that
-        concept, tagged with the relation type, plus how often each attachment occurred &mdash; e.g.
-        <code>art&nbsp;&larr;amod&mdash;&nbsp;martial</code> occurred 7,632 times. That count is what
-        the "corpus freq" column below is built from. Strudel did the equivalent thing with its own
-        hand-written pattern-grammar instead of a dependency parser (see the archived
-        <code>strudel_sups/strudel_report.pdf</code>); this route substitutes a modern dependency
-        parse for that grammar, then leans on the LLM to do the semantic filtering Strudel's
-        stop-lists tried to do by hand.
+        A ~8MB byte-range slice (<code>llm_norms/fetch_corpus_sample.sh</code>) of the
+        <a href="https://opus.nlpl.eu/OpenSubtitles/corpus/version/OpenSubtitles" style="color:inherit">OPUS-OpenSubtitles v2024</a>
+        English mono file &mdash; about 710K real subtitle lines out of the full ~9.5GB corpus.
+        Kept at <code>data/subs/</code>, gitignored: it's a sample to prototype against, not ours
+        to redistribute. For each concept, lines containing the word are found by simple matching,
+        25 are sampled, and each is sent to the model on its own with the sentence in context.
       </p>
+      <span class="prompt-line">Sentence: {sentence}
+
+Does this sentence indicate a genuine property of {concept} &mdash; physical, functional,
+categorical, or behavioral? If yes, output ONE short property (e.g. "has_legs",
+"used_for_sitting"). If not: none</span>
     </div>
 
     <p style="font-size:14.5px; color:var(--ink-dim); margin-bottom:10px;">
-      Worked example &mdash; top 15 raw candidates for <b style="color:var(--ink)">art</b>:
+      Worked example &mdash; six real extractions:
     </p>
-    <table class="cand-table">
-      <thead><tr><th>word</th><th>corpus freq</th><th class="cand-bar-cell"></th><th>LLM verdict</th></tr></thead>
-      <tbody id="cand-table-body"></tbody>
+    <table class="sent-table">
+      <thead><tr><th>sentence</th><th>extracted property</th></tr></thead>
+      <tbody>
+        <tr><td class="sent-text">&ldquo;You said you'd even let the dogs come in.&rdquo;</td><td class="sent-feat">can_be_pets</td></tr>
+        <tr><td class="sent-text">&ldquo;You please sit on the chair.&rdquo;</td><td class="sent-feat">used_for_sitting</td></tr>
+        <tr><td class="sent-text">&ldquo;Now you rob me of the triumph of seeing you sent to the chair.&rdquo;</td><td class="sent-feat">used_as_punishment</td></tr>
+        <tr><td class="sent-text">&ldquo;Well, eat some green apples.&rdquo;</td><td class="sent-feat">has_green_color</td></tr>
+        <tr><td class="sent-text">&ldquo;J And the Adam's apple Is seven and a half&rdquo;</td><td><span class="sent-feat">has_size</span><br><span class="sent-flag">&#9888; wrong sense &mdash; "Adam's apple" isn't the fruit</span></td></tr>
+        <tr><td class="sent-text">&ldquo;But ambition, greed and lust for power destroy any hope for happiness.&rdquo;</td><td class="sent-feat">elusive</td></tr>
+      </tbody>
     </table>
 
-    <div class="stat-row" id="stat-row"></div>
+    <div class="concept-grid" id="concept-grid-corpus" style="margin-top: 26px;"></div>
 
     <div class="diagnosis">
-      <strong>Diagnosis:</strong> the backward-dependency extraction is dominated by
-      <code>amod</code> relations &mdash; adjectives modifying the concept noun &mdash; so the
-      candidate pool is mostly frequent collocations ("martial art", "big band") rather than the
-      functional/associative properties people actually list ("painting", "instruments",
-      "listening"). The LLM filter can discard obvious noise, but it can't manufacture properties
-      that were never in the candidate pool to begin with. Fixing this needs richer relation types
-      at extraction time (verb objects, prepositional attachments), not a better filter downstream.
+      <strong>Caveats from this run:</strong> (1) <em>word sense</em> &mdash; matching is on the
+      surface string, so "Adam's apple" and "the Big Apple" get folded in with the fruit; Strudel's
+      corpus sidesteps this by pre-marking which occurrences count as the target concept
+      (<code>NNCONCEPT</code> tag) before extraction even starts. (2) <em>a generic-guess bias</em>
+      &mdash; <code>has_legs</code> was the model's answer 19 times across all 100 sentences,
+      including ones that never mention legs, suggesting it's a default fallback rather than a
+      grounded read of the sentence. (3) <em>small sample</em> &mdash; 25 sentences per concept from
+      one 8MB slice; several concepts got 0&ndash;5 "none" responses before there was enough text to
+      work with.
+    </div>
+
+    <div class="aside">
+      <p class="eyebrow">superseded first attempt</p>
+      <h3>Cleaning pre-parsed dependency data</h3>
+      <p>
+        Before pulling raw corpus text, the first attempt at a "corpus route" reused counts already
+        sitting in <code>archive/example/english_backward.csv</code> &mdash; words dependency-parsed
+        as modifying a concept noun in an earlier subs2vec pass &mdash; and asked the LLM to filter
+        parsing noise (fixed-phrase collocations like <em>martial art</em>) from genuine properties.
+        It didn't work: that extraction is dominated by <code>amod</code> (adjective-modifier)
+        relations, so the candidate pool for a word like <b style="color:var(--ink)">art</b> was
+        mostly frequent collocations, not the properties people actually list. An LLM filter can
+        discard obvious noise but can't manufacture a property that was never in the candidate pool.
+        Measured against the human norms for <code>art / band / concert / radio</code>, this route
+        recovered <b style="color:var(--bad)">0%</b> of the top&#8209;10 human feature mass, across
+        all four words &mdash; which is why the sentence-reading approach above exists.
+      </p>
+      <table class="cand-table">
+        <thead><tr><th>word</th><th>corpus freq</th><th class="cand-bar-cell"></th><th>LLM verdict</th></tr></thead>
+        <tbody id="cand-table-body"></tbody>
+      </table>
     </div>
   </section>
 
@@ -400,15 +472,16 @@ Now give the comma-separated list of properties for: {concept}</span>
     <div class="section-head"><span class="section-num">03</span><h2>For discussion</h2></div>
     <ul class="questions">
       <li><b>Does virtual-participant sampling feel legitimate</b> as a stand-in for norm collection, or does it just reproduce the LLM's training-data priors dressed up as "probability"? What would we want to see before trusting it for a language with no existing human norms?</li>
-      <li><b>Is the corpus route worth saving</b> by re-extracting with fuller dependency relations (verb-object, prepositional), or should OpenSubtitles text go straight to an LLM extractor instead of through a dependency parse first?</li>
-      <li><b>Where does reinforcement learning fit?</b> The English human norms (<code>data/human/</code>) could serve as a reward/eval signal for tuning the elicitation prompt or scoring &mdash; worth investing in now, or only once one base approach is picked?</li>
-      <li><b>Which concepts should the next round cover</b> &mdash; abstract vs. concrete, high vs. low frequency, or specifically words where the two methods disagree most?</li>
+      <li><b>Does the corpus route need Strudel's concept-tagging step back</b> &mdash; marking which occurrences of a word are really the target concept &mdash; before an LLM extractor can trust the sentences it's reading, given the Adam's-apple problem above?</li>
+      <li><b>How much does sample size matter here?</b> 25 sentences from an 8MB slice already shows real signal for some concepts (chair: 57% coverage) and almost none for others (happiness: 0%) &mdash; is that a corpus-size problem or a concreteness problem?</li>
+      <li><b>Where does reinforcement learning fit?</b> The English human norms (<code>data/human/</code>) could serve as a reward/eval signal for tuning either the elicitation prompt or the sentence-extraction prompt &mdash; worth investing in now, or only once one base approach is picked?</li>
+      <li><b>Which concepts should the next round cover</b> &mdash; abstract vs. concrete, high vs. low frequency, or specifically words where the methods disagree most?</li>
     </ul>
   </section>
 
   <footer>
-    <p>Generated from <code>llm_norms/elicit_norms.py</code> and <code>llm_norms/clean_corpus_norms.py</code> &middot; model: llama3.1 via local Ollama</p>
-    <p>Human norms: Buchanan et al. (2019), <code>data/human/english_Buchanan2019.csv</code></p>
+    <p>Generated from <code>llm_norms/elicit_norms.py</code>, <code>llm_norms/extract_corpus_sentences.py</code>, and <code>llm_norms/clean_corpus_norms.py</code> &middot; model: llama3.1 via local Ollama</p>
+    <p>Human norms: Buchanan et al. (2019), <code>data/human/english_Buchanan2019.csv</code> &middot; corpus sample: OPUS-OpenSubtitles v2024 (not redistributed)</p>
   </footer>
 </main>
 
@@ -427,40 +500,59 @@ const ELICIT = {
 };
 const COVERAGE = { dog: 94.6, chair: 94.3, apple: 93.9, happiness: 77.8 };
 
-const grid = document.getElementById("concept-grid");
-for (const concept of ["dog", "chair", "apple", "happiness"]) {
-  const card = document.createElement("div");
-  card.className = "concept-card";
+const ACCENT_VARS = { human: "var(--accent-human)", elicit: "var(--accent-elicit)", corpus: "var(--accent-corpus)" };
 
-  const head = document.createElement("div");
-  head.className = "concept-card-head";
-  head.innerHTML = `<span class="concept-name">${concept}</span><span class="coverage-pill">${COVERAGE[concept]}% top-10 mass covered</span>`;
-  card.appendChild(head);
-
-  const cols = document.createElement("div");
-  cols.className = "concept-cols";
-
-  function makeCol(label, cls, data) {
-    const col = document.createElement("div");
-    col.className = "concept-col";
-    const max = data[0][1];
-    const accentVar = cls === "human" ? "var(--accent-human)" : "var(--accent-elicit)";
-    let rows = `<div class="col-label ${cls}"><span class="dot"></span>${label}</div>`;
-    for (const [feat, pct] of data) {
-      rows += `<div class="feat-item">
-        <div class="feat-row"><span class="feat-name">${feat}</span><span class="feat-pct">${pct}%</span></div>
-        <div class="feat-bar-wrap"><div class="feat-bar" style="width:${(pct/max)*100}%; background:${accentVar}"></div></div>
-      </div>`;
-    }
-    col.innerHTML = rows;
-    return col;
+function makeCol(label, cls, data) {
+  const col = document.createElement("div");
+  col.className = "concept-col";
+  const max = data.length ? data[0][1] : 1;
+  let rows = `<div class="col-label ${cls}"><span class="dot"></span>${label}</div>`;
+  if (!data.length) {
+    rows += `<div class="feat-item"><span class="feat-pct">no features extracted</span></div>`;
   }
-
-  cols.appendChild(makeCol("Human norms", "human", HUMAN[concept]));
-  cols.appendChild(makeCol("LLM elicited", "elicit", ELICIT[concept]));
-  card.appendChild(cols);
-  grid.appendChild(card);
+  for (const [feat, pct] of data) {
+    rows += `<div class="feat-item">
+      <div class="feat-row"><span class="feat-name">${feat}</span><span class="feat-pct">${pct}%</span></div>
+      <div class="feat-bar-wrap"><div class="feat-bar" style="width:${(pct/max)*100}%; background:${ACCENT_VARS[cls]}"></div></div>
+    </div>`;
+  }
+  col.innerHTML = rows;
+  return col;
 }
+
+function buildConceptGrid(gridId, concepts, secondLabel, secondClass, secondData, coverageData) {
+  const grid = document.getElementById(gridId);
+  for (const concept of concepts) {
+    const card = document.createElement("div");
+    card.className = "concept-card";
+
+    const cov = coverageData[concept];
+    const covVar = cov >= 50 ? "var(--good)" : "var(--bad)";
+    const head = document.createElement("div");
+    head.className = "concept-card-head";
+    head.innerHTML = `<span class="concept-name">${concept}</span><span class="coverage-pill" style="background: color-mix(in srgb, ${covVar} 16%, transparent); color: ${covVar}">${cov}% top-10 mass covered</span>`;
+    card.appendChild(head);
+
+    const cols = document.createElement("div");
+    cols.className = "concept-cols";
+    cols.appendChild(makeCol("Human norms", "human", HUMAN[concept]));
+    cols.appendChild(makeCol(secondLabel, secondClass, secondData[concept]));
+    card.appendChild(cols);
+    grid.appendChild(card);
+  }
+}
+
+const CONCEPTS = ["dog", "chair", "apple", "happiness"];
+buildConceptGrid("concept-grid", CONCEPTS, "LLM elicited", "elicit", ELICIT, COVERAGE);
+
+const CORPUS_SENT = {
+  dog: [["has_legs",28],["is_a_pet",8],["can_be_pets",4],["has_owner",4],["licks_shoes",4],["has_white_hair",4]],
+  chair: [["used_for_sitting",36],["has_legs",28],["used_as_punishment",4],["has_multiple",4],["clatters_noisily",4],["has_electric_features",4]],
+  apple: [["edible",24],["has_green_color",8],["stolen_from_gardens",4],["has_size",4],["has_few_apples",4],["golden",4]],
+  happiness: [["has_positive_connotation",8],["is_a_gift",8],["has_location",8],["elusive",4],["can_be_purchased",4],["has_social_function",4]],
+};
+const COVERAGE_CORPUS = { dog: 29.3, chair: 56.9, apple: 26.5, happiness: 0 };
+buildConceptGrid("concept-grid-corpus", CONCEPTS, "LLM from corpus sentences", "corpus", CORPUS_SENT, COVERAGE_CORPUS);
 
 const CANDIDATES = [
   ["martial", 7632, "kept"], ["modern", 1809, "kept"], ["fine", 1440, "kept"],
@@ -480,14 +572,4 @@ for (const [word, freq, status] of CANDIDATES) {
   candBody.appendChild(tr);
 }
 
-const STATS = [
-  ["art", 0], ["band", 0], ["concert", 0], ["radio", 0],
-];
-const statRow = document.getElementById("stat-row");
-for (const [word, cov] of STATS) {
-  const tile = document.createElement("div");
-  tile.className = "stat-tile";
-  tile.innerHTML = `<div class="stat-num">${cov}%</div><div class="stat-label">${word} &middot; top-10 mass covered</div>`;
-  statRow.appendChild(tile);
-}
 </script>
