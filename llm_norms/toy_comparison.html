@@ -1,0 +1,493 @@
+<!doctype html>
+<title>Beyond Strudel</title>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+<style>
+  :root {
+    --bg: #f5f6f3;
+    --surface: #ffffff;
+    --surface-2: #eef0ec;
+    --ink: #1e2320;
+    --ink-dim: #5b6560;
+    --ink-faint: #8b948e;
+    --border: #dde1da;
+    --border-strong: #c7cdc3;
+    --accent-human: #3c3f86;
+    --accent-elicit: #1f6f63;
+    --accent-corpus: #a6752a;
+    --bar-track: #e7eae3;
+    --good: #1f6f63;
+    --bad: #a6392f;
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15181a;
+      --surface: #1c2023;
+      --surface-2: #22262a;
+      --ink: #e7e9e4;
+      --ink-dim: #a3aca4;
+      --ink-faint: #757f78;
+      --border: #2d3234;
+      --border-strong: #3a4043;
+      --accent-human: #9698e0;
+      --accent-elicit: #5fc3b3;
+      --accent-corpus: #dba15c;
+      --bar-track: #262b2c;
+      --good: #5fc3b3;
+      --bad: #e08277;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15181a;
+    --surface: #1c2023;
+    --surface-2: #22262a;
+    --ink: #e7e9e4;
+    --ink-dim: #a3aca4;
+    --ink-faint: #757f78;
+    --border: #2d3234;
+    --border-strong: #3a4043;
+    --accent-human: #9698e0;
+    --accent-elicit: #5fc3b3;
+    --accent-corpus: #dba15c;
+    --bar-track: #262b2c;
+    --good: #5fc3b3;
+    --bad: #e08277;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    margin: 0;
+    line-height: 1.55;
+  }
+  main {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 56px 28px 90px;
+  }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 10px;
+  }
+  h1 { font-size: 40px; letter-spacing: -0.01em; }
+  .dek {
+    font-size: 17px;
+    color: var(--ink-dim);
+    max-width: 62ch;
+    margin: 16px 0 0;
+  }
+  header.page { padding-bottom: 34px; border-bottom: 1px solid var(--border); margin-bottom: 44px; }
+
+  section { margin-bottom: 58px; }
+  .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .section-num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  h2 { font-size: 25px; }
+  .section-intro {
+    max-width: 66ch;
+    color: var(--ink-dim);
+    font-size: 15.5px;
+    margin: 14px 0 26px;
+  }
+  .section-intro code, p code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    background: var(--surface-2);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    color: var(--ink);
+  }
+
+  .method-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    font-size: 14.5px;
+    color: var(--ink-dim);
+  }
+  .method-box strong { color: var(--ink); }
+  .method-box .prompt-line {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    margin-top: 10px;
+    white-space: pre-wrap;
+  }
+
+  /* concept cards */
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 700px) { .concept-grid { grid-template-columns: 1fr; } }
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .concept-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+  .concept-name {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  .coverage-pill {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: color-mix(in srgb, var(--good) 16%, transparent);
+    color: var(--good);
+    white-space: nowrap;
+  }
+  .concept-cols { display: grid; grid-template-columns: 1fr 1fr; }
+  .concept-col { padding: 14px 16px; }
+  .concept-col + .concept-col { border-left: 1px solid var(--border); }
+  .col-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .col-label .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .col-label.human { color: var(--accent-human); }
+  .col-label.human .dot { background: var(--accent-human); }
+  .col-label.elicit { color: var(--accent-elicit); }
+  .col-label.elicit .dot { background: var(--accent-elicit); }
+
+  .feat-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.8px;
+    padding: 3px 0;
+  }
+  .feat-name {
+    font-family: var(--font-mono);
+    color: var(--ink);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .feat-bar-wrap { position: relative; height: 4px; background: var(--bar-track); border-radius: 2px; margin: 3px 0 6px; }
+  .feat-bar { position: absolute; top: 0; left: 0; height: 100%; border-radius: 2px; }
+  .feat-item { margin-bottom: 2px; }
+  .feat-pct { font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); }
+
+  /* candidate table for corpus approach */
+  .cand-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .cand-table th {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding: 10px 14px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .cand-table td { padding: 8px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .cand-table tr:last-child td { border-bottom: none; }
+  .cand-word { font-family: var(--font-mono); }
+  .cand-bar-cell { width: 34%; }
+  .cand-bar-wrap { height: 6px; background: var(--bar-track); border-radius: 3px; overflow: hidden; }
+  .cand-bar { height: 100%; background: var(--accent-corpus); }
+  .status-tag {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .status-tag.kept { background: color-mix(in srgb, var(--bad) 15%, transparent); color: var(--bad); }
+  .status-tag.discarded { background: var(--surface-2); color: var(--ink-faint); }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 26px 0;
+  }
+  @media (max-width: 700px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
+  .stat-tile {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 16px;
+    text-align: center;
+  }
+  .stat-tile .stat-num {
+    font-family: var(--font-mono);
+    font-size: 26px;
+    color: var(--bad);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-tile .stat-label {
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    margin-top: 4px;
+    text-transform: capitalize;
+  }
+
+  .diagnosis {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    font-size: 14.5px;
+    color: var(--ink-dim);
+    margin-top: 18px;
+  }
+  .diagnosis strong { color: var(--ink); }
+
+  .questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .questions li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-human);
+    border-radius: 6px;
+    padding: 13px 18px;
+    font-size: 14.5px;
+  }
+  .questions li b { color: var(--ink); font-family: var(--font-display); font-weight: 600; }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+  }
+  footer p { margin: 4px 0; }
+</style>
+
+<main>
+  <header class="page">
+    <p class="eyebrow">subs2strudel &middot; pilot memo &middot; for colleague reaction</p>
+    <h1>Beyond Strudel: two LLM routes to concept&#8209;feature norms</h1>
+    <p class="dek">
+      Strudel's pattern-grammar and a first pass at UDPipe dependency parsing both worked, but
+      neither scaled cleanly to new languages or produced features that read like something a
+      person would actually say. This is a small pilot testing two LLM-based replacements against
+      real human norms &mdash; not a finished pipeline, just early signal to react to.
+    </p>
+  </header>
+
+  <section>
+    <div class="section-head"><span class="section-num">01</span><h2>LLM as virtual participant</h2></div>
+    <p class="section-intro">
+      <code>llama3.1</code> (open-weight, run locally via Ollama) is given the same instructions
+      used to collect the human norms &mdash; the original Buchanan et&nbsp;al. (2019) task wording,
+      duck / cucumber / stove examples included &mdash; and asked to list properties for one concept
+      at a time. Each call uses a fresh sample (temperature&nbsp;0.9, new seed), standing in for one
+      "participant." Twenty such runs per concept are aggregated exactly like the human study:
+      <code>normalized_feature = participants producing X &divide; N &times; 100</code>.
+    </p>
+    <div class="method-box" style="--accent: var(--accent-elicit)">
+      <strong>Prompt frame</strong> (condensed from <code>materials/human/english_Buchanan2019.html</code>)
+      <span class="prompt-line">duck: is a bird, is an animal, waddles, flies, migrates, lays eggs, quacks, swims,
+has wings, has a beak, has webbed feet, has feathers, lives in ponds, lives in water,
+hunted by people, is edible
+&hellip;
+Now give the comma-separated list of properties for: {concept}</span>
+    </div>
+
+    <div class="concept-grid" id="concept-grid"></div>
+
+    <div class="diagnosis">
+      <strong>Caveat &mdash; phrases vs. words:</strong> the human norming pipeline atomizes each
+      typed response down to individual content words before scoring, so a participant who wrote
+      <code>wags its tail</code> shows up in the data only as the single feature <code>tail</code>
+      (33% for dog) &mdash; not as a phrase, and not as <code>wag</code> either. The LLM elicitation
+      here keeps phrases intact (<code>wags_its_tail</code>). The top-10 coverage numbers above use
+      substring matching, which happens to catch cases like this one, but it's a loose fix: a
+      properly fair comparison would explode LLM phrases into the same single-word units the human
+      pipeline uses before scoring overlap, rather than leaning on substring luck.
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="section-num">02</span><h2>LLM as corpus cleaner</h2></div>
+    <p class="section-intro">
+      The other route keeps the corpus grounding but drops Strudel's hand-built pattern-grammar.
+      It reuses counts already sitting in <code>archive/example/english_backward.csv</code> &mdash;
+      words dependency-parsed as modifying a concept noun in the existing subs2vec-derived corpus
+      &mdash; and asks the same model to separate genuine semantic properties from parsing noise
+      (fixed-phrase collocations, unrelated modifiers), then rescales by the surviving frequency mass.
+    </p>
+
+    <div class="method-box" style="--accent: var(--accent-corpus)">
+      <strong>What "dependency-parsed" means here</strong>
+      <p style="margin: 8px 0 0; font-size: 14px;">
+        A dependency parser reads a sentence and labels which words grammatically attach to which
+        other word, and how. In <em>"a martial art class,"</em> it says <code>martial</code> is an
+        <code>amod</code> (adjectival modifier) of <code>art</code>. Run over every sentence in the
+        corpus that contains a concept, this gives a list of every word ever attached to that
+        concept, tagged with the relation type, plus how often each attachment occurred &mdash; e.g.
+        <code>art&nbsp;&larr;amod&mdash;&nbsp;martial</code> occurred 7,632 times. That count is what
+        the "corpus freq" column below is built from. Strudel did the equivalent thing with its own
+        hand-written pattern-grammar instead of a dependency parser (see the archived
+        <code>strudel_sups/strudel_report.pdf</code>); this route substitutes a modern dependency
+        parse for that grammar, then leans on the LLM to do the semantic filtering Strudel's
+        stop-lists tried to do by hand.
+      </p>
+    </div>
+
+    <p style="font-size:14.5px; color:var(--ink-dim); margin-bottom:10px;">
+      Worked example &mdash; top 15 raw candidates for <b style="color:var(--ink)">art</b>:
+    </p>
+    <table class="cand-table">
+      <thead><tr><th>word</th><th>corpus freq</th><th class="cand-bar-cell"></th><th>LLM verdict</th></tr></thead>
+      <tbody id="cand-table-body"></tbody>
+    </table>
+
+    <div class="stat-row" id="stat-row"></div>
+
+    <div class="diagnosis">
+      <strong>Diagnosis:</strong> the backward-dependency extraction is dominated by
+      <code>amod</code> relations &mdash; adjectives modifying the concept noun &mdash; so the
+      candidate pool is mostly frequent collocations ("martial art", "big band") rather than the
+      functional/associative properties people actually list ("painting", "instruments",
+      "listening"). The LLM filter can discard obvious noise, but it can't manufacture properties
+      that were never in the candidate pool to begin with. Fixing this needs richer relation types
+      at extraction time (verb objects, prepositional attachments), not a better filter downstream.
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="section-num">03</span><h2>For discussion</h2></div>
+    <ul class="questions">
+      <li><b>Does virtual-participant sampling feel legitimate</b> as a stand-in for norm collection, or does it just reproduce the LLM's training-data priors dressed up as "probability"? What would we want to see before trusting it for a language with no existing human norms?</li>
+      <li><b>Is the corpus route worth saving</b> by re-extracting with fuller dependency relations (verb-object, prepositional), or should OpenSubtitles text go straight to an LLM extractor instead of through a dependency parse first?</li>
+      <li><b>Where does reinforcement learning fit?</b> The English human norms (<code>data/human/</code>) could serve as a reward/eval signal for tuning the elicitation prompt or scoring &mdash; worth investing in now, or only once one base approach is picked?</li>
+      <li><b>Which concepts should the next round cover</b> &mdash; abstract vs. concrete, high vs. low frequency, or specifically words where the two methods disagree most?</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Generated from <code>llm_norms/elicit_norms.py</code> and <code>llm_norms/clean_corpus_norms.py</code> &middot; model: llama3.1 via local Ollama</p>
+    <p>Human norms: Buchanan et al. (2019), <code>data/human/english_Buchanan2019.csv</code></p>
+  </footer>
+</main>
+
+<script>
+const HUMAN = {
+  dog: [["legs",100],["animal",80],["pet",80],["barks",70],["four",60],["fur",60],["bark",50],["chases",40]],
+  chair: [["legs",100],["sit",90],["on",86.7],["sitting",86.7],["four",63.3],["wood",60],["furniture",43.3],["comfortable",36.7]],
+  apple: [["fruit",95],["red",90],["grow",66.7],["trees",66.7],["green",58],["tree",55],["crunchy",36.7],["eat",36.7]],
+  happiness: [["feeling",33.3],["joy",33.3],["happy",26.7],["content",20],["opposite",20],["good",16.7],["sadness",16.7],["state",16.7]],
+};
+const ELICIT = {
+  dog: [["mammal",95],["four_legs",95],["barks",85],["fur",80],["whines",80],["howls",75],["wags_its_tail",60],["animal",50]],
+  chair: [["piece_of_furniture",100],["legs",100],["wood",85],["seat",80],["metal",70],["cushions",70],["sitting",65],["offices",60]],
+  apple: [["fruit",100],["round",100],["trees",100],["seeds",95],["orchards",75],["edible",75],["juicy",70],["making_pies",55]],
+  happiness: [["feeling",90],["emotion",85],["can_be_fleeting",70],["subjective",65],["varies_from_person_to_person",35],["can_be_long-lasting",30],["contagious",30],["can_be_intense",30]],
+};
+const COVERAGE = { dog: 94.6, chair: 94.3, apple: 93.9, happiness: 77.8 };
+
+const grid = document.getElementById("concept-grid");
+for (const concept of ["dog", "chair", "apple", "happiness"]) {
+  const card = document.createElement("div");
+  card.className = "concept-card";
+
+  const head = document.createElement("div");
+  head.className = "concept-card-head";
+  head.innerHTML = `<span class="concept-name">${concept}</span><span class="coverage-pill">${COVERAGE[concept]}% top-10 mass covered</span>`;
+  card.appendChild(head);
+
+  const cols = document.createElement("div");
+  cols.className = "concept-cols";
+
+  function makeCol(label, cls, data) {
+    const col = document.createElement("div");
+    col.className = "concept-col";
+    const max = data[0][1];
+    const accentVar = cls === "human" ? "var(--accent-human)" : "var(--accent-elicit)";
+    let rows = `<div class="col-label ${cls}"><span class="dot"></span>${label}</div>`;
+    for (const [feat, pct] of data) {
+      rows += `<div class="feat-item">
+        <div class="feat-row"><span class="feat-name">${feat}</span><span class="feat-pct">${pct}%</span></div>
+        <div class="feat-bar-wrap"><div class="feat-bar" style="width:${(pct/max)*100}%; background:${accentVar}"></div></div>
+      </div>`;
+    }
+    col.innerHTML = rows;
+    return col;
+  }
+
+  cols.appendChild(makeCol("Human norms", "human", HUMAN[concept]));
+  cols.appendChild(makeCol("LLM elicited", "elicit", ELICIT[concept]));
+  card.appendChild(cols);
+  grid.appendChild(card);
+}
+
+const CANDIDATES = [
+  ["martial", 7632, "kept"], ["modern", 1809, "kept"], ["fine", 1440, "kept"],
+  ["war", 1358, "kept"], ["great", 1055, "kept"], ["ancient", 649, "kept"],
+  ["dark", 463, "kept"], ["lost", 449, "kept"], ["black", 389, "kept"],
+  ["real", 344, "kept"], ["contemporary", 312, "kept"], ["love", 298, "discarded"],
+  ["steal", 289, "discarded"], ["mix", 239, "discarded"], ["good", 237, "discarded"],
+];
+const candBody = document.getElementById("cand-table-body");
+const maxFreq = CANDIDATES[0][1];
+for (const [word, freq, status] of CANDIDATES) {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td class="cand-word">${word}</td>
+    <td class="feat-pct">${freq.toLocaleString()}</td>
+    <td class="cand-bar-cell"><div class="cand-bar-wrap"><div class="cand-bar" style="width:${(freq/maxFreq)*100}%"></div></div></td>
+    <td><span class="status-tag ${status}">${status}</span></td>`;
+  candBody.appendChild(tr);
+}
+
+const STATS = [
+  ["art", 0], ["band", 0], ["concert", 0], ["radio", 0],
+];
+const statRow = document.getElementById("stat-row");
+for (const [word, cov] of STATS) {
+  const tile = document.createElement("div");
+  tile.className = "stat-tile";
+  tile.innerHTML = `<div class="stat-num">${cov}%</div><div class="stat-label">${word} &middot; top-10 mass covered</div>`;
+  statRow.appendChild(tile);
+}
+</script>
