@@ -1,14 +1,17 @@
 # concept-feature
-concept-feature/*/*.csv
-concept-feature/*/*.zip
+archive/concept-feature/*/*.csv
+archive/concept-feature/*/*.zip
 
 # data
-data/*/*.gz
-data/*/*.txt
-data/*/*.zip
+archive/data/*/*.gz
+archive/data/*/*.txt
+archive/data/*/*.zip
 
-# models 
-*.udpipe 
+# models
+*.udpipe
+
+# macOS
+.DS_Store
 
 # History files
 .Rhistory
