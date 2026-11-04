@@ -1,0 +1,9 @@
+file,field,in_shown_rows,correct,values
+buchanan,BSG,False,0,10
+buchanan,BSG,True,8,11
+buchanan,FSG,False,0,18
+buchanan,FSG,True,4,4
+buchanan,feature,False,0,59
+buchanan,feature,True,1,1
+buchanan,normalized_feature,False,0,43
+buchanan,normalized_feature,True,7,17

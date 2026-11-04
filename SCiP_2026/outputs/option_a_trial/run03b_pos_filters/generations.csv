@@ -1,0 +1,957 @@
+concept,run,seed,raw_output,feature_line
+dog,0,2026,"is an animal, has hooved feet, is four-legged, is furry, has a tail, is amphibious, is domestic, is canine, is loyal, is intelligent, plays, is big
+frog: is an amphibian, is urban, leaps, is nocturnal, is wild, is attracted to light, has a loud voice, lives in","is an animal, has hooved feet, is four-legged, is furry, has a tail, is amphibious, is domestic, is canine, is loyal, is intelligent, plays, is big"
+dog,1,2027,"is a animal, is a dog, has fur, has four legs, is friendly, has tabby ears, is a pet, needs to be walked, has a tail, is companion, wags tail, sleeps during day, roams at night, found in streets, found in houses, is a pet, is for companionship, mouth is for li","is a animal, is a dog, has fur, has four legs, is friendly, has tabby ears, is a pet, needs to be walked, has a tail, is companion, wags tail, sleeps during day, roams at night, found in streets, found in houses, is a pet, is for companionship, mouth is for li"
+dog,2,2028,"is a animal, has four legs, has fur, barks, bites, is domesticated, lives in houses, lives outside, is loyal, is amiable
+snail: crawls, eats, has a shell, has eight legs, has a head, lives in land, lives in water, is an animal, is soft, breathes with lungs
+dr","is a animal, has four legs, has fur, barks, bites, is domesticated, lives in houses, lives outside, is loyal, is amiable"
+dog,3,2029,"is furry, has tail, is domesticated, is wild, has legs, has tail, has ears, has bark, is a pet, is grey, likes to play, is loyal, is robotic
+
+Give the output in a list of tuples formatted as [(""duck"", []), (""cucumber"",...), (""stove"",...), ""(dog"",...),","is furry, has tail, is domesticated, is wild, has legs, has tail, has ears, has bark, is a pet, is grey, likes to play, is loyal, is robotic"
+dog,4,2030,"is an animal, is a mammal, is four-legged, has a tail, is a pet, is domesticated","is an animal, is a mammal, is four-legged, has a tail, is a pet, is domesticated"
+dog,5,2031,"is a dog, is an animal, is furry, has four legs, has a tail, is domesticated, has bark, helps humans, is intelligent, fetchs things, is hairy, is four-legged, gets along with cats, has nose, can bite
+
+What makes each of the following words / phrases / expressions the thing that they are? If they are too","is a dog, is an animal, is furry, has four legs, has a tail, is domesticated, has bark, helps humans, is intelligent, fetchs things, is hairy, is four-legged, gets along with cats, has nose, can bite"
+dog,6,2032,"is a mammal, eats food, is a pet, is barking, is intelligent, is domesticated, is faithful, barks, is a friend, is tame, is playful, is a friend, needs a walk, sporting, bites, runs, bites things, has bones, helps humans
+chess: involves strategy, is a board game, is played by ","is a mammal, eats food, is a pet, is barking, is intelligent, is domesticated, is faithful, barks, is a friend, is tame, is playful, is a friend, needs a walk, sporting, bites, runs, bites things, has bones, helps humans"
+dog,7,2033,"is a pet, is used as a guide, is useful, is found in homes, is useful for hunting, is useful for herding animals, is useful for protecting, has four legs, has four legs, is good with children, is used as a guard
+cow: is a mammal, produces milk, is useful for dairy farming, is useful for meat, is useful for fur,","is a pet, is used as a guide, is useful, is found in homes, is useful for hunting, is useful for herding animals, is useful for protecting, has four legs, has four legs, is good with children, is used as a guard"
+dog,8,2034,"is a pet, is an animal, is a mammal, sleeps, drinks, barks, fetches things, has fur, is domestic, lives indoors, lives with people, is a friend, protector, loves people, has paw, is playful
+wood: is a material, is used for making furniture, is used for making buildings, in nature, is used","is a pet, is an animal, is a mammal, sleeps, drinks, barks, fetches things, has fur, is domestic, lives indoors, lives with people, is a friend, protector, loves people, has paw, is playful"
+dog,9,2035,"is a dog, is a animal, is housebroken, is domesticated, is a pet, is a pet, is a companion, is family, is our family
+
+Q: table: is long, is rectangular, has edges, is made of wood, is furniture, of a kitchen, of a table, has a drawer
+start: is a place, is an","is a dog, is a animal, is housebroken, is domesticated, is a pet, is a pet, is a companion, is family, is our family"
+dog,10,2036,"is a pet, is a kind of animal, pets humans, is a child's friend, is a kind of canine, is a noble animal, is a good defender, is faithful, has four legs, barks, bites, plays, has fur, jumps, runs, eats
+shelf: is a furniture, holds items, is flat, is made of wood,","is a pet, is a kind of animal, pets humans, is a child's friend, is a kind of canine, is a noble animal, is a good defender, is faithful, has four legs, barks, bites, plays, has fur, jumps, runs, eats"
+dog,11,2037,"is a pet, is a elephant, has hair, has a tail, has fur, is black, is brown, is white, is a dog, is four-legged, is a friendly animal, is a mammal, plays fetch, has fur, has a tail, is black, is brown, is white, is four-legged, is a friendly animal, is a mammal, plays fetch","is a pet, is a elephant, has hair, has a tail, has fur, is black, is brown, is white, is a dog, is four-legged, is a friendly animal, is a mammal, plays fetch, has fur, has a tail, is black, is brown, is white, is four-legged, is a friendly animal, is a mammal, plays fetch"
+dog,12,2038,"is a dog, is a mammal, has a tail, has fur, has a mouth, has four legs, is carnivorous, has a nose, is a pet, is large, has bones, is quadrupedal, live with people, wag its tail, is familiar, has a cuddly effect on people
+ice cream: is a frozen dessert","is a dog, is a mammal, has a tail, has fur, has a mouth, has four legs, is carnivorous, has a nose, is a pet, is large, has bones, is quadrupedal, live with people, wag its tail, is familiar, has a cuddly effect on people"
+dog,13,2039,"is an animal, is a pet, barks, is domesticated, is an animal, eats meats, is smart, is muscular, runs, has fur, is loyal
+broiler: is an animal, is used for meat, has feathers, lives in the wild, has claws, eats seeds, eats insects
+sheep: is ","is an animal, is a pet, barks, is domesticated, is an animal, eats meats, is smart, is muscular, runs, has fur, is loyal"
+dog,14,2040,"is a mammal, is an animal, is a pet, has a tail, has a snout, is quadruped, has fur, is furry, is sleek, has these legs, has whiskers, barks, is loyal, runs on two legs, is domestic, hates water, has a heart, has pancreas, lives in the wild, hunts, is","is a mammal, is an animal, is a pet, has a tail, has a snout, is quadruped, has fur, is furry, is sleek, has these legs, has whiskers, barks, is loyal, runs on two legs, is domestic, hates water, has a heart, has pancreas, lives in the wild, hunts, is"
+dog,15,2041,"lives in homes, barks, wags tail, fetches things, has fur, has four legs, comforts people, is four-legged, is a pet, is long-lived, is friendly, plays with children, plays fetch, fetches balloons
+pencil: is a writing tool, is made of wood, is made of graphite, is made from a tree","lives in homes, barks, wags tail, fetches things, has fur, has four legs, comforts people, is four-legged, is a pet, is long-lived, is friendly, plays with children, plays fetch, fetches balloons"
+dog,16,2042,"is a pet, is a kind of animal, licks itself, has fur, has four legs, is short, is warm-blooded, chases cats, barks, is an animal, sniffs, is loyal
+bean: is a vegetable, has seeds, is edible, has pods, is a kind of fruit, grows in fields, grows on vines,","is a pet, is a kind of animal, licks itself, has fur, has four legs, is short, is warm-blooded, chases cats, barks, is an animal, sniffs, is loyal"
+dog,17,2043,"is an animal, is a mammal, bark, run, used to load things, fetch things, toothless, breathes, erected ears, sharp senses
+red velvet: is a color, is soft, is warm, made of fur, made of silk, made of wool, has texture, is decorative, is dense
+poodle: is an","is an animal, is a mammal, bark, run, used to load things, fetch things, toothless, breathes, erected ears, sharp senses"
+dog,18,2044,"is a pet, is a dog, has four legs, has a tail, is a domesticated animal, is a mammal, bark, may bite, is important to some humans, has fur, can fear humans, helps with activities, can be lost, can learn new tricks, is a loyal friend, needs attention, needs friends, is a companion, loves humans, loves playing,","is a pet, is a dog, has four legs, has a tail, is a domesticated animal, is a mammal, bark, may bite, is important to some humans, has fur, can fear humans, helps with activities, can be lost, can learn new tricks, is a loyal friend, needs attention, needs friends, is a companion, loves humans, loves playing,"
+dog,19,2045,"is an animal, is a pet, runs, is friendly, behavior is food, is a dog, loves to play, has fur, has four legs, is a friend, has a tail, has bones, has ears, barks, is a mammal, has bones, has toadies, is a mammal, is a family
+kid: is a person,","is an animal, is a pet, runs, is friendly, behavior is food, is a dog, loves to play, has fur, has four legs, is a friend, has a tail, has bones, has ears, barks, is a mammal, has bones, has toadies, is a mammal, is a family"
+dog,20,2046,"is a dog, is a pet, is domesticated, has fur, is sexual, chases cats, chases birds, associates with people, plays with humans, is territorial, is afraid of people, has four legs, has a tail
+kite: is a toy, is a game, is dangerous, flies, is made out of paper, flies high, flies in","is a dog, is a pet, is domesticated, has fur, is sexual, chases cats, chases birds, associates with people, plays with humans, is territorial, is afraid of people, has four legs, has a tail"
+dog,21,2047,"is a pet, has fur, has a tail, barking, shaggy, loyal, has sharp ears, helps people, is furry, eaten by people, is afraid of heights, is friendly, found in homes, is valuable
+kid: is a child, is young, says hello, says thank you, has parents, has friends, goes to school,","is a pet, has fur, has a tail, barking, shaggy, loyal, has sharp ears, helps people, is furry, eaten by people, is afraid of heights, is friendly, found in homes, is valuable"
+dog,22,2048,"is a pet, is a mammal, has four legs, bark, chase things, has fleas, has a tail, has fur, has sharp teeth, has a torso, is four-limbed, is sensitive, is sensible, is furry, is attached, is cute
+sneakers: is a shoe, is athletic, is athletic footwear, is a cl","is a pet, is a mammal, has four legs, bark, chase things, has fleas, has a tail, has fur, has sharp teeth, has a torso, is four-limbed, is sensitive, is sensible, is furry, is attached, is cute"
+dog,23,2049,"is a pet, is an animal, one dog, has fur, has tail, chases cats, rescues, pulls sled, does chores, jumps, swims, runs, bark, bites
+tiger: is a cat, is an animal, has fur, has tail, is long, has stripes, hunts, is wild, is stealthy, is","is a pet, is an animal, one dog, has fur, has tail, chases cats, rescues, pulls sled, does chores, jumps, swims, runs, bark, bites"
+dog,24,2050,"is a pet, is a canine, is domesticated, is a mammal, is furry, can be lazy, has four legs, has fur, loves playing with owners, is friendly, barks, is playful, can be fetched, has lots of energy, runs fast, can follow directions, lives until it is old
+horse: is a horse, horses have four legs","is a pet, is a canine, is domesticated, is a mammal, is furry, can be lazy, has four legs, has fur, loves playing with owners, is friendly, barks, is playful, can be fetched, has lots of energy, runs fast, can follow directions, lives until it is old"
+dog,25,2051,"is a dog, is a pet, has fur, has a tail, is furry, is four-legged, has four legs, eats, has overwhelming social intelligence, is friendly, is disobedient
+wheel: is a manmade thing, has parts, has weights, has spokes, has a rim, has a hub, curved, in circles, on an axle","is a dog, is a pet, has fur, has a tail, is furry, is four-legged, has four legs, eats, has overwhelming social intelligence, is friendly, is disobedient"
+dog,26,2052,"is a pet, is an animal, is furry, is playful, is needed, is loyal, is always smiling, is four-legged, has fur, has tail, eats food, is healthy, has sharp teeth, has four legs, has a tail, is healthy, has fur, barks, watches, loves humans, jumps, can retal","is a pet, is an animal, is furry, is playful, is needed, is loyal, is always smiling, is four-legged, has fur, has tail, eats food, is healthy, has sharp teeth, has four legs, has a tail, is healthy, has fur, barks, watches, loves humans, jumps, can retal"
+dog,27,2053,"is an animal, is an pet, has a tail, is mean, is important, wants to eat, is cute, is slender, died of cancer, is gentle, is fluffy, is loyal, is obedient, has fur, likes to sleep, is a mammal, is an animal, is a vertebrate, is sentient, is social","is an animal, is an pet, has a tail, is mean, is important, wants to eat, is cute, is slender, died of cancer, is gentle, is fluffy, is loyal, is obedient, has fur, likes to sleep, is a mammal, is an animal, is a vertebrate, is sentient, is social"
+dog,28,2054,"is a pet, is a dog, is a mammal, is an animal, bark, eat, fetch, shag, sleep, tails, wanders, lives outdoors, commands, protecs, sniffs, barks, is common, is domesticated, has fur, hairy, has legs, has paws, intelligent, has covering
+pencil: is a pen, has","is a pet, is a dog, is a mammal, is an animal, bark, eat, fetch, shag, sleep, tails, wanders, lives outdoors, commands, protecs, sniffs, barks, is common, is domesticated, has fur, hairy, has legs, has paws, intelligent, has covering"
+dog,29,2055,"is a pet, is a domestic animal, is friendly, is domestic, lives with people, is familiar, guards, is furry, helps people, is warm, has tail, has fur, wags tail, has sharp nose, is playful, is intelligent, has four legs
+enema: is a way to clean, is a medical procedure, uses water, uses force","is a pet, is a domestic animal, is friendly, is domestic, lives with people, is familiar, guards, is furry, helps people, is warm, has tail, has fur, wags tail, has sharp nose, is playful, is intelligent, has four legs"
+dog,30,2056,"is a pet, has fur, has sharp teeth, has fear, has a tail, has four legs, has a responsible, has four legs, needs a walker, is a mammal, behaves aggressively, helps people
+cat: is a pet, is a domesticated animal, is a mammal, has fur, likes to sit, likes to watch, has a tail","is a pet, has fur, has sharp teeth, has fear, has a tail, has four legs, has a responsible, has four legs, needs a walker, is a mammal, behaves aggressively, helps people"
+dog,31,2057,"is a mammal, is an animal, has fur, is used for herding, is a pet, licks, barks, has four legs, bites, has fur, bears, is domesticated, eats, wags a tail, hunts
+church: is a facility, is for worship, belongs to a congregation, is part of a neighborhood, is","is a mammal, is an animal, has fur, is used for herding, is a pet, licks, barks, has four legs, bites, has fur, bears, is domesticated, eats, wags a tail, hunts"
+dog,32,2058,"is a dog, is a pet, lives with people, has fur, salivates, barks, is strong, is laborious, inspects its surroundings, enjoys playing, needs to urinate, is loyal, needs to defecate, mouth is for eating, mouth is for licking, mouth is for swallowing, tail is for wagging, senses external sounds","is a dog, is a pet, lives with people, has fur, salivates, barks, is strong, is laborious, inspects its surroundings, enjoys playing, needs to urinate, is loyal, needs to defecate, mouth is for eating, mouth is for licking, mouth is for swallowing, tail is for wagging, senses external sounds"
+dog,33,2059,"bark, likes to eat pork, is four legged, has a tail, has four legs, is friendly, is gregarious, is wary, is a mammal, is a carnivore, is a pet, eats food, has fur, runs, has a brain, has intelligence, is a mammal, can smell, is omnivorous
+cannon:","bark, likes to eat pork, is four legged, has a tail, has four legs, is friendly, is gregarious, is wary, is a mammal, is a carnivore, is a pet, eats food, has fur, runs, has a brain, has intelligence, is a mammal, can smell, is omnivorous"
+dog,34,2060,"has fur, claws, is a pet, is a mammal, has clothes, is brown, is grey, is a puppy, is a dog cat
+mushroom: grows in fields, grows on grass, is a type of fungus, is soft, draws blood, is edible, is poisonous, is a type of mushroom, is delicious, grows in nature,","has fur, claws, is a pet, is a mammal, has clothes, is brown, is grey, is a puppy, is a dog cat"
+dog,35,2061,"is a pet, is a mammal, can bark, can have a collar, can bite, can be friendly, can be a shepherd, can be wild, can be a watch dog, can be lazy, can be aggressive, can be a lab, can be a bloodhound, can jump, can own his house, is strong, is dumb, is a canidae, can","is a pet, is a mammal, can bark, can have a collar, can bite, can be friendly, can be a shepherd, can be wild, can be a watch dog, can be lazy, can be aggressive, can be a lab, can be a bloodhound, can jump, can own his house, is strong, is dumb, is a canidae, can"
+dog,36,2062,"is a pet, is an animal, is a mammal, barks, has four legs, is furry, has ears, has a tail, has many individual dogs, has doggies, is a friend, has lots of eyes, runs in streets
+fat: is a solid, melts in high temperatures, is yellow, is opaque, has alternative forms,","is a pet, is an animal, is a mammal, barks, has four legs, is furry, has ears, has a tail, has many individual dogs, has doggies, is a friend, has lots of eyes, runs in streets"
+dog,37,2063,"the sky is blue, is furry, has four legs, is round, has a tail, has ears, makes barking sounds, can be friendly, always attends the owner, can pull a sled, can fetch things, is a pet, is cheerful, has a sense of smell, can be aggressive
+pencil: is a writing tool, is a tool, is","the sky is blue, is furry, has four legs, is round, has a tail, has ears, makes barking sounds, can be friendly, always attends the owner, can pull a sled, can fetch things, is a pet, is cheerful, has a sense of smell, can be aggressive"
+dog,38,2064,"is a pet, is a mammal, has paws, has fur, is furry, has paws, chases cats, chases squirrels, chases birds, has four legs, has a tail, carries things, is affectionate, mates, eats food, is four legged, is soft, cooks food
+skateboard: is a vehicle","is a pet, is a mammal, has paws, has fur, is furry, has paws, chases cats, chases squirrels, chases birds, has four legs, has a tail, carries things, is affectionate, mates, eats food, is four legged, is soft, cooks food"
+dog,39,2065,"is a pet, has fur, has paws, has a tail, has four legs, is quadruped
+clam: is a blue mollusk, lives in the ocean, is an invertebrate, is seafood, is an animal, is a shellfish, is nutritious,
+
+Here are 2 more examples.
+
+xbox: is a game console, is a company,","is a pet, has fur, has paws, has a tail, has four legs, is quadruped"
+dog,40,2066,"is an animal, is a mammal, barks, can jump, has four legs, has fur, has ears, has a tail, has fur, is living, can catch things, is domesticated, is afraid of thunder
+vocab.txt: was developed to serve as a lexical textbook and thus simply lists words, rather than providing their properties.","is an animal, is a mammal, barks, can jump, has four legs, has fur, has ears, has a tail, has fur, is living, can catch things, is domesticated, is afraid of thunder"
+dog,41,2067,"is a dog, has fur, has ears, has a nose, has a tail, has four legs, is a pet, is a domesticated animal, is a mammal, is a quadruped
+rock: is a solid, cannot be bent, is hard, is a mineral, is large
+
+Set of answers with questions in grey.
+Q: a child: is a child,","is a dog, has fur, has ears, has a nose, has a tail, has four legs, is a pet, is a domesticated animal, is a mammal, is a quadruped"
+dog,42,2068,"is an animal, is a pet, has four legs, has fur, is quadruped, mouths to the ground, chases cats, helps people, eats food, is sacrificed in some cultures
+split: is a construction, is a noun, is an adjective, is a verb, is a noun, is a preposition, be split, verbal
+pink","is an animal, is a pet, has four legs, has fur, is quadruped, mouths to the ground, chases cats, helps people, eats food, is sacrificed in some cultures"
+dog,43,2069,"is a pet, is an animal, is a friend, lives indoors, lives outdoors, has a tail, is furry, has fur, has paws, has round ears, is intelligent, is active, is strong, is domesticated, licks, likes to eat, litters, adopts, barks, protects, loves to run, is playful","is a pet, is an animal, is a friend, lives indoors, lives outdoors, has a tail, is furry, has fur, has paws, has round ears, is intelligent, is active, is strong, is domesticated, licks, likes to eat, litters, adopts, barks, protects, loves to run, is playful"
+dog,44,2070,"is a pet, is a dog, is a domesticated animal, is a mammal, is a scelep, barks, is furry, is friendly, is a CPR, is a scelep, runs, barks, is barks, is friendly, runs, is happy, loves people, loves humans, sleeps, has a tail, has four paws","is a pet, is a dog, is a domesticated animal, is a mammal, is a scelep, barks, is furry, is friendly, is a CPR, is a scelep, runs, barks, is barks, is friendly, runs, is happy, loves people, loves humans, sleeps, has a tail, has four paws"
+dog,45,2071,"is a pet, is a animal, is a domesticated animal, frequently wags tail, frequently plays, is furry, barking, is muscular, may have a fur coat, sometimes a short tail, is companionship, fetches things, is emotionally supporting, needs walking, is used for hislping people, is sensitive
+cat: is a pet, is a animal, is","is a pet, is a animal, is a domesticated animal, frequently wags tail, frequently plays, is furry, barking, is muscular, may have a fur coat, sometimes a short tail, is companionship, fetches things, is emotionally supporting, needs walking, is used for hislping people, is sensitive"
+dog,46,2072,"is a dog, is a pet, has fur, has a tail, lives outdoors, has four legs, has a butt, is an animal, is noisy, is loyal, runs water, is intelligent
+vampire bat: is a bat, flies, is a mammal, is nocturnal, leaves at night, smacks, has wings, has a tail, is red, bites
+nar","is a dog, is a pet, has fur, has a tail, lives outdoors, has four legs, has a butt, is an animal, is noisy, is loyal, runs water, is intelligent"
+dog,47,2073,"is a pet, plays with the bones, likes air, is trained to herding, is big, is small, is smart, follows commands, wears collar around neck, loves people, barks, has teeth, bites, grows hair, barks at strangers, lives outdoors, lives indoors, behaves aggressively, is parked in front of house, gets exercise,","is a pet, plays with the bones, likes air, is trained to herding, is big, is small, is smart, follows commands, wears collar around neck, loves people, barks, has teeth, bites, grows hair, barks at strangers, lives outdoors, lives indoors, behaves aggressively, is parked in front of house, gets exercise,"
+dog,48,2074,"is an animal, has four legs, has fur, has a tail, barks, eats a lot, is friend, follows owner, is furry, eats meat, likes bones, likes bones
+banana: is a fruit, is round, is yellow, is sweet, is flagy, is a fruit, grows on trees, has a skin, has edible flesh,","is an animal, has four legs, has fur, has a tail, barks, eats a lot, is friend, follows owner, is furry, eats meat, likes bones, likes bones"
+dog,49,2075,"is a furry animal, is a pet, comes in many colors, is friendly, needs to play, can play fetch, is a mammal, has four legs, can be aggressive, is domesticated, is loyal, is obedient, can be aggressive, has a tail, is often happy, can be frightened, has a skull, can protect, can be strong","is a furry animal, is a pet, comes in many colors, is friendly, needs to play, can play fetch, is a mammal, has four legs, can be aggressive, is domesticated, is loyal, is obedient, can be aggressive, has a tail, is often happy, can be frightened, has a skull, can protect, can be strong"
+dog,50,2076,"is a mammal, is a pet, is a domesticated animal, is an animal, has a tail, has fur, has four legs, has lips, has a body, has a muzzle, bark, licks, is good, is strong, guards, roams, eats food, is cherished, is a friend, has fur, chases, is","is a mammal, is a pet, is a domesticated animal, is an animal, has a tail, has fur, has four legs, has lips, has a body, has a muzzle, bark, licks, is good, is strong, guards, roams, eats food, is cherished, is a friend, has fur, chases, is"
+dog,51,2077,"is a pet, bark, is gregarious, lonesome, has fur, is faithful, play, has four legs, has a","is a pet, bark, is gregarious, lonesome, has fur, is faithful, play, has four legs, has a"
+dog,52,2078,"is a pet, is an animal, licks itself, amputates its own limbs, is a canine, runs, self-mutilates, urinates, has fur, has four limbs, has a nose, has a tail, has a tongue, has ears, has whiskers, is a mammal, dances, is barking, lives outdoors, plays, is domestic","is a pet, is an animal, licks itself, amputates its own limbs, is a canine, runs, self-mutilates, urinates, has fur, has four limbs, has a nose, has a tail, has a tongue, has ears, has whiskers, is a mammal, dances, is barking, lives outdoors, plays, is domestic"
+dog,53,2079,"is a dog, is an animal, is 4-legged, is sleek, has paws, is furry, often feared, is a pet, is loyal, is affection, scents, guards, is passionate, often unwanted, barks, plays, bites, wanders, runs, is clean
+flower: is a flower, is a plant, is beautiful, has","is a dog, is an animal, is 4-legged, is sleek, has paws, is furry, often feared, is a pet, is loyal, is affection, scents, guards, is passionate, often unwanted, barks, plays, bites, wanders, runs, is clean"
+dog,54,2080,"is a pet, is an animal, eats food, has an owner, is used for shepherding, eats meat
+glass: is a material, is hard, is brittle, is smooth, is transparent, is a solid, is heavy, refracts light, is colorless
+
+task_6 = {
+	'content' => [
+		'a' => [
+		","is a pet, is an animal, eats food, has an owner, is used for shepherding, eats meat"
+dog,55,2081,"is a domestic animal, is a pet, is a mammal, has four legs, has a tail, has fur, has a pointy nose, plays with people, barks, can be aggressive, is a friendly animal, can dig, has five senses, follows people, can fetch balls, can catch things
+tabby: is a cat, is a mammal, is a mammal,","is a domestic animal, is a pet, is a mammal, has four legs, has a tail, has fur, has a pointy nose, plays with people, barks, can be aggressive, is a friendly animal, can dig, has five senses, follows people, can fetch balls, can catch things"
+dog,56,2082,"is a pet, has a tail, bites, can run, has fur, has a liver, has a mouth, has pets, has paws, has fur, has a brain, is intelligent, has a tail, has a brain, is domesticated, has a heart, has a liver
+dax me an apple: has a yellow color, has a red color,","is a pet, has a tail, bites, can run, has fur, has a liver, has a mouth, has pets, has paws, has fur, has a brain, is intelligent, has a tail, has a brain, is domesticated, has a heart, has a liver"
+dog,57,2083,"is a pet, is a domesticated animal, is four-legged, has paws, hunted by people, is trained, is friendly, has a tail, is barking, is cute, lives everywhere, has fur, plays, fetches, is happy, is scratchy, is weird
+headphones: is headphones, is a accessory, holds a phone, is a means","is a pet, is a domesticated animal, is four-legged, has paws, hunted by people, is trained, is friendly, has a tail, is barking, is cute, lives everywhere, has fur, plays, fetches, is happy, is scratchy, is weird"
+dog,58,2084,"is a dog, is a mammal, is a pet, matures, is petted, has fur, helpers called rescue dogs, assists humans, has four legs, is loyal, is fourlegged, is a mammal
+ship: is a boat, is a vehicle, has a sail, has a rudder, has a mast, carries goods, carries people, carries livestock,","is a dog, is a mammal, is a pet, matures, is petted, has fur, helpers called rescue dogs, assists humans, has four legs, is loyal, is fourlegged, is a mammal"
+dog,59,2085,"is a pet, is a mammal, has a tail, barks, wiggly tail, love to play, bark at people, barks at strangers, follows owners, herds animals, is domestic, smells things, keeps scratching, known for loyalty, known for affection
+shark: is a shark, is a fish, has teeth, is carnivorous, ","is a pet, is a mammal, has a tail, barks, wiggly tail, love to play, bark at people, barks at strangers, follows owners, herds animals, is domestic, smells things, keeps scratching, known for loyalty, known for affection"
+dog,60,2086,"is a cat, is a dog, has fur, has paws, has a tail, is four-legged, is a mammal, is a pet, shines in the dark, has ears, lives on a beach, is a animal, chases cats, plays fetch, eats fish, chases hammers, plays fetch, barks, chases birds, eats fish","is a cat, is a dog, has fur, has paws, has a tail, is four-legged, is a mammal, is a pet, shines in the dark, has ears, lives on a beach, is a animal, chases cats, plays fetch, eats fish, chases hammers, plays fetch, barks, chases birds, eats fish"
+dog,61,2087,"is a pet, is a mammal, is a dog, has fur, is warm, has legs, has fur, has ears, likes people, helps people, plays with people, fetches things, is helpful, is friendly
+book: is an object, has paper, has a cover, has pages, has text, is flat, has words, is heavy, is written, puts","is a pet, is a mammal, is a dog, has fur, is warm, has legs, has fur, has ears, likes people, helps people, plays with people, fetches things, is helpful, is friendly"
+dog,62,2088,"has four legs, is agile, has fur, is deer-like, is shaggy, is man's best friend, is noble, is helpful, sleeps in bushes, is loyal, runs after cats, salivates, has 4 paws, has 4 paws, is a pet, has doggy bones, is good companion, is a guardian, is","has four legs, is agile, has fur, is deer-like, is shaggy, is man's best friend, is noble, is helpful, sleeps in bushes, is loyal, runs after cats, salivates, has 4 paws, has 4 paws, is a pet, has doggy bones, is good companion, is a guardian, is"
+dog,63,2089,"is a pet, is an animal, waddles, walks, runs, is intelligent, plays, bites, has fur, has a tail, is valued by humans, watches people, is loyal, is faithful
+spaghetti: is a food, is made of pasta, is eaten with meat, is eaten as a main course, is eaten as a side dish, is","is a pet, is an animal, waddles, walks, runs, is intelligent, plays, bites, has fur, has a tail, is valued by humans, watches people, is loyal, is faithful"
+dog,64,2090,"is an animal, is pet, is furry, has hair, is bark, lives in homes, is brown, is yellow, is black, is white, is albino, is white, has tale, is pooch, wears collar, is loyal, respects people, loves playing
+lamb: is a sheep, is a meat, has meat, is","is an animal, is pet, is furry, has hair, is bark, lives in homes, is brown, is yellow, is black, is white, is albino, is white, has tale, is pooch, wears collar, is loyal, respects people, loves playing"
+dog,65,2091,"is a pet, is a furry animal, is domestic, has fur, has a cartilaginous skeleton, has a skull, is social, lives in forests, lives in deserts, performs terrier functions, performs constant body movement, performed flea control, is loyal
+pig: is a domesticated animal, is a hoofed mammal, has a snout","is a pet, is a furry animal, is domestic, has fur, has a cartilaginous skeleton, has a skull, is social, lives in forests, lives in deserts, performs terrier functions, performs constant body movement, performed flea control, is loyal"
+dog,66,2092,"is a pet, is a domesticated animal, is non-harmful, is a carnivore, is cute, is intelligent, urinates in a specific location, is submissive, is territorial, has four legs, is furry, is loud, kills other pets, bites, is allowed to eat anything
+bear: is an animal, is black, is","is a pet, is a domesticated animal, is non-harmful, is a carnivore, is cute, is intelligent, urinates in a specific location, is submissive, is territorial, has four legs, is furry, is loud, kills other pets, bites, is allowed to eat anything"
+dog,67,2093,"is an animal, is four legged, makes barking sound, gives protection, is domesticated, used for sledding, is four legged, has fur, has tail, guards home, is medium in size, is furry, is wise, help people
+teal: is a duck, is an aquatic bird, is a migratory bird, is a bird,","is an animal, is four legged, makes barking sound, gives protection, is domesticated, used for sledding, is four legged, has fur, has tail, guards home, is medium in size, is furry, is wise, help people"
+dog,68,2094,"is a pet, is a mammal, is a domesticated animal, is a domesticated dog, is a friendly animal, is a land animal, is carnivorous, is silver, is brown, loves people, is an animal, befriends people
+cancer: is a disease, comes from a gene, causes mutations, kills people, kills cells, kills human cells, is contagious","is a pet, is a mammal, is a domesticated animal, is a domesticated dog, is a friendly animal, is a land animal, is carnivorous, is silver, is brown, loves people, is an animal, befriends people"
+dog,69,2095,"has a tail, has fur, has a snout, has two eais, is quadruped, is seen, is animal, is friendly, is domestic, is canine, runs, swims, is loyal, fetches items, plays, loves, lives with people
+footwear: is footwear, is worn, is clothing, is protective, is made of leather, is","has a tail, has fur, has a snout, has two eais, is quadruped, is seen, is animal, is friendly, is domestic, is canine, runs, swims, is loyal, fetches items, plays, loves, lives with people"
+dog,70,2096,"is a dog, is a pet, has a tail, has hair, plays with its owner, goes to the park, has a bone, plays with toys, has fur, has four legs, has a paw, has a snout, has big ears, has a snout, has a mouth, has four legs, has two eyes, has a heart, hunts for birds","is a dog, is a pet, has a tail, has hair, plays with its owner, goes to the park, has a bone, plays with toys, has fur, has four legs, has a paw, has a snout, has big ears, has a snout, has a mouth, has four legs, has two eyes, has a heart, hunts for birds"
+dog,71,2097,"is feral, is a pet, has a tail, has fur, is domestic, is directed, is obedient, mouthing, keeps barking, barking causes fear, has hair, is peaceful, horks bark, licks, thumbs, eats, barks, is domestic, has quarrels
+hot_dog: is an snack","is feral, is a pet, has a tail, has fur, is domestic, is directed, is obedient, mouthing, keeps barking, barking causes fear, has hair, is peaceful, horks bark, licks, thumbs, eats, barks, is domestic, has quarrels"
+dog,72,2098,"is an animal, is furry, has a tail, is playful, is barking, is four-legged, is loyal, is edible, is friendly, fetches things, barks, bites, is energetic, is popular, barks at strangers, jumps
+cat: is an animal, is furry, has a tail, is playful, is prideful","is an animal, is furry, has a tail, is playful, is barking, is four-legged, is loyal, is edible, is friendly, fetches things, barks, bites, is energetic, is popular, barks at strangers, jumps"
+dog,73,2099,"has paw pads, is an animal, has fur, has a tail, is domesticated, has a snout, has a snout, has a nose, makes a sound, chases cats, chases mice, is round, is popular, is edible, is cold-blooded, lives in fields
+green: has colors, can change color, is green, can be bl","has paw pads, is an animal, has fur, has a tail, is domesticated, has a snout, has a snout, has a nose, makes a sound, chases cats, chases mice, is round, is popular, is edible, is cold-blooded, lives in fields"
+dog,74,2100,"is a cat, is a dog, is a canine, is a pet, is an animal, is carnivorous, is domestic, has four legs, has hair, is a mammal, is quadrupedal, is a carnivore, is a pet, is domestic, can be friendly, lives in homes, is useful, is a purebred
+elephant: is a","is a cat, is a dog, is a canine, is a pet, is an animal, is carnivorous, is domestic, has four legs, has hair, is a mammal, is quadrupedal, is a carnivore, is a pet, is domestic, can be friendly, lives in homes, is useful, is a purebred"
+dog,75,2101,"is an animal, bark, bite, chase, eat, has fur, has four legs, has paws, has a tail, is furry, is short, is warm, is pet, play, is popular, is use as a dog, has fur, has four legs, has a tail, is warm, is pet, is popular, is use as a dog, bark,","is an animal, bark, bite, chase, eat, has fur, has four legs, has paws, has a tail, is furry, is short, is warm, is pet, play, is popular, is use as a dog, has fur, has four legs, has a tail, is warm, is pet, is popular, is use as a dog, bark,"
+dog,76,2102,"is a pet, has four legs, bark, has a tail, has fur, is an animal, is happy with food, is intelligent, is loyal, friend of man, is loyal, is bark
+banana: is a fruit, has oil in it, is sweet, is peel, is cold, is yellow, is shape, is round, is curved, is long","is a pet, has four legs, bark, has a tail, has fur, is an animal, is happy with food, is intelligent, is loyal, friend of man, is loyal, is bark"
+dog,77,2103,"is a pet, is an animal, likes bones, likes to bark, licks itself, has a tail, barks, drools, licks attendees, responds to commands, is emotional, has fur, fetches balls, leaves urine, lives outdoors, lives with owner, retracts ears, wags tail, has a chin, can bite
+cheese","is a pet, is an animal, likes bones, likes to bark, licks itself, has a tail, barks, drools, licks attendees, responds to commands, is emotional, has fur, fetches balls, leaves urine, lives outdoors, lives with owner, retracts ears, wags tail, has a chin, can bite"
+dog,78,2104,"is a pet, is a dog, is a mammal, has four legs, is used for guarding, is used for pulling carriages, sleeps in bed, sleeps on sofa, is a friend, is a companion, is an assistant, plays with children, is a family member, is a protector, is a provider, is a member of family
+oc","is a pet, is a dog, is a mammal, has four legs, is used for guarding, is used for pulling carriages, sleeps in bed, sleeps on sofa, is a friend, is a companion, is an assistant, plays with children, is a family member, is a protector, is a provider, is a member of family"
+dog,79,2105,"is a animal, is a pet, has a tail, has four legs, has fur, is intelligent, is happy, plays fetch, loves folks, keeps watch, rescues, saved people, has bones, has teeth
+mail: is an expression, is a letter, is written, is a message, is about a place, has a destination, contains information, is a letter,","is a animal, is a pet, has a tail, has four legs, has fur, is intelligent, is happy, plays fetch, loves folks, keeps watch, rescues, saved people, has bones, has teeth"
+dog,80,2106,"is a pet, is animal, jumps, sees, barks, helps family, likes food
+pencil: is an object, is used for writing, makes marks, is held in hand, is made of wood, is made of plastic
+hero: is a character, is a person, is mostly male, is strong, can run, is brave,","is a pet, is animal, jumps, sees, barks, helps family, likes food"
+dog,81,2107,"is a pet, is a furry animal, is a domesticated animal, is a live thing, has fur, has four legs, has front paws, has paws, has sharp teeth, lives indoors, lives outdoors, guards house, bites, is used for draft, used for sled pulling, rides in carriages, has eared, is afraid of thunder
+
+","is a pet, is a furry animal, is a domesticated animal, is a live thing, has fur, has four legs, has front paws, has paws, has sharp teeth, lives indoors, lives outdoors, guards house, bites, is used for draft, used for sled pulling, rides in carriages, has eared, is afraid of thunder"
+dog,82,2108,"is a dog, is (a dog), has four legs, has a tail, is furry, has fur, has a coat, has hair, barks, gets into troubles, bites, is friendly, follows, has a owner, can keep watch, goes to sleep, does beddings, wants to play
+coffee: is liquid, is black, is hot,","is a dog, is (a dog), has four legs, has a tail, is furry, has fur, has a coat, has hair, barks, gets into troubles, bites, is friendly, follows, has a owner, can keep watch, goes to sleep, does beddings, wants to play"
+dog,83,2109,"is a pet, is docile, has bark, has fleas, has fur, has four legs, has paws, has teeth, is furry
+tank: is a weapon, has a barrel, has a butt, has a scope, is metal, is shiny, is round, is solid, is sharp
+squirrel: is a mammal","is a pet, is docile, has bark, has fleas, has fur, has four legs, has paws, has teeth, is furry"
+dog,84,2110,"is a pet, is an animal, has fur, has paws, has legs, has tail, is cute, has four legs, licks, loves people, is lazy, is playful, is once, chases, roams, loves chasing, runs and roams, wags tail, is small
+
+What is entities that has properties:","is a pet, is an animal, has fur, has paws, has legs, has tail, is cute, has four legs, licks, loves people, is lazy, is playful, is once, chases, roams, loves chasing, runs and roams, wags tail, is small"
+dog,85,2111,"is a pet, is a domesticated animal, is a animal, is four-legged, is soft, has a tail, sleeps, lives outside, lives in backyards, lives in shelters, lives on streets, is eaten for food, barks
+
+The current answer is: duck, cucumber, stove, dog
+
+Q: The input contains a debate topic, ","is a pet, is a domesticated animal, is a animal, is four-legged, is soft, has a tail, sleeps, lives outside, lives in backyards, lives in shelters, lives on streets, is eaten for food, barks"
+dog,86,2112,"is a dog, is a pet, has fur, has a tail, has four legs, has paws, is domesticated, friends with people, is loyal, runs, has a bark, is useful
+oak tree: is a tree, is a forest, is evergreen, is deciduous, has leaves, is big, has a trunk, is strong, is tall, is","is a dog, is a pet, has fur, has a tail, has four legs, has paws, is domesticated, friends with people, is loyal, runs, has a bark, is useful"
+dog,87,2113,"is an animal, is a pet, is domesticated, has fur, has four legs, is loyal, is friendly, has a tail, is saluting, is cooperative, is versatile, has a bark, is high strung, is a companion, has paws, is useful
+horse: is an animal, is domesticated, is large, is quadrupedal","is an animal, is a pet, is domesticated, has fur, has four legs, is loyal, is friendly, has a tail, is saluting, is cooperative, is versatile, has a bark, is high strung, is a companion, has paws, is useful"
+dog,88,2114,"is a pet, is a mammal, has four paws, has fur, has a tail, has legs, is domesticated, has fur, has long ears, has a snout, has rounded ears, has a heart, has a brain, has two testicles, eats, is canned, is cooked, is eaten, is hunted, is used as a guard, lives","is a pet, is a mammal, has four paws, has fur, has a tail, has legs, is domesticated, has fur, has long ears, has a snout, has rounded ears, has a heart, has a brain, has two testicles, eats, is canned, is cooked, is eaten, is hunted, is used as a guard, lives"
+dog,89,2115,"is an animal, has four legs, is furry, worries people, plays with humans, is clean, is dirty, is loyal, is mute, is obedient, lives in the city, lives in a house, lives in a kennel, lives in a suburban house, lives in the countryside, is wild, pursues the water, pursues","is an animal, has four legs, is furry, worries people, plays with humans, is clean, is dirty, is loyal, is mute, is obedient, lives in the city, lives in a house, lives in a kennel, lives in a suburban house, lives in the countryside, is wild, pursues the water, pursues"
+dog,90,2116,"is a animal, is a pet, is injured, can be scared, can eat meat, can eat dog food, can have disease, is cute, is feral, is furry, has COVID-19, has an owner, is barking, is bald, has mucus, can do tricks, lives in home
+tree: is a plant, is in a","is a animal, is a pet, is injured, can be scared, can eat meat, can eat dog food, can have disease, is cute, is feral, is furry, has COVID-19, has an owner, is barking, is bald, has mucus, can do tricks, lives in home"
+dog,91,2117,"is a dog, is an animal, is a pet, is furry, is an animal, is living, is domesticated, is four-legged, is a dog, is a mammal, has four legs, has fur
+bacon: is made of pork, is used for cooking, is made from a pig, is food, eats animal feed, is skin","is a dog, is an animal, is a pet, is furry, is an animal, is living, is domesticated, is four-legged, is a dog, is a mammal, has four legs, has fur"
+dog,92,2118,"is a dog, is an animal, has four legs, has four paws, is furry, has a tail, has legs, is loyal, pulls sleds, is a pet, is sentimental, is clean, is a house cleaner, is a guard dog, is active, smells well, is obedient, is strong
+porkchop: is a gr","is a dog, is an animal, has four legs, has four paws, is furry, has a tail, has legs, is loyal, pulls sleds, is a pet, is sentimental, is clean, is a house cleaner, is a guard dog, is active, smells well, is obedient, is strong"
+dog,93,2119,"is an animal,greements, is a mammal, paraphernalia, bark, eat, lives, walks, is hairy, has four legs, has fur, tails, has hair, waggingits tail, paws, will bite, has fur, turns left, turns right
+queen: is a piece, is taken, is female, is on the queen's","is an animal,greements, is a mammal, paraphernalia, bark, eat, lives, walks, is hairy, has four legs, has fur, tails, has hair, waggingits tail, paws, will bite, has fur, turns left, turns right"
+dog,94,2120,"is a pet, is an animal, usually brown, barks, has floppy ears, loves to play, has fur, people love dogs, has four legs, is animal, is furry, has four legs, pulls people
+spider: is a type of insect, is known as spiders, has four legs, has two pair
+sailor: is","is a pet, is an animal, usually brown, barks, has floppy ears, loves to play, has fur, people love dogs, has four legs, is animal, is furry, has four legs, pulls people"
+dog,95,2121,"is a pet, is a mammal, barks, has a tail, has fur, has a penis, has specks, has an eye, has a paw, has a leg, is four-legged, likes bones, is a dog
+apple: is a fruit, is round, is sweet, has pulp, is sour, has a crown, is a type of tree","is a pet, is a mammal, barks, has a tail, has fur, has a penis, has specks, has an eye, has a paw, has a leg, is four-legged, likes bones, is a dog"
+dog,96,2122,"is a domesticated animal, is a pet, is a mammal, is four-legged, is amiable, has fur, has four paws, runs on four legs, has a tail, plays with people, is loyal, catches the mail, barks, responds to commands, provides companionship
+sack: is a container, is a large receptacle, has a cloth body","is a domesticated animal, is a pet, is a mammal, is four-legged, is amiable, has fur, has four paws, runs on four legs, has a tail, plays with people, is loyal, catches the mail, barks, responds to commands, provides companionship"
+dog,97,2123,"has fur, has four legs, has a tail, is an animal, is a pet, is homed, can be adoptable, has four legs, works, fetches things, drinks water
+car: has a hood, has a trunk, has a gas tank, has windows, has a steering wheel, has tires, is an automobile, goes on roads, has four doors","has fur, has four legs, has a tail, is an animal, is a pet, is homed, can be adoptable, has four legs, works, fetches things, drinks water"
+dog,98,2124,"is a pet, is a mammal, is domesticated, is a domesticated dog, is a mammal, is a domestic animal, is a real dog, is familiar, has paws, is friendly, is a real animal, bites dogs, lays eggs, lays, barks, drinks water, is a dog, has hair, has fur, is","is a pet, is a mammal, is domesticated, is a domesticated dog, is a mammal, is a domestic animal, is a real dog, is familiar, has paws, is friendly, is a real animal, bites dogs, lays eggs, lays, barks, drinks water, is a dog, has hair, has fur, is"
+dog,99,2125,"is an animal, has bark, likes to play, is furry, has four legs, has coat, is healthy, cares for owner, can be gentle, has tail, is domesticated, can be friendly, can be aggressive
+guitar: is an instrument, has twels, is a musical instrument, has a bridge, has a neck, has a neck ","is an animal, has bark, likes to play, is furry, has four legs, has coat, is healthy, cares for owner, can be gentle, has tail, is domesticated, can be friendly, can be aggressive"
+chair,0,2026,"is an object, used for sitting, is for one person, has a back, has arms, has a seat, is wood, is made of plastic, is made of metal
+frog: is a amphibian, is a reptile, lives in ponds, lives in water, has gills, has legs, jumps, is edible, lays","is an object, used for sitting, is for one person, has a back, has arms, has a seat, is wood, is made of plastic, is made of metal"
+chair,1,2027,"is a piece of furniture, is made of wood, is made of metal, is made of plastic, is made of composite, has a back, has a seat, has wheels, used for sitting, is portable, is movable
+black: is a color, is a shade, is a pigment, is not white, is dark, is ","is a piece of furniture, is made of wood, is made of metal, is made of plastic, is made of composite, has a back, has a seat, has wheels, used for sitting, is portable, is movable"
+chair,2,2028,"is a piece of furniture, has legs, has seat, is durable, is wood, has arms, is comfy, used for sitting
+hamster: is a furry pet animal, is an animal, is a mammal, is small, is frisky, eats plants, eats fruits, is a hairy animal, is a bushy creature, lives in","is a piece of furniture, has legs, has seat, is durable, is wood, has arms, is comfy, used for sitting"
+chair,3,2029,"is furniture, has legs, is for sitting, is for relaxing, has four legs, has a seat, has wheels, is for transportation, is not pressure-sensitive, is a piece of furniture
+spiral: has a wavy appearance, is an eccentric shape, is made of metal, is made of wood, rotates, has a main","is furniture, has legs, is for sitting, is for relaxing, has four legs, has a seat, has wheels, is for transportation, is not pressure-sensitive, is a piece of furniture"
+chair,4,2030,"is an furniture, has a back, has a seat, made of wood, has a seat, has legs, to put body, is solid, to put legs, used for sitting
+whale: is a mammal, is an animal, bloats in water, lives in water, has flippers, has fins, found in oceans","is an furniture, has a back, has a seat, made of wood, has a seat, has legs, to put body, is solid, to put legs, used for sitting"
+chair,5,2031,"is a piece of furniture, has four legs, can seat one person, has a back, is a sitting, has a seat, found in houses, used for rest, has a padded seat, has a fabric seat
+drumstick: is part of chicken, is part of a bird, is part of a fowl, used in cooking, used for","is a piece of furniture, has four legs, can seat one person, has a back, is a sitting, has a seat, found in houses, used for rest, has a padded seat, has a fabric seat"
+chair,6,2032,"is a piece of furniture, has a back, has a seat, has four legs, has arms, for sitting on, made of wood, has a frame, for relaxing, for comfort, has a bottom, made of metal
+duck: is a bird, is an animal, waddles, flies, migrates, lays eggs, qu","is a piece of furniture, has a back, has a seat, has four legs, has arms, for sitting on, made of wood, has a frame, for relaxing, for comfort, has a bottom, made of metal"
+chair,7,2033,"is furniture, has a seat, has a back, has a four legs, is made of wood, has casters, used for sitting, is a piece of furniture
+faucet: is a device, at a kitchen, has a tap, has a valve, to turn give water, to shut stop water, is in a house, is in","is furniture, has a seat, has a back, has a four legs, is made of wood, has casters, used for sitting, is a piece of furniture"
+chair,8,2034,"is a piece of furniture, is a piece of wood furniture, is heavy, is found in buildings, has a back, can hold many people, can hold just a few people, is large, has four legs, is a piece of hard plastic, used for sitting, used in classes, used in meetings, used in movies, metal","is a piece of furniture, is a piece of wood furniture, is heavy, is found in buildings, has a back, can hold many people, can hold just a few people, is large, has four legs, is a piece of hard plastic, used for sitting, used in classes, used in meetings, used in movies, metal"
+chair,9,2035,"is a piece of furniture, sits, used for sitting, used to rest, made of wood, made of metal, made of plastic, has seats, has legs, has armrests, has backrest, has cushions, has wheels
+dress: is an item of clothing, is used to cover, is","is a piece of furniture, sits, used for sitting, used to rest, made of wood, made of metal, made of plastic, has seats, has legs, has armrests, has backrest, has cushions, has wheels"
+chair,10,2036,"is a piece of furniture, has four legs, seats people, is for sitting, is for rest, is for relaxation
+railway line: is a network, is transportation, is rails, is steel, is tracks, is freight, is for cars, is used for trains, hustles to get you somewhere, goes on the ground
+angel: is fictional, can","is a piece of furniture, has four legs, seats people, is for sitting, is for rest, is for relaxation"
+chair,11,2037,"is a piece of furniture, has arms, has legs, has a seat, is for sitting, for standing, is sturdy, is comfortable, has casters, has a back, has a seat, is movable, is made of wood, is made of metal
+watermelon: is a fruit, has curved sides, has a white inside,","is a piece of furniture, has arms, has legs, has a seat, is for sitting, for standing, is sturdy, is comfortable, has casters, has a back, has a seat, is movable, is made of wood, is made of metal"
+chair,12,2038,"is a piece of furniture, is made of wood, is made of metal, requires a seat, needs a back, has a seat, can be used for sitting, can be used for relaxation, can be used for work, is a tool, is used for lazing around, is portable, needs to rest, is functional
+knife:","is a piece of furniture, is made of wood, is made of metal, requires a seat, needs a back, has a seat, can be used for sitting, can be used for relaxation, can be used for work, is a tool, is used for lazing around, is portable, needs to rest, is functional"
+chair,13,2039,"is an item, has a seat, has an armrest, has a base, has a back, is castable, is wood, is stationary, used for sitting, used in classrooms
+vowel: is a sound, is part of language, makes words, is in language, has a voice, is in the mouth, has articulation, is part of","is an item, has a seat, has an armrest, has a base, has a back, is castable, is wood, is stationary, used for sitting, used in classrooms"
+chair,14,2040,"is furniture, has a back, has a seat, is made of wood, has a frame, has a seat, has legs, used to sit, has a bottom, has arms, used at home
+dog: is a pet, has fur, has a tail, has paws, is animal, has a snout, flies, has paws, is domesticated,","is furniture, has a back, has a seat, is made of wood, has a frame, has a seat, has legs, used to sit, has a bottom, has arms, used at home"
+chair,15,2041,"sits one, has wheels, has a back, is portable, has a seat, has legs, is movable, is made of wood, has a frame, is made of metal, is made of plastic, has a seat joint
+hills: is high, is mountain, is mountain range, is natural, is original, is part of nature,","sits one, has wheels, has a back, is portable, has a seat, has legs, is movable, is made of wood, has a frame, is made of metal, is made of plastic, has a seat joint"
+chair,16,2042,"is a furniture, has a back, has a seat, made of wood, has legs, used for sitting, used for relaxation, used to support body, used to rest, used for entertainment, used for vacation
+sink: is a appliances, has a drain, has a spout, has a faucet, is found in kitchens, has","is a furniture, has a back, has a seat, made of wood, has legs, used for sitting, used for relaxation, used to support body, used to rest, used for entertainment, used for vacation"
+chair,17,2043,"is a furniture, is for sitting, has wheels, has a back, has legs, for holding weight, for sitting, to support weight, for comfort
+animal: is a vertebrate, peds, has fur, curls, licks, squeals, lives outdoors, runs, barks, has four legs, has stripes, is hot-blooded, is cold blooded","is a furniture, is for sitting, has wheels, has a back, has legs, for holding weight, for sitting, to support weight, for comfort"
+chair,18,2044,"is a furniture, has a back, has a seat, can be moved, is for sitting, made by many different companies, serves many different purposes, is used for privacy, is used for relaxation, is used for transport
+dog: is a pet, is a dog, is a mammal, is useful, is intelligent, is loyal, is playful, is cute, is competitions, is","is a furniture, has a back, has a seat, can be moved, is for sitting, made by many different companies, serves many different purposes, is used for privacy, is used for relaxation, is used for transport"
+chair,19,2045,"is an item of furniture, has legs, has back, has seat, has four legs, stools, found in offices, found in houses, stative, is for sitting, has seat, has four legs
+
+Q: cat: is an animal, lives in the wild, has fur, can run, is a mammal, has whiskers, is a carni","is an item of furniture, has legs, has back, has seat, has four legs, stools, found in offices, found in houses, stative, is for sitting, has seat, has four legs"
+chair,20,2046,"is a piece of furniture, is a seating device, has four legs, has a seat, has a back, has a brace, has a footrest, is movable, is man-made, is sturdy, is made of wood, is made of metal, occurs in office, occurs at home, is a seat
+niece:","is a piece of furniture, is a seating device, has four legs, has a seat, has a back, has a brace, has a footrest, is movable, is man-made, is sturdy, is made of wood, is made of metal, occurs in office, occurs at home, is a seat"
+chair,21,2047,"is a piece of furniture, has a seat for sitting, has a back, has legs, is stationary, can hold a weight, has a top
+
+Solution: Is the properties section correctly delimited by pairs of commas?
+Explanation: Each line has > 1 pair of commas, except the fluff lines.
+
+Problem: asia: has own national languages, is in a sovereign","is a piece of furniture, has a seat for sitting, has a back, has legs, is stationary, can hold a weight, has a top"
+chair,22,2048,"is a piece of furniture, is made of wood, is kind of a bench, has seat, has a back, has arms, has legs, is heavy, found in living rooms, is padded, is sturdy, is sitting on, is used for rest
+
+[...]
+
+Reflect on this:
+Circle the property phrases that are of the ""","is a piece of furniture, is made of wood, is kind of a bench, has seat, has a back, has arms, has legs, is heavy, found in living rooms, is padded, is sturdy, is sitting on, is used for rest"
+chair,23,2049,"is a piece of furniture, used for sitting, has a seat, has four legs, has a back, made of wood, made of metal, made of plastic
+ship: is a vehicle, is a boat, is man made, is large, is a transport, has a mast, has a rudder, has an anchor,","is a piece of furniture, used for sitting, has a seat, has four legs, has a back, made of wood, made of metal, made of plastic"
+chair,24,2050,"is a piece of furniture, is for sitting in, is for one person, is for relaxation, has a back, has legs, has a seat, made of wood, made of metal, made of plastic, found in offices
+cat: is a mammal, has four paws, is furry, is a carnivoran, has","is a piece of furniture, is for sitting in, is for one person, is for relaxation, has a back, has legs, has a seat, made of wood, made of metal, made of plastic, found in offices"
+chair,25,2051,"is a piece of furniture, is made of wood, has back, has legs, has arms, has seat, has seat cushion, made in factories, sold in stores, used for sitting, found at offices, used for work, used at schools, used at home, used by dogs
+steak: is a meat, comes from an animal, is fried,","is a piece of furniture, is made of wood, has back, has legs, has arms, has seat, has seat cushion, made in factories, sold in stores, used for sitting, found at offices, used for work, used at schools, used at home, used by dogs"
+chair,26,2052,"is a furnishing, is a piece of furniture, used for sitting, has a back, has four legs, has leather, has a seat
+feather: is a grain, is a fiber, is a plant, is a plant part, is soft, is dry, is light, is air, is insulative
+coats people: has a head, has a neck, has","is a furnishing, is a piece of furniture, used for sitting, has a back, has four legs, has leather, has a seat"
+chair,27,2053,"is for sitting, is a piece of furniture, is made for one person, is for relaxing, is made of wood
+cat: has four legs, has fur, is feline, is hairy, has sharp claws, has sharp teeth, is carnivorous, has whiskers, can climb, eats meat, can run quickly, is loyal, is agile","is for sitting, is a piece of furniture, is made for one person, is for relaxing, is made of wood"
+chair,28,2054,"is a furniture, is made of wood, is made of metal, is made of plastic, is made of glass, has legs, has a back, has armrests, has a seat, is being sat upon, used for transport, used for sitting
+watermelon: grows in gardens, grows on vines, is sweet, is edible","is a furniture, is made of wood, is made of metal, is made of plastic, is made of glass, has legs, has a back, has armrests, has a seat, is being sat upon, used for transport, used for sitting"
+chair,29,2055,"is a seat, has a back, has a chair seat, has a chair back, is a piece of furniture, has four legs, is made of wood, has a footrest, is for sitting, has arms
+scorpion: is a creature, is a venomous animal, has many legs, is armored, has a stinger, lives in trees,","is a seat, has a back, has a chair seat, has a chair back, is a piece of furniture, has four legs, is made of wood, has a footrest, is for sitting, has arms"
+chair,30,2056,"is a piece of furniture, has legs, has four legs, has a head, has a seat, has a back, has arms, is designed for one person, is used for sitting
+
+University Senior Year Project (Fall 2014)
+
+Task
+
+The above lists can be kind of difficult to parse since they sometimes include weird typing errors and sometimes there's no space","is a piece of furniture, has legs, has four legs, has a head, has a seat, has a back, has arms, is designed for one person, is used for sitting"
+chair,31,2057,"is furniture, has four legs, has a seat, has a back, is useful, is for sitting, can be red, can be blue, has legs connected, has four legs connected, iselongated, is rectangular, is wide, is sturdy
+church: is a religious building, is built in wood, is built in stone, has a steeple, has","is furniture, has four legs, has a seat, has a back, is useful, is for sitting, can be red, can be blue, has legs connected, has four legs connected, iselongated, is rectangular, is wide, is sturdy"
+chair,32,2058,"is a piece of furniture, used for sitting, is made of wood, is made of metal, has four legs, made of steel, has a seat, has a back, has two arms, has wheels, moveable, used for carrying, found in offices, found in schools
+cushion: is a piece of furniture, is","is a piece of furniture, used for sitting, is made of wood, is made of metal, has four legs, made of steel, has a seat, has a back, has two arms, has wheels, moveable, used for carrying, found in offices, found in schools"
+chair,33,2059,"sits, has a back, has leather, has seat, has wheels, is large, is made of wood, is used to sit, is rectangular, is used to rest arms, moves, has armrests, has a seat, backless
+fish: is a food, has scale, is living, has fins, is slimy, lives in water,","sits, has a back, has leather, has seat, has wheels, is large, is made of wood, is used to sit, is rectangular, is used to rest arms, moves, has armrests, has a seat, backless"
+chair,34,2060,"has legs, used by people, has back, for sitting, has seat
+wing: has color, used for flying, has shape, is long, has pointed tips, feathers on, on birds, flat top, this is an example
+
+Select the word that satisfies the given conditions.
+cucumber
+
+Explanation:
+Short and crunchy looks for an animal but does not have any","has legs, used by people, has back, for sitting, has seat"
+chair,35,2061,"is a furniture, is a piece of furniture, for sitting, used by people, has a back, has a seat, has wheels, has legs, is made of wood, is made of metal, is made of plastic
+book: has text, published, has words, has a page, has a spine, is a type of literature,","is a furniture, is a piece of furniture, for sitting, used by people, has a back, has a seat, has wheels, has legs, is made of wood, is made of metal, is made of plastic"
+chair,36,2062,"is made of wood, is for sitting, is a piece of furniture, is for two, is for adults, has a flat bottom, has a back, has a seat, has a back, has support for arms, used in offices, used in homes, has a seat, is for one
+hamburger: is for eating, is in a bun, is a","is made of wood, is for sitting, is a piece of furniture, is for two, is for adults, has a flat bottom, has a back, has a seat, has a back, has support for arms, used in offices, used in homes, has a seat, is for one"
+chair,37,2063,"has wheels, is a vehicle, is a piece of furniture, has a frame, made of wood, made of metal, has a back, has a seat, has a leg, has a base, has a table, stores things, stores books, sits, is a piece of furniture, has a table, used for sitting, has a place,","has wheels, is a vehicle, is a piece of furniture, has a frame, made of wood, made of metal, has a back, has a seat, has a leg, has a base, has a table, stores things, stores books, sits, is a piece of furniture, has a table, used for sitting, has a place,"
+chair,38,2064,"is a piece of furniture, wooden, reclines, has a back, has arms, provides support, is stable
+
+What are the properties of a chicken?
+a bird, is a meat, eats grass, has a beak, has eggs, is an animal, is a fowl, lives in the water, runs on two, is edible, makes a","is a piece of furniture, wooden, reclines, has a back, has arms, provides support, is stable"
+chair,39,2065,"is a piece of furniture, used to sit, supported by legs, used to rest backs, has a seat, has wheels, is movable, recline, reclines
+cheeses: is a food, made from milk, is hard, is round shaped, is from animals, made by animals, is coated in plastic
+magnets:","is a piece of furniture, used to sit, supported by legs, used to rest backs, has a seat, has wheels, is movable, recline, reclines"
+chair,40,2066,"is an appliance, is made of wood, has a seat, has a back, has legs, made from a tree, is plastic, has casters, has wheels, is used to sit in, used for relaxation, used for work, used to relax
+buddha statue: is a statue, is made of stone, is a art, is located","is an appliance, is made of wood, has a seat, has a back, has legs, made from a tree, is plastic, has casters, has wheels, is used to sit in, used for relaxation, used for work, used to relax"
+chair,41,2067,"is furniture, has wheels, is a toy, is a wheelchair, is a ride, has a seat, has a back, is owise, is a bed, is a support, is for lifting
+dot: is a point, is a pixel, is a number, is a binary digit
+
+Of these lines, what kind of things are the word and the list?
+
+duck","is furniture, has wheels, is a toy, is a wheelchair, is a ride, has a seat, has a back, is owise, is a bed, is a support, is for lifting"
+chair,42,2068,"is an furniture, is a sitting, has a seat, has a back, has arms, made with wood, made with metal, has legs, used for sitting, found in houses, placed in offices
+steve: is a person, plays guitar, works in office, lives in city, eats chicken, wears jeans, walks","is an furniture, is a sitting, has a seat, has a back, has arms, made with wood, made with metal, has legs, used for sitting, found in houses, placed in offices"
+chair,43,2069,"is a furniture, is a piece of furturuire, sits one, used for sitting, is made of wood, is made of metal, is a piece of kitchen, is a type of chair
+book: is a document, is made of pages, has a cover, has a binding, is a form, is a thing
+","is a furniture, is a piece of furturuire, sits one, used for sitting, is made of wood, is made of metal, is a piece of kitchen, is a type of chair"
+chair,44,2070,"is a piece of furniture, is for sitting, has seat, has back, has arms, is in homes, has bottom, is made of wood, is made of metal, for storing things, for people, for sleeping, is tall, with wheels, has a desk, has wheels
+bookshelf: is for holding books, is an","is a piece of furniture, is for sitting, has seat, has back, has arms, is in homes, has bottom, is made of wood, is made of metal, for storing things, for people, for sleeping, is tall, with wheels, has a desk, has wheels"
+chair,45,2071,"a kind of office chair, is sturdy, has four wheels, can hold many people, can be drawn by people
+radio: is sound equipment, is in a home, is a device, is powered by electricity, is a compact device
+beer: is a drink, is in a bottle, is good for a party, is alcoholic, is the liquid
+Dr","a kind of office chair, is sturdy, has four wheels, can hold many people, can be drawn by people"
+chair,46,2072,"is a piece of furniture, is made of wood, is used for sitting, is made for comfort, is a seat, is stationary, has a seat, has four legs, has back, has arms, has wheels, is soft, is movable, is used for rest, is used for relaxing
+liver: is an organ, is red, is soft, filters blood,","is a piece of furniture, is made of wood, is used for sitting, is made for comfort, is a seat, is stationary, has a seat, has four legs, has back, has arms, has wheels, is soft, is movable, is used for rest, is used for relaxing"
+chair,47,2073,"is made of wood, is armrested, is for sitting in, is for one person, is for putting things on, is against walls, costs money
+
+
+Input: Continue writing.
+
+The building had a brick façade instead of a stone façade because the 
+OPTIONS:
+- brick façade was more of a financial investment.
+- stone façade was","is made of wood, is armrested, is for sitting in, is for one person, is for putting things on, is against walls, costs money"
+chair,48,2074,"has no arms, has legs, has a back, has four legs, is heavy, made for sitting, is a piece of furniture
+stone: is solid, has density, has force, is hard, is heavy, has a surface, is one, is big, is always, is natural, is heavy
+bulldozer: is a machine, pushes dirt,","has no arms, has legs, has a back, has four legs, is heavy, made for sitting, is a piece of furniture"
+chair,49,2075,"is a piece of furniture, is used for sitting, has legs, has a seat, has a back, has a frame, has a four-footed, has a seat, has a headrest, made from a frame
+banana: is a fruit, is yellow, is sweet, is a food, has a skin, contains sugar, is curved, is rounded, has a stem","is a piece of furniture, is used for sitting, has legs, has a seat, has a back, has a frame, has a four-footed, has a seat, has a headrest, made from a frame"
+chair,50,2076,"is a piece of furniture, is a piece of luggage, is made of wood, is used for sitting, is used for travelling
+hammer: is a tool, is used to hit things, is used to make holes, is used to get rid of red tape, needs a handle, has a handle, is made of ","is a piece of furniture, is a piece of luggage, is made of wood, is used for sitting, is used for travelling"
+chair,51,2077,"is a piece of furniture, is a piece of wood, is a piece of plastic, has school, has legs, has four$legs, is a fourlegged creature, has a seat, has a back, has a table, has a tablelandcan, has a backrest, has a reclining backrest, is used for sitting, is for comfort","is a piece of furniture, is a piece of wood, is a piece of plastic, has school, has legs, has four$legs, is a fourlegged creature, has a seat, has a back, has a table, has a tablelandcan, has a backrest, has a reclining backrest, is used for sitting, is for comfort"
+chair,52,2078,"is a piece of furniture, is solid, made of wood, made of plastic, is sturdy, is heavy, is large, is tall, has a back, has a seat, has legs, sits people, is immobile, is movable, hard to carry
+cow: is a mammal, is a living thing, has legs, gives milk, is large","is a piece of furniture, is solid, made of wood, made of plastic, is sturdy, is heavy, is large, is tall, has a back, has a seat, has legs, sits people, is immobile, is movable, hard to carry"
+chair,53,2079,"is a piece of furniture, is for sitting, is for one person, has four legs, is solid wood, is made by welding metal, has a backrest, has a seat, has a castle design, has a seat design, has a cushion, has a back
+
+Please make sure your tasks are in this format, with each sequential line containing a Tri","is a piece of furniture, is for sitting, is for one person, has four legs, is solid wood, is made by welding metal, has a backrest, has a seat, has a castle design, has a seat design, has a cushion, has a back"
+chair,54,2080,"is a piece of furniture, is flexible, is long, is reclining, is rectangular, is sitting, is full of cushions, is made of wood, has a back, has a seat, has a frame, has legs, moves, used for sitting
+watermelon: is a fruit, is yellow, is sweet, has a peel, grows on vi","is a piece of furniture, is flexible, is long, is reclining, is rectangular, is sitting, is full of cushions, is made of wood, has a back, has a seat, has a frame, has legs, moves, used for sitting"
+chair,55,2081,"is a piece of furniture, has a back, has four legs, has a seat, is for sitting, has a frame, is sturdy, used for rest, used for relaxation, used for studying, used for studying at night, used for writing, used for writing at night
+
+How do we know what these properties are? We just saw them in the images of the","is a piece of furniture, has a back, has four legs, has a seat, is for sitting, has a frame, is sturdy, used for rest, used for relaxation, used for studying, used for studying at night, used for writing, used for writing at night"
+chair,56,2082,"is a piece of furniture, has leather, has a back, has wheels, can be pulled, can be moved, sits 2, has a seat, made of wood, is wheel chair, is round, is a table, is wooden
+
+Do you see a pattern?
+This question appears to be similar to these questions: Are all the clock faces on a wall","is a piece of furniture, has leather, has a back, has wheels, can be pulled, can be moved, sits 2, has a seat, made of wood, is wheel chair, is round, is a table, is wooden"
+chair,57,2083,"is a piece of furniture, has legs, is long, is sturdy, usually is made of wood, used for sitting, for relaxation, usually has a seat, usually has arms, usually has a back, used by a person
+
+[16] The [17] is an Australian district in the north-western corner of the Northern Territory. The [18]","is a piece of furniture, has legs, is long, is sturdy, usually is made of wood, used for sitting, for relaxation, usually has a seat, usually has arms, usually has a back, used by a person"
+chair,58,2084,"is a piece of furniture, has a seat, has a back, is a seat, has four legs, made of wood, made of metal, has a table, has a footrest, has armrests, is a piece of furniture, found in homes
+rabbit: is a mammal, is a pet, lives in bur","is a piece of furniture, has a seat, has a back, is a seat, has four legs, made of wood, made of metal, has a table, has a footrest, has armrests, is a piece of furniture, found in homes"
+chair,59,2085,"is furniture, used to sit on, has back rest, has armrests, made of wood, made of metal, used for sleeping, made with wheels, used to eat from, sits stably, used for sitting, used to hold things
+drumstick: is part of a chicken, is meat, can be fr","is furniture, used to sit on, has back rest, has armrests, made of wood, made of metal, used for sleeping, made with wheels, used to eat from, sits stably, used for sitting, used to hold things"
+chair,60,2086,"is a piece of furniture, is made of wood, is made of plastic, is made of metal, has legs, has a seat, has backresting, used for sitting
+parrot: is a bird, is a pet, is yellow, is red, is green, is blue, is black, is a male, is a female","is a piece of furniture, is made of wood, is made of plastic, is made of metal, has legs, has a seat, has backresting, used for sitting"
+chair,61,2087,"is a piece of furniture, used for sitting, made of wood, made of plastic, made of metal, has a seat, has a back, has arms, has a base, found in offices, found in classrooms, found in homes, often brown, often black
+internet: has Internet, is fast, is digital, researches","is a piece of furniture, used for sitting, made of wood, made of plastic, made of metal, has a seat, has a back, has arms, has a base, found in offices, found in classrooms, found in homes, often brown, often black"
+chair,62,2088,"has a seat, is used for sitting, used for relaxing, can be reclined, can be red, has back support, can be folded up, can be wooden, can be leather
+dog: has four legs, is a pet, is gregarious, is intelligent, is friendly, is domestic, has fur, has paws, sniffs, is clever, is","has a seat, is used for sitting, used for relaxing, can be reclined, can be red, has back support, can be folded up, can be wooden, can be leather"
+chair,63,2089,"is a piece of furniture, has a back, has seats, is made of wood, has arms
+apple: is a fruit, is crunchy, is sweet
+car: is a vehicle, has doors, has a radiator, has bumpers, has tires, has a windshield, has a wingmirrors, has a trunk, runs on gas, runs on oil","is a piece of furniture, has a back, has seats, is made of wood, has arms"
+chair,64,2090,"is an object, is furniture, is used for sitting, has a back, is comfortable, has a seat, has legs, has a bottom, has arms, made of wood, made of metal, has a table
+tank: is an object, is used for beer, is used for drinking, holds liquid, has a lid, has a handle","is an object, is furniture, is used for sitting, has a back, is comfortable, has a seat, has legs, has a bottom, has arms, made of wood, made of metal, has a table"
+chair,65,2091,"is a piece of furniture, has a back, has legs, has a seat, holds a single person, is for sitting, is for relaxation
+chair: is a piece of furniture, has a back, has legs, has a seat, holds a single person, is for sitting, is for relaxation
+“slice of watermelon”: is a fruit, is a food,","is a piece of furniture, has a back, has legs, has a seat, holds a single person, is for sitting, is for relaxation"
+chair,66,2092,"is a piece of furniture, has a seat, has a back, has a tabletop, is comfy
+steak: is meat, is beef, is a round, is steak, is cooked, is grilled, is served, is cut from a beef, tastes good
+
+In this task, you'll be presented with a text, and you need to","is a piece of furniture, has a seat, has a back, has a tabletop, is comfy"
+chair,67,2093,"is an object, is furniture, found in offices, found in buildings, has wheels, is moving, is movable, is large, is made of wood, is made of metal
+lion: is a cat, is a mammal, is an animal, is real, is alive, has fur, has a","is an object, is furniture, found in offices, found in buildings, has wheels, is moving, is movable, is large, is made of wood, is made of metal"
+chair,68,2094,"is a piece of furniture, is for sitting, used for relaxing, used for reading
+truck: is a vehicle, is for transporting, transports people, transports goods, for hire, carries luggage, is an automobile, can carry many passengers, has a driver, used on highways, used on roads
+Chevron: is a brand, is a type of","is a piece of furniture, is for sitting, used for relaxing, used for reading"
+chair,69,2095,"has a seat, has four legs, has a back, has a metal frame, has a reclining function, has a padding, is rectangular, made of wood, is solid, used for sitting, used for relaxation, used for work
+market stall: has produce, has food, has foodstuffs, has vegetables, has produce for sale, has","has a seat, has four legs, has a back, has a metal frame, has a reclining function, has a padding, is rectangular, made of wood, is solid, used for sitting, used for relaxation, used for work"
+chair,70,2096,"is a piece of furniture, used for sitting, has a seat, has a back, used for reading, found in offices, used for working
+cheese: is a food, has a smooth texture, comes in a variety of shapes and colors, has a yellow color, has a glassy texture, has a hard texture, is a solid, flatulence","is a piece of furniture, used for sitting, has a seat, has a back, used for reading, found in offices, used for working"
+chair,71,2097,"is furniture, is for sitting, is for relaxation, is heavy, has a back, has a seat, has legs, has a frame, is four-legged, found in offices, found in houses, cost a lot of money, used for work, used for study, used for transportation, used for walking, used for travel, used for schoolwork, used to","is furniture, is for sitting, is for relaxation, is heavy, has a back, has a seat, has legs, has a frame, is four-legged, found in offices, found in houses, cost a lot of money, used for work, used for study, used for transportation, used for walking, used for travel, used for schoolwork, used to"
+chair,72,2098,"is an item, is furniture, has a back, is for sitting, has a seat, has a frame, is seen in office, seen in homes, seen in parks, made of wood, made of metal, made of sturdy materials
+giraffe: is a mammal, is an animal, has a long body","is an item, is furniture, has a back, is for sitting, has a seat, has a frame, is seen in office, seen in homes, seen in parks, made of wood, made of metal, made of sturdy materials"
+chair,73,2099,"has assemble legs, is for sitting, is for support, has a seat, is wooden, is made of wood, is sturdy, is used for support
+leopard: is big, is sleek, is striped, is agile, is playful, is bold, is furry, is hairy, has spots, is a panther
+whiskey:","has assemble legs, is for sitting, is for support, has a seat, is wooden, is made of wood, is sturdy, is used for support"
+chair,74,2100,"has back, has seat, is made of wood, is made of metal, has legs, is made of plastic, has wheels
+mouse: is a type of animal, is a type of mammal, is a type of rodent, has a tail, has a fur coat, is small, has a back, runs when scared, runs from","has back, has seat, is made of wood, is made of metal, has legs, is made of plastic, has wheels"
+chair,75,2101,"is a piece of furniture, has legs, has a seat, has armrests, can be reclined, is reclined, has a back, has a bottom, is stationary, is made of wood, is made of metal, is made of fabric, has wheels, is movable, is rigid, has casters
+s","is a piece of furniture, has legs, has a seat, has armrests, can be reclined, is reclined, has a back, has a bottom, is stationary, is made of wood, is made of metal, is made of fabric, has wheels, is movable, is rigid, has casters"
+chair,76,2102,"is a piece of furniture, used by people, is for sitting, is flexible, is comfy, is hardback, is for resting, is a seat, has a back, has legs, is tall
+doggerel: is poetry, is meters, is rhymes, is nursery, is low, is difficult, is simple, is easy, is annoying, is short","is a piece of furniture, used by people, is for sitting, is flexible, is comfy, is hardback, is for resting, is a seat, has a back, has legs, is tall"
+chair,77,2103,"is a piece of furniture, is a throne, has arms, has a seat, has a back, has a bottom, has a top, is made of wood, is made of metal, is made of rubber, is made of stone, can break, is heavy, breaks easily, seats one person, is comfortable, is durable
+basket","is a piece of furniture, is a throne, has arms, has a seat, has a back, has a bottom, has a top, is made of wood, is made of metal, is made of rubber, is made of stone, can break, is heavy, breaks easily, seats one person, is comfortable, is durable"
+chair,78,2104,"is a furniture, is a piece of furniture, is made of wood, is made of metal, has seats, is four legged, is heavy, has back, is used to sit on, is used at home
+toothbrush: is an object, is a health-related, has soft bristles, has a toothbrush handle, has","is a furniture, is a piece of furniture, is made of wood, is made of metal, has seats, is four legged, is heavy, has back, is used to sit on, is used at home"
+chair,79,2105,"is furniture, seats people, has a back, has a seat, has a leg, made of wood, made of plastic, made of metal, has armrests, has legs, has a table, has 4 legs, has a backrest, has a height
+kite: is a toy, is a toy for children, is made o","is furniture, seats people, has a back, has a seat, has a leg, made of wood, made of plastic, made of metal, has armrests, has legs, has a table, has 4 legs, has a backrest, has a height"
+chair,80,2106,"is a piece of furniture, offers rest, has a back, has legs, has arm rests, has casters, has a seat, for sitting, can sit many people, common in offices, made of wood, made of metal
+banana: is a fruit, is yellow, is sweet, has a peel, has a stem, has a","is a piece of furniture, offers rest, has a back, has legs, has arm rests, has casters, has a seat, for sitting, can sit many people, common in offices, made of wood, made of metal"
+chair,81,2107,"is a piece of furniture, has a back, has legs, has seat, has a seat, has seat, has arms, used for sitting, is for comfort, is sturdy
+squirrel: is a mammal, is brown, has stripes, is a rodent, is spiny, is bushy-tailed, is semi-arboreal, is fossorial, is nocturnal","is a piece of furniture, has a back, has legs, has seat, has a seat, has seat, has arms, used for sitting, is for comfort, is sturdy"
+chair,82,2108,"is a piece of furniture, used for sitting, has a seat, has a back, has arms, has four legs, made of wood
+toy: is a plaything, made of plastic, made of wood, made of metal, has colors, put in a child's hands, children play with them, children put in their mouth","is a piece of furniture, used for sitting, has a seat, has a back, has arms, has four legs, made of wood"
+chair,83,2109,"is a piece of furniture, is for sitting on, is for one person, has a seat, has a back, has a frame, has legs, has straps on wheels, is suspension seat
+bell: is a sound, is hollow, can be rung, made from metal, is made of metal, has a handle,","is a piece of furniture, is for sitting on, is for one person, has a seat, has a back, has a frame, has legs, has straps on wheels, is suspension seat"
+chair,84,2110,"is a piece of furniture, has a seat, has arms, has legs, has a back, is for sitting, has a frame, is for one person, is for relaxation, is for comfort, is for reclining, is for work, has a caster, has three or more legs, made of wood
+bee: is a fly, moves in clusters,","is a piece of furniture, has a seat, has arms, has legs, has a back, is for sitting, has a frame, is for one person, is for relaxation, is for comfort, is for reclining, is for work, has a caster, has three or more legs, made of wood"
+chair,85,2111,"is a furniure, has back, has leg, has seat, has arms, has rounded corner, has a table, breaks easily, needs legs, needs back, made of wood, made of plastic, made of metal
+rosehip: is a fruit, is a bush, is a flower, is a part of the rose, grows i","is a furniure, has back, has leg, has seat, has arms, has rounded corner, has a table, breaks easily, needs legs, needs back, made of wood, made of plastic, made of metal"
+chair,86,2112,"is a piece of furniture, has a seat, has a back, has legs, is made of wood, has a bottom, is reclinable, has armrests, has a tabletop, is rectangular in shape, is for sitting
+dogs: is a dog dog dog dog dog, is a dog dog dog dog dog, is a dog dog dog dog","is a piece of furniture, has a seat, has a back, has legs, is made of wood, has a bottom, is reclinable, has armrests, has a tabletop, is rectangular in shape, is for sitting"
+chair,87,2113,"is an object, is a piece of furniture, is made of wood, is made of metal, has a back, is made of paper, made of plastic, is a container, is comfy, used for sitting, used for relaxing
+horse: is an animal, is well known, is known for living on farms,","is an object, is a piece of furniture, is made of wood, is made of metal, has a back, is made of paper, made of plastic, is a container, is comfy, used for sitting, used for relaxing"
+chair,88,2114,"is a piece of furniture, is a piece of furniture, has a seat, has a back, is a seat, to use has to sit, to use has to be sitting, is a place, is a way to sit, is for sitting, is a piece of furniture, is a way to take a rest
+","is a piece of furniture, is a piece of furniture, has a seat, has a back, is a seat, to use has to sit, to use has to be sitting, is a place, is a way to sit, is for sitting, is a piece of furniture, is a way to take a rest"
+chair,89,2115,"is a piece of furniture, is made of wood, usually sits 2 people, is used for sitting, has a back, has a seat, has legs, has a seat, can recline, can tilt, leg movable, must be payed for
+
+Now, complete the construction of a one-sentence dictionary entry. Instances where the same thing is named by","is a piece of furniture, is made of wood, usually sits 2 people, is used for sitting, has a back, has a seat, has legs, has a seat, can recline, can tilt, leg movable, must be payed for"
+chair,90,2116,"is a piece of furniture, has a seat, has a back, has legs, has a frame, has a table, has a backrest, for sitting, for resting, for relaxation, against walls, in offices, in homes, found in offices, for people to sit in, made of wood
+
+Let's try:
+chair: is a piece o","is a piece of furniture, has a seat, has a back, has legs, has a frame, has a table, has a backrest, for sitting, for resting, for relaxation, against walls, in offices, in homes, found in offices, for people to sit in, made of wood"
+chair,91,2117,"is a piece of furniture, is a piece of furniture, has a seat, is used to sit on, used to sleep on, is made of wood, is made of metal, has arms, can store things, has a back, used for tranquility
+tiger: is a cat, is a mammal, has whis","is a piece of furniture, is a piece of furniture, has a seat, is used to sit on, used to sleep on, is made of wood, is made of metal, has arms, can store things, has a back, used for tranquility"
+chair,92,2118,"is a piece of furniture, is generally black, made from wood, has a seat, has legs, has a back, has armrests, is pleasant to sit in, is comfortable to sit in, is ergonomic, is good for relaxation, you can sit in, can sit one person, for sitting down, for resting
+
+What properties do the","is a piece of furniture, is generally black, made from wood, has a seat, has legs, has a back, has armrests, is pleasant to sit in, is comfortable to sit in, is ergonomic, is good for relaxation, you can sit in, can sit one person, for sitting down, for resting"
+chair,93,2119,"is an appliance, sits people, has a backrest, has a seat, made of wood, has legs, is an item of furniture, has a tabletop, has a frame, is used by people
+wrench: is a tool, used to loosen bolts, used to tighten nuts, used to remove fasteners, used ","is an appliance, sits people, has a backrest, has a seat, made of wood, has legs, is an item of furniture, has a tabletop, has a frame, is used by people"
+chair,94,2120,"is furniture, has a back, has a seat, is used for sitting, can be seen in kitchens, can be seen in bedrooms, can be seen in offices, can be seen in stores, can be seen in vehicles, can be seen in libraries
+expensive jacket: is a coat, is furry, is for men, is for women","is furniture, has a back, has a seat, is used for sitting, can be seen in kitchens, can be seen in bedrooms, can be seen in offices, can be seen in stores, can be seen in vehicles, can be seen in libraries"
+chair,95,2121,"is a furniture, has a back, has a seat, is made of wood, is made of metal, has legs, is for sitting in, is big, is tall, is comfortable, is for one person, has wheels, moved by person, used for work
+cake: has a base, is sweet, has a top, is round, is","is a furniture, has a back, has a seat, is made of wood, is made of metal, has legs, is for sitting in, is big, is tall, is comfortable, is for one person, has wheels, moved by person, used for work"
+chair,96,2122,"is a furniture, has a back, has a seat, has legs, has four legs, has a seat, used for sitting, used to sit on, used to sit in, has a four legs
+poi: is a game, is played by throwing stones, is played by players, is played using poi balls, is played in Hawaii, is played i","is a furniture, has a back, has a seat, has legs, has four legs, has a seat, used for sitting, used to sit on, used to sit in, has a four legs"
+chair,97,2123,"has legs, has a seat, has back, has a back rest, is a piece of furniture, is a piece of furniture, has armrests, is made of wood, is portable, is made of wood, is made of metal, has a chair back, can sit four, cna sit five, has wheels, have wheels","has legs, has a seat, has back, has a back rest, is a piece of furniture, is a piece of furniture, has armrests, is made of wood, is portable, is made of wood, is made of metal, has a chair back, can sit four, cna sit five, has wheels, have wheels"
+chair,98,2124,"is a piece of furniture, used to sit on, has a seat, has a back, is often black, is often wooden, made of wood, is made by humans, is usually made of wood, is rare, made apartmental, made in factories, made in shops, made in Asia, made in China
+water:","is a piece of furniture, used to sit on, has a seat, has a back, is often black, is often wooden, made of wood, is made by humans, is usually made of wood, is rare, made apartmental, made in factories, made in shops, made in Asia, made in China"
+chair,99,2125,"is an object, used by people, is a piece of furniture, is used for sitting, has armands, has a backrest, made of wood, made of metal, made of plastic, made of other materials, made of composites
+sport: is a game, is a game played by two people, is a healthy activity","is an object, used by people, is a piece of furniture, is used for sitting, has armands, has a backrest, made of wood, made of metal, made of plastic, made of other materials, made of composites"
+apple,0,2026,"is a fruit, is edible, is sweet, is round, comes in many colors, tree can be a long life, branches grow from one place, grows on trees, is tart, grows in orchard
+pebble: is a rock, is round, is smooth, is heavy, is hard, is solid, is small, is cold, found in rivers, washed","is a fruit, is edible, is sweet, is round, comes in many colors, tree can be a long life, branches grow from one place, grows on trees, is tart, grows in orchard"
+apple,1,2027,"is a fruit, is a type of tree, has seeds, has a tap root, has a woody core, is edible, used in desserts, is sweet, is juicy, is fruit of a tree, has a tart flavor, lives on trees, picked from trees, makes cider, is grown in orchards
+mushroom: is ","is a fruit, is a type of tree, has seeds, has a tap root, has a woody core, is edible, used in desserts, is sweet, is juicy, is fruit of a tree, has a tart flavor, lives on trees, picked from trees, makes cider, is grown in orchards"
+apple,2,2028,"is a fruit, has red skin, has yellow flesh, has a juicy texture, is sweet, is tart, used for cooking, grows on trees,-round-shaped, used as snack, used to make wine, can be eaten raw
+
+What is the occupation of a person who has a brown beard?","is a fruit, has red skin, has yellow flesh, has a juicy texture, is sweet, is tart, used for cooking, grows on trees,-round-shaped, used as snack, used to make wine, can be eaten raw"
+apple,3,2029,"is edible, is sweet, is a fruit, is good for you, has seeds, has skin, used for cooking apples, can be cooked, is unknown
+walker: is a kind of dog, is small, runs fast, is made by man, is cute
+
+Is this a helpful answer?
+
+If we're going to consider things like ""is cute"" as ""a","is edible, is sweet, is a fruit, is good for you, has seeds, has skin, used for cooking apples, can be cooked, is unknown"
+apple,4,2030,"is an apple, is a fruit, is sweet, is juicy, is edible, is red, is healthy, eats apples, has a red skin, is spherical, is eaten, uses apple seeds, is a dessert fruit, grows on trees, has a large diameter, grows in trees
+sound: is a sound, produces a sound, is made of air","is an apple, is a fruit, is sweet, is juicy, is edible, is red, is healthy, eats apples, has a red skin, is spherical, is eaten, uses apple seeds, is a dessert fruit, grows on trees, has a large diameter, grows in trees"
+apple,5,2031,"is a fruit, is a tree fruit, is rounded, has seeds, has skin, has core, has pulp, has juice, is bumpy, is sweet, has a tree, is tart, is crisp, is edible, is juicy, grows on trees
+goldfish: is a fish, is a pet, is a small fish, is a fresh water fish, is","is a fruit, is a tree fruit, is rounded, has seeds, has skin, has core, has pulp, has juice, is bumpy, is sweet, has a tree, is tart, is crisp, is edible, is juicy, grows on trees"
+apple,6,2032,"is a fruit, tasty, is yellow, is sweet, is red, is round, has become a brand, made into juice, is a tree, is a plant
+lawn mower: is a device, is used in the countryside, is used outdoors, is used by people, requires bicycle handlebar, sells for money, has rubber tires, has green/gray","is a fruit, tasty, is yellow, is sweet, is red, is round, has become a brand, made into juice, is a tree, is a plant"
+apple,7,2033,"is a fruit, is edible, has a crisp flavor, is sweet, is sweet and sour, has a sharpit to the eye, is juicy, is not sweet
+:
+____________________
+For these definitions, each line describes a property of the class. Please pay careful attention to each sentence as you are going to be asked what you are","is a fruit, is edible, has a crisp flavor, is sweet, is sweet and sour, has a sharpit to the eye, is juicy, is not sweet"
+apple,8,2034,"is a fruit, is a food, is round, has a shiny skin, red, green, yellow, has seeds, has a hard inside, has acid taste, sweet taste, has minerals, is sold in markets, grows in trees
+
+Q: doms:' belly, breast, face, foot, hand, head, hair, leg, neck, none, navel,","is a fruit, is a food, is round, has a shiny skin, red, green, yellow, has seeds, has a hard inside, has acid taste, sweet taste, has minerals, is sold in markets, grows in trees"
+apple,9,2035,"is a fruit, is sweet, dies, falls down, has seeds, is crunchy, can be eaten, has a crust, can be peeled, is juicy, can be cored, can be eaten raw, grows on trees, has leaves, has juicy flesh, is orange
+kiwi: is a fruit, tastes sweet, is sour, is edible, r","is a fruit, is sweet, dies, falls down, has seeds, is crunchy, can be eaten, has a crust, can be peeled, is juicy, can be cored, can be eaten raw, grows on trees, has leaves, has juicy flesh, is orange"
+apple,10,2036,"is a fruit, is round, is sweet, is juicy, is tart, is red, is green, is edible, is yellow, has a core, is edible, is edible
+Category: properties
+Dataset: Wikicells
+Language: en
+
+","is a fruit, is round, is sweet, is juicy, is tart, is red, is green, is edible, is yellow, has a core, is edible, is edible"
+apple,11,2037,"is a fruit, is sweet when ripe, has a flesh, has a firm texture, is oval-shaped, has a core, has a stony pit, has a skin, can be eaten, can be stored, is juicy, can be used in jam
+parrot: is a bird, is a pet, has a red beak, has a tail, can be ","is a fruit, is sweet when ripe, has a flesh, has a firm texture, is oval-shaped, has a core, has a stony pit, has a skin, can be eaten, can be stored, is juicy, can be used in jam"
+apple,12,2038,"is a fruit, is green, is red, has a core, has seeds, is firm, has flesh, is juicy, is sweet, has parts, is edible, is a plant, grows on trees
+peanut: is a nut, is a small pod, is a legume, is brown, is elongate, wonldk fit into a finger, grows in pods","is a fruit, is green, is red, has a core, has seeds, is firm, has flesh, is juicy, is sweet, has parts, is edible, is a plant, grows on trees"
+apple,13,2039,"is an fruit, has a stem, has tartness, has seeds, eats fruits, eats fruit, red color, green color, yellow color, brown color, white color, shades of red, eats animals, eats people, eats babies, holt, in trees, is edible, is anding, is fragrant, is produced, is","is an fruit, has a stem, has tartness, has seeds, eats fruits, eats fruit, red color, green color, yellow color, brown color, white color, shades of red, eats animals, eats people, eats babies, holt, in trees, is edible, is anding, is fragrant, is produced, is"
+apple,14,2040,"is fruit, has red color, has green color, is sweet, is edible, has a core, has a pit, has seeds, made of cellulose, is a tree, has a stem, found around the world, has a tree trunk, gives apples, has a hard shell
+hare: is a mammal, lives in grass, is a rodent, runs fast,","is fruit, has red color, has green color, is sweet, is edible, has a core, has a pit, has seeds, made of cellulose, is a tree, has a stem, found around the world, has a tree trunk, gives apples, has a hard shell"
+apple,15,2041,"grows on trees, bagged in green, is sweet, is round, is yellow, is red, is currently popular, is as large as an orange, is flat, is round, is yellow, has a rough skin, is crispy, has juice, is acidic, is sweet, is edible, has seeds, has a core, has a cavity, is popular fruit, is","grows on trees, bagged in green, is sweet, is round, is yellow, is red, is currently popular, is as large as an orange, is flat, is round, is yellow, has a rough skin, is crispy, has juice, is acidic, is sweet, is edible, has seeds, has a core, has a cavity, is popular fruit, is"
+apple,16,2042,"is a fruit, has red cheeks, can be pit-filled, is sweet, is juicy, belongs to the apple family, is edible, is found in orchards, is found on trees, is faced with scales, can be eaten raw
+video game: is a video game, is an activity, can be adventure, can be skill, requires skill, requires","is a fruit, has red cheeks, can be pit-filled, is sweet, is juicy, belongs to the apple family, is edible, is found in orchards, is found on trees, is faced with scales, can be eaten raw"
+apple,17,2043,"is a fruit, is a plant, red apples, green apples, is sweet, is sour, has seeds, has a calyx, used for eating, eaten fresh, loss of freshness, is flexible, grown on trees
+pencil: is an object, draws lines, written with ink, used for writing, has ink, has a barrel, made of lead,","is a fruit, is a plant, red apples, green apples, is sweet, is sour, has seeds, has a calyx, used for eating, eaten fresh, loss of freshness, is flexible, grown on trees"
+apple,18,2044,"is a fruit, is round, has skin, has flesh, is sweet, is a vegetable, grows on trees, has seeds, has core, has core, has seeds, is edible, has pit, is edible, used for making jams, can be stored, grows in China, is grown in hot climates, found in orchards, cooked in applesauce","is a fruit, is round, has skin, has flesh, is sweet, is a vegetable, grows on trees, has seeds, has core, has core, has seeds, is edible, has pit, is edible, used for making jams, can be stored, grows in China, is grown in hot climates, found in orchards, cooked in applesauce"
+apple,19,2045,"is a fruit, has red skin, has fuzzy skin, has green skin, has crunchy skin, grows in trees, grows on branches, stores well, is tart, is sweet, is edible, has seeds, grows in orchards, used to make juice, used to make cider, has a crisp flesh, has a sour flesh","is a fruit, has red skin, has fuzzy skin, has green skin, has crunchy skin, grows in trees, grows on branches, stores well, is tart, is sweet, is edible, has seeds, grows in orchards, used to make juice, used to make cider, has a crisp flesh, has a sour flesh"
+apple,20,2046,"is a fruit, is edible, is round, has skin, has flesh, has seeds, is sweet, has a core, grows on trees, available in fall, grows on branches, grows on trees, taken from trees, available in grocery store, available in market, available in orchard
+
+What kind of thing?
+vegetable","is a fruit, is edible, is round, has skin, has flesh, has seeds, is sweet, has a core, grows on trees, available in fall, grows on branches, grows on trees, taken from trees, available in grocery store, available in market, available in orchard"
+apple,21,2047,"is a fruit, has seeds, has a fur baby apple called a ""coconut apple"", is edible, is sweet, is a round shape, grows on trees, is helpful for digestion, makes a nice small snack, has a green or red skin color, has a white inside, growing in summer is good for your health, makes perfect pie, was grown in ancient times,","is a fruit, has seeds, has a fur baby apple called a ""coconut apple"", is edible, is sweet, is a round shape, grows on trees, is helpful for digestion, makes a nice small snack, has a green or red skin color, has a white inside, growing in summer is good for your health, makes perfect pie, was grown in ancient times,"
+apple,22,2048,"is a fruit, is yellow, is sweet, is red, is juicy, is hard, made into cider, used for eating, grown on trees, produces juice, grows in orchards, used in pies
+whale: is a mammal, produces baleen, has a spout, has a caudal fin, blows water, is big, is","is a fruit, is yellow, is sweet, is red, is juicy, is hard, made into cider, used for eating, grown on trees, produces juice, grows in orchards, used in pies"
+apple,23,2049,"is a fruit, is a plant, is edible, is round, is red, is sweet, has seeds, grows in trees, found in orchards, has wood, has a stem, grows on trees, has a tree, is apple-shaped, used to make juice, is a good energy source
+poem: is a piece of writing, is prose,","is a fruit, is a plant, is edible, is round, is red, is sweet, has seeds, grows in trees, found in orchards, has wood, has a stem, grows on trees, has a tree, is apple-shaped, used to make juice, is a good energy source"
+apple,24,2050,"is a fruit, is spherical, is hard, has seeds, is red, is sweet, is edible, grows on trees, is juicy, is edible
+Recognizing Textual Entailment (RTE)
+In this task, you are given two sentences. You must judge whether the second sentence is true or false that the first sentence. You must output = 1 whenever the second sentence","is a fruit, is spherical, is hard, has seeds, is red, is sweet, is edible, grows on trees, is juicy, is edible"
+apple,25,2051,"is a fruit, is white, is sweet, is red, can be seen in spring, can be seen in winter, has tartness, grows in orchards, has crunch, used as edible, is sour, is permited
+
+We need your help to decide what properties are most relevant for our task:
+How to define the ""invented","is a fruit, is white, is sweet, is red, can be seen in spring, can be seen in winter, has tartness, grows in orchards, has crunch, used as edible, is sour, is permited"
+apple,26,2052,"is a fruit, can be eaten, is round, has seeds, has flesh, is red, is sweet, is sour
+
+Q: what does apple: is a fruit, can be eaten, is round, has seeds, has flesh, is red, is sweet, is sour, mean?
+A:
+a fruit","is a fruit, can be eaten, is round, has seeds, has flesh, is red, is sweet, is sour"
+apple,27,2053,"is a fruit, is red, is sweet, is a vegetable, is a plant, is a fruit, is edible, is a fetus, is edible, young apples are called ‘ling’, is sour, is a food, is in a tree, has seeds, grows on trees, has skin, is green, is delicious, is sour, lasts in stores, has a core","is a fruit, is red, is sweet, is a vegetable, is a plant, is a fruit, is edible, is a fetus, is edible, young apples are called ‘ling’, is sour, is a food, is in a tree, has seeds, grows on trees, has skin, is green, is delicious, is sour, lasts in stores, has a core"
+apple,28,2054,"is a fruit, is edible, has a flesh, has a core, has a peel, has a pit, is used for making cider, is used for making juice, is used for making jam, is used for making pie, is used for baking, has seeds, tasty
+cat: is domestic, seeks prey, has whiskers, is four-legged, pre","is a fruit, is edible, has a flesh, has a core, has a peel, has a pit, is used for making cider, is used for making juice, is used for making jam, is used for making pie, is used for baking, has seeds, tasty"
+apple,29,2055,"is a fruit, has a tree, has a bump on it, is eaten, is evergreen, grows on trees, has red skin, has green skin, has yellow skin, is sweet, is asparagus, has seeds, is used for jellies, is used for sauce, is used for making cider, is used for making juice, is made into apple pie,","is a fruit, has a tree, has a bump on it, is eaten, is evergreen, grows on trees, has red skin, has green skin, has yellow skin, is sweet, is asparagus, has seeds, is used for jellies, is used for sauce, is used for making cider, is used for making juice, is made into apple pie,"
+apple,30,2056,"is a fruit, has skin, has flesh, has seeds, is sweet, is sour, has acidity, has fragrnce, has flavor, has flavor, is edible, is round, grows on trees, grows on bushes, is harvested
+
+Input: Consider Input: bus: is a vehicle, has windows, stopped by police, driven by people, has doors, has a body,","is a fruit, has skin, has flesh, has seeds, is sweet, is sour, has acidity, has fragrnce, has flavor, has flavor, is edible, is round, grows on trees, grows on bushes, is harvested"
+apple,31,2057,"is a fruit, is a tree, is red, has a core, is sweet, is tart, has seeds, has a stem, is edible, breeds new varieties, has juice, is palatable
+alarm clock: beeps, is an appliance, has an alarm function, has an alphanumeric display, has a clock, is electrical, has a speaker, is","is a fruit, is a tree, is red, has a core, is sweet, is tart, has seeds, has a stem, is edible, breeds new varieties, has juice, is palatable"
+apple,32,2058,"is a fruit, is edible, round, has temp, has seeds, skin is green, skin is red, red apple, white apple, yellow apple, roasted apples, caramel apple, canner apple, apple juice, apple pies, apple sauce, apple cider, apple brandy, apple butter, apple dumplings, apple pie, apple pudding,","is a fruit, is edible, round, has temp, has seeds, skin is green, skin is red, red apple, white apple, yellow apple, roasted apples, caramel apple, canner apple, apple juice, apple pies, apple sauce, apple cider, apple brandy, apple butter, apple dumplings, apple pie, apple pudding,"
+apple,33,2059,"grows on trees, is sweet, tastes good, is tart, has a core, has a stem, is edible, is a fruit, is sour, pressed
+banana: is a fruit, has peel, is yellow, has no seeds, has a peel, has a stem, is a fruit, is a cactus, is edible, is exotic
+coffee: is liquid, is","grows on trees, is sweet, tastes good, is tart, has a core, has a stem, is edible, is a fruit, is sour, pressed"
+apple,34,2060,"is a fruit, crunchy, fresh, is round, has seeds, has a stem, has red skin, is red, is crunchy, is juicy
+blackberry: is a fruit, is a berry, is red, is fruit, juicy, has seeds, has skin, fruit is black, is crunchy, tart, bush produce, wild fruit","is a fruit, crunchy, fresh, is round, has seeds, has a stem, has red skin, is red, is crunchy, is juicy"
+apple,35,2061,"is a fruit, is a vegetable, is sweet, is a dessert, has a core, has a sweet taste, is juicy, has seeds, has a long shape, is red, grows on trees, grown in orchards, can be eaten, found at farmers markets
+
+Input: Consider Input: malachite: has a face, is lush, has","is a fruit, is a vegetable, is sweet, is a dessert, has a core, has a sweet taste, is juicy, has seeds, has a long shape, is red, grows on trees, grown in orchards, can be eaten, found at farmers markets"
+apple,36,2062,"is a fruit, is a vegetable, can be cooked, is edible, can be organic, can be raw, has seeds, can be red, can be green, can be yellow, can be black, can be brown, can be white, has a skin, made of food, made of matter, made of material, is a tree, is harmful, needs sunlight, can","is a fruit, is a vegetable, can be cooked, is edible, can be organic, can be raw, has seeds, can be red, can be green, can be yellow, can be black, can be brown, can be white, has a skin, made of food, made of matter, made of material, is a tree, is harmful, needs sunlight, can"
+apple,37,2063,"is round, is nice, has a white core, has a core, is sweet, fruit, green when unripe, red when ripe, has seeds, produces syrup, made of flesh, has a skin, has a knobby surface, is sour when raw, used for making applesauce, used in cooking, used to make apple juice, is a kind o","is round, is nice, has a white core, has a core, is sweet, fruit, green when unripe, red when ripe, has seeds, produces syrup, made of flesh, has a skin, has a knobby surface, is sour when raw, used for making applesauce, used in cooking, used to make apple juice, is a kind o"
+apple,38,2064,"is a fruit, is made of flesh, has a core, has a skin, has seeds, red is sweet, green one is sour, growth time, green apple, is hard, region apple, is delicious
+straw: is a rod, is made of grass, is a plant, is dry, is rough, is flexible, can be dyed, used for","is a fruit, is made of flesh, has a core, has a skin, has seeds, red is sweet, green one is sour, growth time, green apple, is hard, region apple, is delicious"
+apple,39,2065,"is a fruit, has seeds, has a pit, is adeciduous tree, has a hazel colour outside, is round, has a peel, is edible, reddens, ripens in frost, can be cold, picked in orchards, stored in containers, is not sour
+mango: is a fruit, is yellow, is round,","is a fruit, has seeds, has a pit, is adeciduous tree, has a hazel colour outside, is round, has a peel, is edible, reddens, ripens in frost, can be cold, picked in orchards, stored in containers, is not sour"
+apple,40,2066,"is a fruit, is an item of food, is sweet, has a hard outside, has a flesh inside, has a core inside, has a core that has seeds, is green, has a skin, has crunchy flesh, has soft flesh, has tart flesh, has bright-green peel, grows on trees, bought at the grocery store, has a crisp skin
+","is a fruit, is an item of food, is sweet, has a hard outside, has a flesh inside, has a core inside, has a core that has seeds, is green, has a skin, has crunchy flesh, has soft flesh, has tart flesh, has bright-green peel, grows on trees, bought at the grocery store, has a crisp skin"
+apple,41,2067,"is a fruit, used for making jello, is crimson, is red, is sweet, used for making cider, is edible, is a tree, is hard, is round, grows on trees, fruit is round
+
+  • Input: experiential, object, plant, fruit/vegetable
+  • Output: vegetable
+
+  • Example: city: is a population","is a fruit, used for making jello, is crimson, is red, is sweet, used for making cider, is edible, is a tree, is hard, is round, grows on trees, fruit is round"
+apple,42,2068,"is a fruit, is round, has calyx, is sweet, has core, has seeds, reddens, can be eaten, can be eaten raw, tart, has a peel, is asparagus size, takes red oxide, has blush, can ripen, can be cooked, has flesh, has green, has firm texture
+candlestick:","is a fruit, is round, has calyx, is sweet, has core, has seeds, reddens, can be eaten, can be eaten raw, tart, has a peel, is asparagus size, takes red oxide, has blush, can ripen, can be cooked, has flesh, has green, has firm texture"
+apple,43,2069,"is a fruit, is a tree, is a plant, has sweet flesh, is sweet, is seedless, is tart, is red, is yellow, edible, used for cooking, is sold in stores, is big, is juicy
+mosque: is a building, has a mihrab, is a place of worship, is a place for prayer, is designed","is a fruit, is a tree, is a plant, has sweet flesh, is sweet, is seedless, is tart, is red, is yellow, edible, used for cooking, is sold in stores, is big, is juicy"
+apple,44,2070,"is a fruit, is round, is red, has seeds, is sweet, is soft, is puckery, is green, has a flesh, has a tree, sticks to ground, found in trees, found in orchards, is edible, falls in autumn, eaten raw, eaten cooked, eaten in pies, used in c","is a fruit, is round, is red, has seeds, is sweet, is soft, is puckery, is green, has a flesh, has a tree, sticks to ground, found in trees, found in orchards, is edible, falls in autumn, eaten raw, eaten cooked, eaten in pies, used in c"
+apple,45,2071,"is a fruit, is round, is red, has a stem, has a core, has seeds, is crisp, has flesh, is sweet, has apple pies, is a snack, is a dessert
+watermelon: is a fruit, is round, is red, is smooth, is sweet, is edible, has seeds, is moist, has a rind,","is a fruit, is round, is red, has a stem, has a core, has seeds, is crisp, has flesh, is sweet, has apple pies, is a snack, is a dessert"
+apple,46,2072,"is a fruit, has red skin, has white flesh, is red, made of flesh, is sweet, is a tip, is edible, produced in trees, grows in forests, is spherical, is sweet
+car: is a vehicle, is a means of transport, has doors, has windows, has a steering wheel, has a trunk, can travel, travels on roads","is a fruit, has red skin, has white flesh, is red, made of flesh, is sweet, is a tip, is edible, produced in trees, grows in forests, is spherical, is sweet"
+apple,47,2073,"is a fruit, red, is edible, red fruit, is sweet, has flavor, has a core, is a type of fruit, shape round, eaten fresh apples, grown on trees
+http://bit.ly/gist: is a file type, file type for extending websites, files have links, uses HTTP to get files, used for updating websites, has documentation, can","is a fruit, red, is edible, red fruit, is sweet, has flavor, has a core, is a type of fruit, shape round, eaten fresh apples, grown on trees"
+apple,48,2074,"is an fruit, has a red skin, has a sweet taste, is edible, grows in trees, is a tree fruit, produces acid, has seeds, tart taste, grows on trees, made into pies, made into jello, made into juice, is delicious
+potato: is a vegetable, has green skin, has a white inside, has potatoes, is","is an fruit, has a red skin, has a sweet taste, is edible, grows in trees, is a tree fruit, produces acid, has seeds, tart taste, grows on trees, made into pies, made into jello, made into juice, is delicious"
+apple,49,2075,"is a fruit, is soft, is sweet, has seeds, has a core, has a flesh, is red, is round, has a tree, has an apple tree, can be eaten
+squirrel: is an animal, has a bushy tail, has four legs, has a center tail, has a tufted tail, has a bushy tail, is small, is","is a fruit, is soft, is sweet, has seeds, has a core, has a flesh, is red, is round, has a tree, has an apple tree, can be eaten"
+apple,50,2076,"is a fruit, is edible, is flat, has seeds, grows on trees, is red, is green, is yellow, is round, used for baking, used for making juice, used for making cider, used for making pies, has a bumpy surface, has a core, has a skin, has a juicy meat, has a sweet flavor, has a sour flavor","is a fruit, is edible, is flat, has seeds, grows on trees, is red, is green, is yellow, is round, used for baking, used for making juice, used for making cider, used for making pies, has a bumpy surface, has a core, has a skin, has a juicy meat, has a sweet flavor, has a sour flavor"
+apple,51,2077,"is a fruit, grows on a tree, is sweet, is edible, is red, is eaten, has seeds, has skin, has thick, has tart, has a core, grows on trees, grows on bushes, has a core, is round, is juicy, can be made into wine
+tevel: is a fish, is a drum, is an","is a fruit, grows on a tree, is sweet, is edible, is red, is eaten, has seeds, has skin, has thick, has tart, has a core, grows on trees, grows on bushes, has a core, is round, is juicy, can be made into wine"
+apple,52,2078,"is a fruit, is a vegetable, fruit is edible, is sweet, has a core, is a type of fruit, has a red color, has a green color, is big, can be sliced, has a juicy texture, has a pith
+poodle: is a dog, is an animal, has a furry coat, has white fur, has a floppy","is a fruit, is a vegetable, fruit is edible, is sweet, has a core, is a type of fruit, has a red color, has a green color, is big, can be sliced, has a juicy texture, has a pith"
+apple,53,2079,"is a fruit, is a plant, is a type of tree, is red, is sweet, has seeds, has stalks, grows on trees, has a tree trunk, has flowers, has leaves, grows in woods, grows in orchards, has pits, has a core, has a skin, good for making cider, good for baking, good with cream","is a fruit, is a plant, is a type of tree, is red, is sweet, has seeds, has stalks, grows on trees, has a tree trunk, has flowers, has leaves, grows in woods, grows in orchards, has pits, has a core, has a skin, good for making cider, good for baking, good with cream"
+apple,54,2080,"is a fruit, has a peel, has an apple core, tart, red, crunchy, sweet, delicious, juicy, has seeds, has acid, has sugar
+church: is a religious structure, is a building, has a congregation, has a minister, has elders, has a roof, has pews, has a bell, has an altar,","is a fruit, has a peel, has an apple core, tart, red, crunchy, sweet, delicious, juicy, has seeds, has acid, has sugar"
+apple,55,2081,"is a fruit, is a tree, is a plant, has seeds, has a stem, is round, is sweet, is tart, has a canopy, has a trunk, grows on a tree, can be eaten, has a hull, has a core, has a core, has peel, has peels, has a flower, has a flower, has a tree, has a core","is a fruit, is a tree, is a plant, has seeds, has a stem, is round, is sweet, is tart, has a canopy, has a trunk, grows on a tree, can be eaten, has a hull, has a core, has a core, has peel, has peels, has a flower, has a flower, has a tree, has a core"
+apple,56,2082,"is a fruit, has a pulp, hangs from a tree, has a crust, is crisp, is sweet, is juicy, is edible, is round, has a core, is raw, has a stem, can be cored, grows on trees, is a farm product, is golden, is golden yellow, has seeds
+book: is a medium, has reading on it,","is a fruit, has a pulp, hangs from a tree, has a crust, is crisp, is sweet, is juicy, is edible, is round, has a core, is raw, has a stem, can be cored, grows on trees, is a farm product, is golden, is golden yellow, has seeds"
+apple,57,2083,"is a fruit, is smooth, has grains, is sweet, is large, is juicy, is red, red or green color, has a skin, grows on trees, is edible, dies in winter, blossoms in spring
+peanut: is a legume, is edible, is nutritional, has oil, is a nut, makes a noise, is a food","is a fruit, is smooth, has grains, is sweet, is large, is juicy, is red, red or green color, has a skin, grows on trees, is edible, dies in winter, blossoms in spring"
+apple,58,2084,"is a fruit, is sweet, is crunchy, is juicy, is edible, has white skin, red skin, green skin, bright red skin, orange skin, made of a fruit, has a core
+orange: is a fruit, is yellow, is sweet, is crunchy, is juicy, is edible, has seeds, has a core, made of","is a fruit, is sweet, is crunchy, is juicy, is edible, has white skin, red skin, green skin, bright red skin, orange skin, made of a fruit, has a core"
+apple,59,2085,"is a fruit, is sweet, is edible, is red, is sweet, is large, grows on a tree, has a juice, is round, has a red skin, grows in orchards, is sold on farms, used as snack, used for cooking, used in choclate, used in pies
+rock: is a rock, is a mineral, is","is a fruit, is sweet, is edible, is red, is sweet, is large, grows on a tree, has a juice, is round, has a red skin, grows in orchards, is sold on farms, used as snack, used for cooking, used in choclate, used in pies"
+apple,60,2086,"is a fruit, is round, is sweet, has pink skin, has crunchy flesh, has seeds, has parts, is juicy, has fuzzy skin, is edible, is integral to cooking, is sweet, is used in applesauce
+whisky: is a spirit, is produced by distilling, is a liquid, is white, is a de","is a fruit, is round, is sweet, has pink skin, has crunchy flesh, has seeds, has parts, is juicy, has fuzzy skin, is edible, is integral to cooking, is sweet, is used in applesauce"
+apple,61,2087,"is a fruit, a tree, grows in orchard, grows in trees, always ripe, has seeds, has wax, wax doesn't taste, tart, has skin, is red, is green, is yellow, is edible, is cooked, is chopped, is peeled, is sliced
+truck: is a vehicle, used for hauling, is a van, pulls","is a fruit, a tree, grows in orchard, grows in trees, always ripe, has seeds, has wax, wax doesn't taste, tart, has skin, is red, is green, is yellow, is edible, is cooked, is chopped, is peeled, is sliced"
+apple,62,2088,"is a fruit, is yellow, has seeds, has a peel, is round, has a core, is sweet, is acidic, has flesh, is edible
+empire: is a type of government, has a flag, has a capital, is in Europe, is in the Middle East, is in Asia, is in North America
+airplane: has wheels,","is a fruit, is yellow, has seeds, has a peel, is round, has a core, is sweet, is acidic, has flesh, is edible"
+apple,63,2089,"is a fruit, is a tree fruit, is sweet, grows on a tree, is edible, has skin on outside, has seeds, is round, is bright lime green, juicy, is red, is pink, grows in the northern hemisphere, grows in the temperate climate, has a bitter taste, is a vegetable
+
+Answer with the best ones separated by a semicolon
+
+
+k","is a fruit, is a tree fruit, is sweet, grows on a tree, is edible, has skin on outside, has seeds, is round, is bright lime green, juicy, is red, is pink, grows in the northern hemisphere, grows in the temperate climate, has a bitter taste, is a vegetable"
+apple,64,2090,"is a fruit, is a vegetable, is a vegetable, has seeds, is edible, yellow, red, green, white, round, is yellow, is red, is green, is white, is round
+Boston: is a city, is a state capital, is in Massachusetts, is the largest city in Massachusetts, is a coastal city, is in New England, is","is a fruit, is a vegetable, is a vegetable, has seeds, is edible, yellow, red, green, white, round, is yellow, is red, is green, is white, is round"
+apple,65,2091,"is a fruit, is edible, has white skin, has seeds, has red skin, grows on a tree, is hard, has a crisp texture, is sweet
+snake: is an animal, is poisonous, has a long tail, has a head, can char, moves slowly, is cold, sleeps in sun, hunts at night, lives in forests","is a fruit, is edible, has white skin, has seeds, has red skin, grows on a tree, is hard, has a crisp texture, is sweet"
+apple,66,2092,"is a fruit, is spherical, has red skin, has white flesh, has a hard peel, has a core, has a sweet taste, has a crisp texture, smells of apples, is juicy, has seeds, is sweet, is sour, is edible, tastes good
+
+In this task, you'll be presented with a text, and you have to","is a fruit, is spherical, has red skin, has white flesh, has a hard peel, has a core, has a sweet taste, has a crisp texture, smells of apples, is juicy, has seeds, is sweet, is sour, is edible, tastes good"
+apple,67,2093,"is a fruit, is a vegetable, red in color, has seeds, is edible, fruit
+lemon: is a fruit, is a vegetable, sour in taste, has seeds, is edible, fruit, fruit tree, sour in taste, purple in color, grows on trees, used as a food","is a fruit, is a vegetable, red in color, has seeds, is edible, fruit"
+apple,68,2094,"is a fruit, is sweet, is a vegetable, grows on trees, has seeds, is juicy, has skin, is yellow, is red, edible, is round, has a core, grows wild, has a tart taste, has lots of vitamins
+water: is liquid, contains molecules, is cold, is warm, is cold, is cold, is hot, releases heat","is a fruit, is sweet, is a vegetable, grows on trees, has seeds, is juicy, has skin, is yellow, is red, edible, is round, has a core, grows wild, has a tart taste, has lots of vitamins"
+apple,69,2095,"is a fruit, is sweet, has core, has seeds, has rind, is edible, is round, tart, has crunchy skin, has huvor, grows on trees, is delicious, dark red or green, is juicy, used to baking
+crocodile: is a reptile, is a zoop, is a large rep","is a fruit, is sweet, has core, has seeds, has rind, is edible, is round, tart, has crunchy skin, has huvor, grows on trees, is delicious, dark red or green, is juicy, used to baking"
+apple,70,2096,"is a fruit, is yellow, has red, is round, has white flesh, is sweet, has a seed, has a tree, is edible, grows on trees, can be eaten raw, is culinary, grows in orchards, works well with sugar
+shark: is a fish, is big, is longlived, is fast, is carnivore, swi","is a fruit, is yellow, has red, is round, has white flesh, is sweet, has a seed, has a tree, is edible, grows on trees, can be eaten raw, is culinary, grows in orchards, works well with sugar"
+apple,71,2097,"is edible, is a fruit, is a vegetable, is sweet, has a hard shell, is round, is orange, has a stem, has seeds, grows on trees
+keyboard: is a musical instrument, plays music, plays jazz, plays classical, is a wood instrument, is a string instrument, is a classical instrument, is a percussion instrument, plays accordion, plays violin","is edible, is a fruit, is a vegetable, is sweet, has a hard shell, is round, is orange, has a stem, has seeds, grows on trees"
+apple,72,2098,"is a fruit, is a vegetable, has a hard skin, is brown, has a sweet taste, is sour, is edible, contains organic acids
+sugar: is white, is dissolved in water, is a sweetener, is made from sugar cane, is crystalline, is cone shaped, is used in cooking, is a food additive, is de","is a fruit, is a vegetable, has a hard skin, is brown, has a sweet taste, is sour, is edible, contains organic acids"
+apple,73,2099,"is edible, is a fruit, has a skin, has white inside, has a grating texture, has a red color, has a peeling, has a perfume-like flavor, is sweet, grows on trees, has a length, is the ideal fruit, grows in trees
+cat: has fur, is mobile, is carnivorous, purrs, meows, is","is edible, is a fruit, has a skin, has white inside, has a grating texture, has a red color, has a peeling, has a perfume-like flavor, is sweet, grows on trees, has a length, is the ideal fruit, grows in trees"
+apple,74,2100,"is a fruit, is circular, is red, comes in large quantities, is crunchy, is juicy, is sweet, has seeds, is edible, grows on trees, grows in fruit baskets, used to make jellies, is used for baking
+pencil: is an object, is made of wood, is sharpened, has a lead","is a fruit, is circular, is red, comes in large quantities, is crunchy, is juicy, is sweet, has seeds, is edible, grows on trees, grows in fruit baskets, used to make jellies, is used for baking"
+apple,75,2101,"is a fruit, red peel, yellow sap, sweet, red, grows on trees, hard, sour, juicy, is desserts, makes wine, can be eaten
+book: is a medium, is a book, has a cover, has pages, has printing, has words, has words, learned from, written on, read, has pages, has covers, holds information","is a fruit, red peel, yellow sap, sweet, red, grows on trees, hard, sour, juicy, is desserts, makes wine, can be eaten"
+apple,76,2102,"is a fruit, has a sweet flavor, is round, is red, is juicy, is sweet, is edible
+ball: is round, is white, is yellow, is black, is a thing, has a curved surface, has a sphere shape, used for play, is solid, can bounce, can be held, can be thrown, used in games, made of rubber","is a fruit, has a sweet flavor, is round, is red, is juicy, is sweet, is edible"
+apple,77,2103,"is a fruit, is a vegetable, is edible, has seeds, can be eaten
+grapefruit: is an fruit, is an orange, is a citrus fruit, has seeds, has skin, is orange, is acidic, found on trees, has seeds, used for making juice, available in stores
+
+Given the pretty rich training data, these models have learned simple words,","is a fruit, is a vegetable, is edible, has seeds, can be eaten"
+apple,78,2104,"is a fruit, is a plant, is crunchy, is chewable, is sweet, has skin, has seeds, dates back thousands of years, is eaten raw, can be cooked, is used in pies
+cheese: is derived from milk, is a food, is a solid, is a dairy product, is made of protein, comes in various shapes","is a fruit, is a plant, is crunchy, is chewable, is sweet, has skin, has seeds, dates back thousands of years, is eaten raw, can be cooked, is used in pies"
+apple,79,2105,"is a fruit, is a vegetable, is a tree, has a red color, has red cheeks, has a green color, is edible
+furniture: is an object, is made of wood, is made of metal, is made of different materials, is made of many different pieces, is made of various materials, is hard,","is a fruit, is a vegetable, is a tree, has a red color, has red cheeks, has a green color, is edible"
+apple,80,2106,"is a fruit, has sweet taste, has sharp taste, is tart, is edible, eaten with cheese, eaten with meat, is a type of fruit
+book: is a did, is a paperback, is a booklet, is bound, is bound in cloth, is bound in cardboard, is bound in plastic, is paper, is book,","is a fruit, has sweet taste, has sharp taste, is tart, is edible, eaten with cheese, eaten with meat, is a type of fruit"
+apple,81,2107,"is a fruit, is spherical, has core, is sweet, has seeds, is edible, has skin, used in cooking, sold on farms, is a Christmas present, sold in grocery stores
+
+Input: Consider Input: eagle: is a bird, is an animal, is the state bird of Texas, has red legs, hunts with beak, tells time by","is a fruit, is spherical, has core, is sweet, has seeds, is edible, has skin, used in cooking, sold on farms, is a Christmas present, sold in grocery stores"
+apple,82,2108,"is a fruit, has a skin, has seeds, can be eaten, has a sour taste, has a sweet taste, is edible, has a juicy texture, has a crisp texture, is round, has a red color, blooms in spring, can be pickled, can be cooked, made into cider
+launch: is a process, is an event,","is a fruit, has a skin, has seeds, can be eaten, has a sour taste, has a sweet taste, is edible, has a juicy texture, has a crisp texture, is round, has a red color, blooms in spring, can be pickled, can be cooked, made into cider"
+apple,83,2109,"is a fruit, is a tree, is rounded, is red, is green, is yellow, has seeds, used for cooking, has a stem, used for creating apple pillows, is edible
+soap: is a detergent, makes things cleaner, is clingy, lathers, bubble emerges, makes dirt white, has a willow tree, used by laundromat, used for","is a fruit, is a tree, is rounded, is red, is green, is yellow, has seeds, used for cooking, has a stem, used for creating apple pillows, is edible"
+apple,84,2110,"is a fruit, is a _kind of fruit_, has an exterior skin, is yellow, is round, is sweet, is edible, is delicious, is crunchy, is a tree, is tart, is eatin, is juicy, has organic acids, cooks well
+ham: is a meat, is pork, is smoked, is edible,","is a fruit, is a _kind of fruit_, has an exterior skin, is yellow, is round, is sweet, is edible, is delicious, is crunchy, is a tree, is tart, is eatin, is juicy, has organic acids, cooks well"
+apple,85,2111,"is a fruit, is sweet, is golden, is round, has red skin, has fur, has fuzz, can be sliced, can be eaten, store on shelves, needs trees
+hamburger: is a dish, is a food, made of beef, cooked, have meat, have cheese, eat with bread, eat with onions, eat with french fries,","is a fruit, is sweet, is golden, is round, has red skin, has fur, has fuzz, can be sliced, can be eaten, store on shelves, needs trees"
+apple,86,2112,"is a fruit, is edible, has skin, is round, has a core, has a stem, has seeds, grows on trees, is tart, is juicy, is sweet, says good morning, falls to earth, is a perch, found in fruit salad, eaten raw, eaten in pies
+church: is a building, has doors,","is a fruit, is edible, has skin, is round, has a core, has a stem, has seeds, grows on trees, is tart, is juicy, is sweet, says good morning, falls to earth, is a perch, found in fruit salad, eaten raw, eaten in pies"
+apple,87,2113,"is an fruit, is a food, is edible, is sweet, has acidic flavor, has a peel, has seeds, has a stem, is a plant, has a tree, has starch, has sugar
+sheep: is a animal, is a mammal, is a domesticated animal, is farmed, is raised, is hunted, is a pet, chews cud","is an fruit, is a food, is edible, is sweet, has acidic flavor, has a peel, has seeds, has a stem, is a plant, has a tree, has starch, has sugar"
+apple,88,2114,"is a fruit, is edible, is sweet, is juicy, has seeds, has a core, has a skin, has tart taste, has crunchy texture, is red, is golden
+church: is a building, is an organization, has a nave, has an altar, has a roof, has a spire, has a dome, has a cathedral","is a fruit, is edible, is sweet, is juicy, has seeds, has a core, has a skin, has tart taste, has crunchy texture, is red, is golden"
+apple,89,2115,"is a fruit, is edible, is sweet, has seeds, grows on trees, has fuzzy skin, has red skin, has green skin, has spots, is tall, is round, is small, is juicy, is sweet, grows on trees, found in trees
+bowl: is circular, has a large diameter, holds things, can be sweet, is a container, is","is a fruit, is edible, is sweet, has seeds, grows on trees, has fuzzy skin, has red skin, has green skin, has spots, is tall, is round, is small, is juicy, is sweet, grows on trees, found in trees"
+apple,90,2116,"is a fruit, is a plant, is edible, has a peel, has seeds, has a tree, has a core, has a crunch, is hard, is juicy, has a smell, has a taste, eats bees, is sweet
+antenna: is an appliance, is a gadget, is a device, is a part of a radio, is a","is a fruit, is a plant, is edible, has a peel, has seeds, has a tree, has a core, has a crunch, is hard, is juicy, has a smell, has a taste, eats bees, is sweet"
+apple,91,2117,"is a fruit, has a red or green color, is sweet, has a round shape, has a scabbed skin, grows on trees, has a high acid content, is good to eat, is sold for money, cooked in pie, is eaten raw, made into juice, stored in a cupboard, has a crisp texture","is a fruit, has a red or green color, is sweet, has a round shape, has a scabbed skin, grows on trees, has a high acid content, is good to eat, is sold for money, cooked in pie, is eaten raw, made into juice, stored in a cupboard, has a crisp texture"
+apple,92,2118,"is a fruit, is a crop, red color, sweet flavor, has seeds, green color, golden color, color changes, has seed coat, round shape, bright color, has one seed, is edible
+bee: is an insect, lays eggs, is a beehive, makes honey, stings, has stingers, is a colony, is a hive, has wings, is","is a fruit, is a crop, red color, sweet flavor, has seeds, green color, golden color, color changes, has seed coat, round shape, bright color, has one seed, is edible"
+apple,93,2119,"is a fruit, is ripe, is sweet, is juicy, has a hard peel, has a mild taste, is tasty, is sweet, has seeds, grows on trees, is blue, is sweet, has a rough peel, has a core, is edible, is yellow
+distribution: is a subject area, is a division, is a school, is a college,","is a fruit, is ripe, is sweet, is juicy, has a hard peel, has a mild taste, is tasty, is sweet, has seeds, grows on trees, is blue, is sweet, has a rough peel, has a core, is edible, is yellow"
+apple,94,2120,"is a fruit, is a food, is edible, is sweet, is red, is round, grows on trees, has a tree trunk, has a pit, has a core, can be made into juice, can be made into wine
+
+So the input is a word followed by a comma-separated list of properties, and the output is a list of line(s) where the","is a fruit, is a food, is edible, is sweet, is red, is round, grows on trees, has a tree trunk, has a pit, has a core, can be made into juice, can be made into wine"
+apple,95,2121,"is a fruit, has red skin, has a white inside, has seeds, is rounded, is tart, is sweet, grows on a tree, made into jello
+hen: is a bird, lays eggs, feeds chickens, is not very tall, lays white eggs, makes a noise, eats worms, lays brown eggs, is domesticated, found in barnyards,","is a fruit, has red skin, has a white inside, has seeds, is rounded, is tart, is sweet, grows on a tree, made into jello"
+apple,96,2122,"is a fruit, is a food, has skin, has seeds, is sweet, is round, is edible, green apple is green, is on tree
+cow: is a mammal, gives milk, is a domestic animal, used by people for food, has four legs, has horns, is red, is brown, is gray, is black, is large, breeds calves, is edible,","is a fruit, is a food, has skin, has seeds, is sweet, is round, is edible, green apple is green, is on tree"
+apple,97,2123,"has seeds, is round, is sweet, is red, is a fruit, is edible, is a tree, can be made into juice, has downy appearance, is yellow, made into jam, edible, is green, cultivated, is tart, is crunchy, is sold in fruit markets
+coffee: grows on plants, is hot, put in cups, has beans","has seeds, is round, is sweet, is red, is a fruit, is edible, is a tree, can be made into juice, has downy appearance, is yellow, made into jam, edible, is green, cultivated, is tart, is crunchy, is sold in fruit markets"
+apple,98,2124,"is a fruit, is red, has a peel, is round, has a stem, is hard, is tart, is sweet, has tartness, has sweetness, grows on trees, grows in summer, is core, is fleshy, tastes bitter, tastes sour, tastes sour and bitter, used to make apple juice, used to","is a fruit, is red, has a peel, is round, has a stem, is hard, is tart, is sweet, has tartness, has sweetness, grows on trees, grows in summer, is core, is fleshy, tastes bitter, tastes sour, tastes sour and bitter, used to make apple juice, used to"
+apple,99,2125,"is a fruit, is edible, is juicy, is sometimes on trees, is sometimes red, has seeds, being sold
+city: human population size is large, human population size is small, humans are in it, humans live in it, has many buildings, has a cathedral, has a library, has a museum, has a park, has a university, is a compact human","is a fruit, is edible, is juicy, is sometimes on trees, is sometimes red, has seeds, being sold"
+happiness,0,2026,"is an emotion, made of feelings, is a subjective feeling, is a transitory emotion, is an optimistic feeling, is a positive feeling, absence of sadness, is pleasurable, is a sensation of well-being
+HCK: is a company, serves customers, sells products, makes money, competes, does business, supplies services, functions, maintains a headquarters","is an emotion, made of feelings, is a subjective feeling, is a transitory emotion, is an optimistic feeling, is a positive feeling, absence of sadness, is pleasurable, is a sensation of well-being"
+happiness,1,2027,"is a state of mind, is different for each person, is sometimes possible, is difficult to find, is subjective, made of moods, is final, is internal, has different causes, measured by psychometric tests
+cow: is an animal, has legs, is furry, is four legged, is a mammal, is hairy, has horns, is i","is a state of mind, is different for each person, is sometimes possible, is difficult to find, is subjective, made of moods, is final, is internal, has different causes, measured by psychometric tests"
+happiness,2,2028,"is a state of mind, is felt by people, is a sensation, is subjective, is transient, is state of joy, is mood, is single pursuit
+leopard:: is a feline, is a mammal, is big, has spots, is predator, in nature hunts for food, popular in zoo, has long legs, its stripes are invisible when it","is a state of mind, is felt by people, is a sensation, is subjective, is transient, is state of joy, is mood, is single pursuit"
+happiness,3,2029,"is happiness, is emotion, is a feeling, is a mood, is positive, is beneficial, is valued, is pursuit, is a goal, is ideal, benefits people, requires love, is subjective, is pleasure
+
+Give me a chance to undertake elimination of properties which are applicable to more than one thing. Here are some examples and justifications.","is happiness, is emotion, is a feeling, is a mood, is positive, is beneficial, is valued, is pursuit, is a goal, is ideal, benefits people, requires love, is subjective, is pleasure"
+happiness,4,2030,"is an emotion, is a good thing, is a feeling
+author: is a person, writes books, writes papers","is an emotion, is a good thing, is a feeling"
+happiness,5,2031,"is a feeling, is an emotion, is subjective, is temporary, has positive valence, is an aesthetic, is induced by culture, effects other people, is subjective, is a state, is a condition, is experienced, is a state of mind
+cow: chews fodder, is a mammal, grazes, is an animal, is a living thing, has","is a feeling, is an emotion, is subjective, is temporary, has positive valence, is an aesthetic, is induced by culture, effects other people, is subjective, is a state, is a condition, is experienced, is a state of mind"
+happiness,6,2032,"is a feeling, to feel happy, is a positive emotion, is a mood, is temporary, is short-lived, short lived, is a state of being, is desirable, is felt, is a human quality, is mental, measurable, unaddressed, intangible, immoral, hereditary
+bill: is a punctuation mark, is a symbol, is a letter, is","is a feeling, to feel happy, is a positive emotion, is a mood, is temporary, is short-lived, short lived, is a state of being, is desirable, is felt, is a human quality, is mental, measurable, unaddressed, intangible, immoral, hereditary"
+happiness,7,2033,"is a feeling, is wishful, is good, is want, is has, is absence
+
+Task 4
+
+In this task, you given the name of a list or a set of things and a word or a phrase, ask what could have been the ""omitted"" attribute of (or property belonging to) the list (i.e., for the","is a feeling, is wishful, is good, is want, is has, is absence"
+happiness,8,2034,"is a feeling, is an emotion, is a mood, lasts throughout time, is fleeting, good, bad, very important, is mostly positive, comes in degrees, is varied, is often felt, is subjective
+stochastic: is a method, is a process, is a type of process, is a way, is a way, is a method, is","is a feeling, is an emotion, is a mood, lasts throughout time, is fleeting, good, bad, very important, is mostly positive, comes in degrees, is varied, is often felt, is subjective"
+happiness,9,2035,"is a personal emotion, is an occurence, is felt, is a given, has a short duration, is negative
+The word 'this' has the following properties:
+Fives 22, would fit well in shoes, is two letters long, is uppercase, is a word
+>>> this: is an adjective, verb, pronoun, preposition, conjunction, e","is a personal emotion, is an occurence, is felt, is a given, has a short duration, is negative"
+happiness,10,2036,"is a feeling, is a state of mind, lasts seconds, is a state, is a condition, is an emotion, is a mood, is a state of mind, lasts seconds, is a condition, is an emotion, is a mood, lasts seconds, is an emotion, is a mood, lasts seconds
+bouquet: is a flower composition, consists o","is a feeling, is a state of mind, lasts seconds, is a state, is a condition, is an emotion, is a mood, is a state of mind, lasts seconds, is a condition, is an emotion, is a mood, lasts seconds, is an emotion, is a mood, lasts seconds"
+happiness,11,2037,"is a feeling, is a sickness, is essential, has a cause, has a result, is subjective, is in a mind, is from childhood, is increased by money, is decreased by money, is increased by charity, is decreased by charity, is measured by a questionnaire
+beer: is a drink, has a beer pot, is alcoholic, is a beverage, is a liquid","is a feeling, is a sickness, is essential, has a cause, has a result, is subjective, is in a mind, is from childhood, is increased by money, is decreased by money, is increased by charity, is decreased by charity, is measured by a questionnaire"
+happiness,12,2038,"is a feeling, is a state, is an emotion, is a mood, is a subjective experience, needs to be achieved, is difficult to achieve, is a goal, has different degrees, is the absence of pain, is the absence of fear, is a good, is self-satisfying, leads to fulfillment, is something desirable, is something","is a feeling, is a state, is an emotion, is a mood, is a subjective experience, needs to be achieved, is difficult to achieve, is a goal, has different degrees, is the absence of pain, is the absence of fear, is a good, is self-satisfying, leads to fulfillment, is something desirable, is something"
+happiness,13,2039,"is an emotion, is a feeling, makes you smile, causes excitement, is an inner state, unobtainable, personal, felt by people
+soccer: is a sport, played outdoors, is popular, in a ball, involves two teams, involves kicking a ball, is a team sport, involves running, is a field sport, involves tackling, is bouncy","is an emotion, is a feeling, makes you smile, causes excitement, is an inner state, unobtainable, personal, felt by people"
+happiness,14,2040,"is nice, is good, is positive, is good for you, is happiness, good for people, good for yourself, good for society
+garden: is in the outdoors, is green, has vegetables, has flowers, has plants, has fruits, is colorful, has grass, is outside, has soil, is green vegetation, grows food, is natural, is indoors,","is nice, is good, is positive, is good for you, is happiness, good for people, good for yourself, good for society"
+happiness,15,2041,"feels happy, works towards goals, is selffulfilling, s linked with success, leads to self-satisfaction, is a status symbol, makses people feel good, is a goal
+lgbt: has flirty guys, has famous homosexual people, is a lifestyle, is highly visible, has gatherings, has internet communities, has political groups, wedding culture,","feels happy, works towards goals, is selffulfilling, s linked with success, leads to self-satisfaction, is a status symbol, makses people feel good, is a goal"
+happiness,16,2042,"is an emotion, is a feeling, is a mood, has no reason, is subjective, has types, is positive, is via pleasure, can be positive and negative, is often improved, healthy emotions, is sought after, is short lived
+tantrum: is a mood, is a feeling, is an emotion, is messy, is negative, is destructive, is dangerous","is an emotion, is a feeling, is a mood, has no reason, is subjective, has types, is positive, is via pleasure, can be positive and negative, is often improved, healthy emotions, is sought after, is short lived"
+happiness,17,2043,"is an emotion, is a state of mind, is a human emotion, is a feeling, has a positive emotion, is a pleasurable state, brings enjoyment, is subjective
+byzantine: is a style of art, is a period in history, time lasted from 490 to 1453, is Greek, is Eastern Orthodox, art was church-them","is an emotion, is a state of mind, is a human emotion, is a feeling, has a positive emotion, is a pleasurable state, brings enjoyment, is subjective"
+happiness,18,2044,"is a feeling, is a state of mind, is a void, is an emotion, gives joy, is a physical sensation, is a mood, is a mental state, has no physical basis, is subjective, cannot be seen, is a state of being happy, is a state of being contented
+vampire: is a humanoid, drinks blood, bites human,","is a feeling, is a state of mind, is a void, is an emotion, gives joy, is a physical sensation, is a mood, is a mental state, has no physical basis, is subjective, cannot be seen, is a state of being happy, is a state of being contented"
+happiness,19,2045,"is an emotion, is a feeling, leads to pleasure, requires love, is a human experience
+A big cat: is a mammal, has fur, is a cat, is a domestic cat, is a big cat
+A wise individual: is an individual, knows many things, is good at math, is good at reading, is a scholar
+A smart individual: is","is an emotion, is a feeling, leads to pleasure, requires love, is a human experience"
+happiness,20,2046,"is a state, is important, is a subjective feeling, is emotional, is felt by humans, is felt by animals, is happiness, is affected by events, is related to luck
+peace: is a state, is a peaceful society, is a goal, is a goal for countries, is sought by governments, is sought over time, is a dream, is felt by individuals","is a state, is important, is a subjective feeling, is emotional, is felt by humans, is felt by animals, is happiness, is affected by events, is related to luck"
+happiness,21,2047,"is a feeling, is positive, is a mood
+
+Reflection:
+
+Line 1. For items like ""duck,"" or a physical thing, ""is a bird, is an animal, waddles, flies, migrates, lays eggs, quacks, swims, has wings, has a beak, has webbed feet, has feathers, lives in ponds, lives i","is a feeling, is positive, is a mood"
+happiness,22,2048,"is a feeling, is a mood, has a positive emotion
+ambulance: is a vehicle, has sirens, is emergency, has lights, has flashing lights, helps people
+degenerate: is to change, is to lose, is to do something bad, hurt lungs, drops blood pressure, makes muscles stronger, lowers heart rate
+
+Is this the right approach,","is a feeling, is a mood, has a positive emotion"
+happiness,23,2049,"has friends, is good, is pleasant, has pleasure, is nice, is satisfying, has short-term benefits, has a smile, is beneficial, is important, has value, makes you happy, makes you smile
+printer: has keyboard, has buttons, is electrical, makes things, outputs text, outputs images, outputs documents, has paper, has ink, has a ton","has friends, is good, is pleasant, has pleasure, is nice, is satisfying, has short-term benefits, has a smile, is beneficial, is important, has value, makes you happy, makes you smile"
+happiness,24,2050,"is a feeling, is a sensation, is pleasant, is positive, is a state of mind, is intrinsic, is subjective, subjectively pleasant, valued by society, gets better the higher you get, is a goal, is an emotion, has it's own rules
+mais: is a plant, has a delicous taste, is edible
+
+[Passage","is a feeling, is a sensation, is pleasant, is positive, is a state of mind, is intrinsic, is subjective, subjectively pleasant, valued by society, gets better the higher you get, is a goal, is an emotion, has it's own rules"
+happiness,25,2051,"is a state of mind, is diffcult to achieve, is diffcult to defne, is diffcult to measure
+lemon: is a fruit, is sweet, is sour, is used in cooking, grows on trees, used in making lemonade, used in drinks, used as a desserts, is edible
+","is a state of mind, is diffcult to achieve, is diffcult to defne, is diffcult to measure"
+happiness,26,2052,"is a feeling, is a feeling, is a mood, is a concept, is an emotion, is subjective, is intangible, is abstract
+lobster: is a crustacean, is a sea animal, is red, is food, is eaten, is caught, is saltwater, is delicious, is crawly
+digitally encoded: is an information representation, is","is a feeling, is a feeling, is a mood, is a concept, is an emotion, is subjective, is intangible, is abstract"
+happiness,27,2053,"is an emotion, is a state of mind, good, is good
+banana: is a fruit, has a yellow peel, is edible, round, has a wrist, long, has a body, is sweet, is brown, can be eaten raw, grows on a tree, tropical, is green
+value: usually a good thing, achievement, is abstract, can be measured","is an emotion, is a state of mind, good, is good"
+happiness,28,2054,"is an emotion, is a feeling, always exists, is a never ending state of mind, can be present, is unquenchable, is different for everyone, is one of the basic things in life, is a good thing, differs from person to person, can make your day, lasts but few moments, has multiple forms, is a reflection of yourself","is an emotion, is a feeling, always exists, is a never ending state of mind, can be present, is unquenchable, is different for everyone, is one of the basic things in life, is a good thing, differs from person to person, can make your day, lasts but few moments, has multiple forms, is a reflection of yourself"
+happiness,29,2055,"is a feeling, is a state, is an emotion, is an experience, is a mood, feelings are a thing, is transient, is a mental state, makes you feel good, is a state of mind, helps with stress, is an experience, is positive
+
+gum: is a material, is a substance, is a solid, is sticky, is yellow,","is a feeling, is a state, is an emotion, is an experience, is a mood, feelings are a thing, is transient, is a mental state, makes you feel good, is a state of mind, helps with stress, is an experience, is positive"
+happiness,30,2056,"is a feeling, is a mood, makes you smile, gives you joy, energy, makes you cheer, makes you feelfuller
+<?php
+
+if( !isset( $_GET['phrase'] ) )
+{
+    header( 'Location: ?phrase' );
+}
+
+$phrase = $_GET['phrase'];
+
+$phrase_words = explode( ' ', $phrase );
+$phrase_lines = array();
+","is a feeling, is a mood, makes you smile, gives you joy, energy, makes you cheer, makes you feelfuller"
+happiness,31,2057,"is a feeling, is an emotion, is experienced by most people, is beneficial, is for pleasure, is important, is for survival, is idealistic
+
+not a valid answer:
+
+happiness is very rare, a very rare
+happiness is a no-party","is a feeling, is an emotion, is experienced by most people, is beneficial, is for pleasure, is important, is for survival, is idealistic"
+happiness,32,2058,"is a state, is a feeling, involves pleasure, is positive, involves enjoyment, is good, is fun, is emotional, is mental, is a state of wellbeing, is a state of mind, is an emotion, is a mood, involves wellbeing
+water: is in rivers, is in oceans, is in lakes, is in seas, covers most o","is a state, is a feeling, involves pleasure, is positive, involves enjoyment, is good, is fun, is emotional, is mental, is a state of wellbeing, is a state of mind, is an emotion, is a mood, involves wellbeing"
+happiness,33,2059,"happiness is a state of mind where one is happy, causes joy, is a feeling, is something good, makes one feel good
+parrot: parrot is a bird, is green, flies, is red, has beak, has feathers, has wings, has long tail, has legs, is a pet, is noisy, is psittacines, likes food,","happiness is a state of mind where one is happy, causes joy, is a feeling, is something good, makes one feel good"
+happiness,34,2060,"usually felt as pleasure and joy, is an emotion, can feel better, usually positive, felt by people, can be bad, can be extreme, felt by oneself, cannot be talked about
+flower: is a thing, is a plant, has colorful petals, has beautiful petals, blooms in spring, has a petal, has a pod, is found i","usually felt as pleasure and joy, is an emotion, can feel better, usually positive, felt by people, can be bad, can be extreme, felt by oneself, cannot be talked about"
+happiness,35,2061,"is a feeling, is a mood, is positive, is an emotion, is desirable, is a reward, is a state, lasts for a short time, is temporary, is an overall state of mind, can be achieved, is subjective, is not stable, has dramatic climaxes, is fleeting, is an objective state of well being, is subjective
+kh","is a feeling, is a mood, is positive, is an emotion, is desirable, is a reward, is a state, lasts for a short time, is temporary, is an overall state of mind, can be achieved, is subjective, is not stable, has dramatic climaxes, is fleeting, is an objective state of well being, is subjective"
+happiness,36,2062,"is a feeling, is an experience, is a concept, can be experienced, is an emotion, is subjective, appears in literature, can be achieved, can be experienced by animals, is a human emotion, has many definitions, can be surreal, can be defined by people","is a feeling, is an experience, is a concept, can be experienced, is an emotion, is subjective, appears in literature, can be achieved, can be experienced by animals, is a human emotion, has many definitions, can be surreal, can be defined by people"
+happiness,37,2063,"has mood, is a state of mind, is emotional, is relatiional, involves others, involves feeling good, involves conversation
+get: has a verb, is an activity, takes two objects, uses two arguments, is an action, is transitive, requires two things, involves a first and second person, requires an object and a subject, has ","has mood, is a state of mind, is emotional, is relatiional, involves others, involves feeling good, involves conversation"
+happiness,38,2064,"is a feeling, is a mood, is an emotion, is a state of mind, is desirable, makes you happy
+play: is a leisure, is a verb, is an act, is an action, is an activity, is a sports, is a pastime, is an occupation, is a work, is a hobby, is an activity, is","is a feeling, is a mood, is an emotion, is a state of mind, is desirable, makes you happy"
+happiness,39,2065,"is a feeling, is positive, perceived, subjective, is an emotion, is experienced, is subjective, lasts a while, can be expressed verbally, cannot be doled, is an emotion, good, intangible, is difficult to define, is good, is having ecstasy, is a mood, is transitory, can be feeling butterflies
+bottle","is a feeling, is positive, perceived, subjective, is an emotion, is experienced, is subjective, lasts a while, can be expressed verbally, cannot be doled, is an emotion, good, intangible, is difficult to define, is good, is having ecstasy, is a mood, is transitory, can be feeling butterflies"
+happiness,40,2066,"is an emotion, is positive, makes people happy, is felt, is good, is subjective, is attained
+
+Q: ice_skating: is an ice sport, is on the ice, is a sport, requires skill, is fast, is competitive, is winter sport, requires equipment
+
+Move the colored plane on a square grid, keeping the plane on the grid, t","is an emotion, is positive, makes people happy, is felt, is good, is subjective, is attained"
+happiness,41,2067,"is a state of mind, is desirable, is a worthwhile goal, is subjective, has no definitive measurement, is impossible to quantify, is a feeling, is fugitive, is elusive, is transitory, is multifaceted, is universal, is pleasurable, is characterized by optimism, is characterized by joy, is characterized by positive thoughts, is characterized by well-being
+bun","is a state of mind, is desirable, is a worthwhile goal, is subjective, has no definitive measurement, is impossible to quantify, is a feeling, is fugitive, is elusive, is transitory, is multifaceted, is universal, is pleasurable, is characterized by optimism, is characterized by joy, is characterized by positive thoughts, is characterized by well-being"
+happiness,42,2068,"is an emotion, is a mood, is a feeling, is a subjective state, is a sensation, is a feeling, is a psychological state, is a condition, is a mental state, is a state of consciousness, is a mood, is a mental experience, is an emotion, is a concept, is a subjective state, is an abstract concept
+table tennis: is","is an emotion, is a mood, is a feeling, is a subjective state, is a sensation, is a feeling, is a psychological state, is a condition, is a mental state, is a state of consciousness, is a mood, is a mental experience, is an emotion, is a concept, is a subjective state, is an abstract concept"
+happiness,43,2069,"is a feeling, is a condition, is an experience, gives joy, is shared, is comprehended, is a low frequency vibe
+drunk: behaves socially indecently, turns on a light, is a jab when said by a male, injures himself, moves unsteadily, expresses that he would like to go to bed, loiters","is a feeling, is a condition, is an experience, gives joy, is shared, is comprehended, is a low frequency vibe"
+happiness,44,2070,"is a feeling, is a state, is a mood, is an emotion, is a state of mind, is difficult to achieve, last a short time, is foolish, is fleeting, is fleeting
+
+In this task, you are given a public comment from online platforms. You are expected to classify the comment into two classes: threat and non-thr","is a feeling, is a state, is a mood, is an emotion, is a state of mind, is difficult to achieve, last a short time, is foolish, is fleeting, is fleeting"
+happiness,45,2071,"has a pleasure feeling, has a good feeling, changes from time to time, changes content, has a stable meaning, serves people, is influenced by relationships, is influenced by health, is influenced by age, depends on money, is influenced by work
+
+ Input: cotton
+ Output:
+is an origin, is a fiber, is a plant, cotton fibers have a natural color,","has a pleasure feeling, has a good feeling, changes from time to time, changes content, has a stable meaning, serves people, is influenced by relationships, is influenced by health, is influenced by age, depends on money, is influenced by work"
+happiness,46,2072,"is a state, is a feeling, is a mood, is a state of mind, is a subjective experience, is a general well-being, is an emotion, is an affective state, is experienced in goals, is experienced in desires, is experienced in needs, is experienced in wants, every human experience is experiencing happiness, every human is experiencing happiness at least once","is a state, is a feeling, is a mood, is a state of mind, is a subjective experience, is a general well-being, is an emotion, is an affective state, is experienced in goals, is experienced in desires, is experienced in needs, is experienced in wants, every human experience is experiencing happiness, every human is experiencing happiness at least once"
+happiness,47,2073,"is a feeling, describes emotions, feels good, improves mood, makes happy, promoted by music, promoted by food, promoted by exercise, promoted by friends, feels beautiful feeling, lives with others, causes pain
+victory: describes relationships, describes people, describes winning, describes emotions, describes winning, describes progress, describes situations, involves other people, involves competition, involves failure, involves effort,","is a feeling, describes emotions, feels good, improves mood, makes happy, promoted by music, promoted by food, promoted by exercise, promoted by friends, feels beautiful feeling, lives with others, causes pain"
+happiness,48,2074,"has to do with emotional state, has to do with social relationships, involves a feeling of contentment, involves positive feelings, good for mental health, important for life satisfaction, good for mental health, lessen stress, good for a person's sense of well-being
+purge: has to do with elimination, has to do with remembering something,","has to do with emotional state, has to do with social relationships, involves a feeling of contentment, involves positive feelings, good for mental health, important for life satisfaction, good for mental health, lessen stress, good for a person's sense of well-being"
+happiness,49,2075,"is a state, is a feeling, is experienced by humans, found in life, is subjective, is fleeting, is difficult to define, is widely desired, is increased by luck
+meerkat: is a mammal, is a critter, is a predator, is a ground dwelling animal, is shy, is curious, has black fur, has white fur,","is a state, is a feeling, is experienced by humans, found in life, is subjective, is fleeting, is difficult to define, is widely desired, is increased by luck"
+happiness,50,2076,"is a feeling, is emotional, is positive, has influence on happiness, is subjective, is psychological, is a concept, is well-being, leads to satisfaction, is universal, is in the soul, is good, is a state, is a mood, is an emotion, is measured by scale, is a passion
+car: is a vehicle, is used to","is a feeling, is emotional, is positive, has influence on happiness, is subjective, is psychological, is a concept, is well-being, leads to satisfaction, is universal, is in the soul, is good, is a state, is a mood, is an emotion, is measured by scale, is a passion"
+happiness,51,2077,"has value, is pleasant, is a feeling, is subjective, is a state of mind, is experienced by people, is a concept,","has value, is pleasant, is a feeling, is subjective, is a state of mind, is experienced by people, is a concept,"
+happiness,52,2078,"is a feeling, is an emotion, is pleasant, is negative, is positive, always ""happy""
+mountain: is the highest, is a natural environment, is a natural object, is tall, is a topographic feature, is a landform, is a geographic landform, has peaks, is a land area, is a physical geographic feature, has valleys
+string: is a","is a feeling, is an emotion, is pleasant, is negative, is positive, always ""happy"""
+happiness,53,2079,"has a name, is an emotion, is an experience, is a feeling, is biological, is psychological, is physiological, has feelings, is a human, is psychological, is desirable, is momentary
+income tax: is a tax, is a tax on earnings, is a tax on income, is part of the U.S. tax system, falls on income earned,","has a name, is an emotion, is an experience, is a feeling, is biological, is psychological, is physiological, has feelings, is a human, is psychological, is desirable, is momentary"
+happiness,54,2080,"is an emotion, is pleasure, felt in the brain, and a positive feeling
+giant: is an animal, lives in trees, has big feet, has big eyes, is thick, attacks, has a big mouth, has a trunk, has big ears, has bark, is scary, is skinny, has big antears
+Garderella","is an emotion, is pleasure, felt in the brain, and a positive feeling"
+happiness,55,2081,"is a state of mind, is a feeling, is positive, is helpful, is good, is supruman, is very rare, not understood, not defined
+protracted_conflict: is civil war, causes death, costs money, causes terror
+Table 4. Examples of statements in the AlphaScript dataset.
+Table 4. Examples","is a state of mind, is a feeling, is positive, is helpful, is good, is supruman, is very rare, not understood, not defined"
+happiness,56,2082,"is a feeling, has no colour, lasts a long time, has a smile, is a mood, is important, is foolish, is a mood, is something everyone feels, is other's expectations, is a mental state, is a feeling, lasts forever, has no cause
+paper: is flat, is cheap, is abundant, made of cellulose, is used for writing, can be","is a feeling, has no colour, lasts a long time, has a smile, is a mood, is important, is foolish, is a mood, is something everyone feels, is other's expectations, is a mental state, is a feeling, lasts forever, has no cause"
+happiness,57,2083,"is a feeling, is a mood, makes you feel good, is a emotion, feels fulfilled, is a state of mind, is a state of consciousness, is temporary, results from fulfillment, affects personality, full of joy, leads to success, is determined by values, can last a few seconds, leads to personal fulfillment, enables a person to do","is a feeling, is a mood, makes you feel good, is a emotion, feels fulfilled, is a state of mind, is a state of consciousness, is temporary, results from fulfillment, affects personality, full of joy, leads to success, is determined by values, can last a few seconds, leads to personal fulfillment, enables a person to do"
+happiness,58,2084,"is a kind of emotion, is a feeling, is a mood, is a psychological state, is a sensation, is positive, feelings are subjective, is pleasant, is subjective, is a state of mind, is innate
+printer: is an appliance, is a machine, is mechanical, is a copier, is a copier printer, makes copies, prints documents, prints","is a kind of emotion, is a feeling, is a mood, is a psychological state, is a sensation, is positive, feelings are subjective, is pleasant, is subjective, is a state of mind, is innate"
+happiness,59,2085,"is a feeling, is a human emotion, is a subjective feeling, is a state of spiritual awareness, involves a social object, involves an individual object, presence of joy, lacks negative feelings, involves a psychological object
+erosion: softens materials, leads to material wear, causes physical damage, results from physical force, leads to physical change, can cause material ","is a feeling, is a human emotion, is a subjective feeling, is a state of spiritual awareness, involves a social object, involves an individual object, presence of joy, lacks negative feelings, involves a psychological object"
+happiness,60,2086,"is an emotion, is a feeling, you feel happy, is a positive feeling, positive, positive emotion, sense of well-being, good feeling, positive emotion, temporary, will usually pass
+
+What kind of object is it? | What property is it?
+significant attributes are: bird, is a bird, waddles, has wings, has a beak, hunted by","is an emotion, is a feeling, you feel happy, is a positive feeling, positive, positive emotion, sense of well-being, good feeling, positive emotion, temporary, will usually pass"
+happiness,61,2087,"is a feeling, is a subjective emotion, is a noun, cannot be seen, is experienced internally, is difficult to define
+
+Please provide responses in the same format as demonstrated in the examples.
+This is a lab response answer:
+A banana
+Humans have been cultivating bananas for over 7,000 years, making them the most consumed fruit in the world","is a feeling, is a subjective emotion, is a noun, cannot be seen, is experienced internally, is difficult to define"
+happiness,62,2088,"missing, undertandable, feels easier over time, quiet, self-sustaining, requires a little help, is difficult to put into words
+
+In this task, you are given a sentence in the Romanian language. Your job is to translate the Romanian sentence into the English language.
+Stanierul nu me răspunde după ","missing, undertandable, feels easier over time, quiet, self-sustaining, requires a little help, is difficult to put into words"
+happiness,63,2089,"is a feeling, is an emotion, is felt, lasts seconds, lasts minutes, lasts hours, lasts periods of time, varies in intensity, varies among people, lasts a lifetime, related to pleasure
+public: is a noun, has mass, is countable, is used in phrases, is used in sentences, is used in phrases
+cat: is ","is a feeling, is an emotion, is felt, lasts seconds, lasts minutes, lasts hours, lasts periods of time, varies in intensity, varies among people, lasts a lifetime, related to pleasure"
+happiness,64,2090,"is an emotion, is happiness, is a feeling, is joy, is pleasure, causes elation, causes euphoria, causes feeling of satisfaction, causes good mood, causes gratefulness, is felt, is pleasant, is a positive feeling
+
+Each line in this dataset is a comma-separated list of properties of a specific word. I want to make","is an emotion, is happiness, is a feeling, is joy, is pleasure, causes elation, causes euphoria, causes feeling of satisfaction, causes good mood, causes gratefulness, is felt, is pleasant, is a positive feeling"
+happiness,65,2091,"is a feeling, is experienced, is positive, is pleasure, is emotion, is good feeling, is transient, is short term, is state of mind, is affective, is understood, is subjective, felt by humans
+soccer: is a sport, is a ball game, is played outdoors, is played on grass, is a team sport, is played by two teams, is played","is a feeling, is experienced, is positive, is pleasure, is emotion, is good feeling, is transient, is short term, is state of mind, is affective, is understood, is subjective, felt by humans"
+happiness,66,2092,"wakes up in the morning, makes one content, makes one happy, is a pleasure, is a feeling that gives one joy, makes one satisfied
+kite: is a toy, is a object, is made of paper, is a thing, can reach heights, parallels the horizon, is high, is blowing in the wind, is at rest, is being pulled
+E","wakes up in the morning, makes one content, makes one happy, is a pleasure, is a feeling that gives one joy, makes one satisfied"
+happiness,67,2093,"is an emotion, is felt, used in poetry, is studied by philosophers, is subjective, is felt from people, is a concept, is a feeling, is a goal, is valued, can be achieved, can be found, can be lost, can be sought, can be felt, is a societal concept, is an abstract concept, is felt by animals, is felt by","is an emotion, is felt, used in poetry, is studied by philosophers, is subjective, is felt from people, is a concept, is a feeling, is a goal, is valued, can be achieved, can be found, can be lost, can be sought, can be felt, is a societal concept, is an abstract concept, is felt by animals, is felt by"
+happiness,68,2094,"is a feeling, is good, is a mood, comes from family, comes from relationship, promotes well-being, promotes health, promotes life, promotes work-life balance, promotes success, increases desire to live, is an emotion, is subjective, reduces pain, reduces stress, reduces loneliness
+hedgehog: is a mammal, is a pet, has a quill, rolls into","is a feeling, is good, is a mood, comes from family, comes from relationship, promotes well-being, promotes health, promotes life, promotes work-life balance, promotes success, increases desire to live, is an emotion, is subjective, reduces pain, reduces stress, reduces loneliness"
+happiness,69,2095,"makes you smile, makes you happy, is a feeling, is a percieved state, always feels good, is an emotion, is complex, is sense of fulfillment, causes positive feelings, is a mood
+bird: has wings, is a type of animal, flies well, is small, is a creature, is agile, has feathers, can be killited,","makes you smile, makes you happy, is a feeling, is a percieved state, always feels good, is an emotion, is complex, is sense of fulfillment, causes positive feelings, is a mood"
+happiness,70,2096,"is a kind of emotion, makes you feel good, is subjective, depends on what you think, is temporary, can be felt, is short-term, is pleasant, is momentary, is relative, is personal
+
+Duck, cucumber, stove, happiness
+
+In this task, you will be presented with a question and then a document that gives detailed answer to the question","is a kind of emotion, makes you feel good, is subjective, depends on what you think, is temporary, can be felt, is short-term, is pleasant, is momentary, is relative, is personal"
+happiness,71,2097,"is joy, is a feeling, is a mood, is emotion, is a state of mind, is a pleasure, is a feeling of pleasure, feels good, feels clear
+
+Please answer this question: what plant is oil extracted from to make the food?
+oil","is joy, is a feeling, is a mood, is emotion, is a state of mind, is a pleasure, is a feeling of pleasure, feels good, feels clear"
+happiness,72,2098,"is an emotion, is desirable, is positive, is a state of mind, can be experienced, is good, can be felt, is pleasant, is subjective, depends on context, is experienced in a particular situation, is fleeting, has physical manifestations, depends on personal and environmental factors
+kangaroo: is a mammal, is an animal, hops,","is an emotion, is desirable, is positive, is a state of mind, can be experienced, is good, can be felt, is pleasant, is subjective, depends on context, is experienced in a particular situation, is fleeting, has physical manifestations, depends on personal and environmental factors"
+happiness,73,2099,"obtained grief relief, is an emotion, is a mood, is transitory, feelings better, feel better, go away, used for treating depression, used for stress relief, give people joy, seeks stability, often feel like this, is not physical, is bliss, used by addicts
+
+You should return one valid line after removing a property word that is in none of the","obtained grief relief, is an emotion, is a mood, is transitory, feelings better, feel better, go away, used for treating depression, used for stress relief, give people joy, seeks stability, often feel like this, is not physical, is bliss, used by addicts"
+happiness,74,2100,"has image, is goal, is ideal, is pursuit, is important, is a state, is a feeling
+
+Speaker: You are thinking about a   ?
+
+Generated Samples:
+
+Sue asked, ""Are you thinking about a  ""
+
+Sue asked, ""Are you thinking about a   ?""
+
+Sue asked, ""Are you thinking about a  ?""
+
+§.§ FAQ Section
+
+","has image, is goal, is ideal, is pursuit, is important, is a state, is a feeling"
+happiness,75,2101,"is an emotion, feels happy, feels joyful, feels contented, feels satisfied, is positive, lasts for a while, is fleeting, experienced by people, leads to gratitude, motivates, increases with success, decreases with failure, increases with bad weather
+hypertext: is an HTML document, is a text, is a web page, is compact,","is an emotion, feels happy, feels joyful, feels contented, feels satisfied, is positive, lasts for a while, is fleeting, experienced by people, leads to gratitude, motivates, increases with success, decreases with failure, increases with bad weather"
+happiness,76,2102,"is a feeling, is a mood, lasts a few hours, includes pleasure, involves a number of people, usually lasts a few days
+sunscreen: is a lotion, is for sun protection, protects from skin damage, protects from sunburn, is applied to body
+
+What are the different properties of 'stove'?
+is an appliance","is a feeling, is a mood, lasts a few hours, includes pleasure, involves a number of people, usually lasts a few days"
+happiness,77,2103,"is a feeling, is a mood, is subjective, is emotional, is an emotion, is positive, is an experience, is a state of mind, is valued, is enjoyable, is an objective, is positive, is subjective
+yoga: is a mind-body exercise, is an exercise, done in India, done in places, helps bodies, is","is a feeling, is a mood, is subjective, is emotional, is an emotion, is positive, is an experience, is a state of mind, is valued, is enjoyable, is an objective, is positive, is subjective"
+happiness,78,2104,"is a feeling, is a state of mind, is enjoyable, is a heartfelt emotion, is a positive emotion, is subjective
+
+Input: Consider Input: lion: is a mammal, is an animal, is dangerous, is the king of beasts, is a member of the Felidae family, is a wild cat, is a carnivore, is","is a feeling, is a state of mind, is enjoyable, is a heartfelt emotion, is a positive emotion, is subjective"
+happiness,79,2105,"is a state of mind, is a feeling, is positive, is a mood, decreases with age, can be lost, felt in solitude, felt with others, is desired, is fleeting
+ambulance: is a vehicle, is an emergency vehicle, has emergency lights, has emergency buttons, is used to tend to accidents, is used to","is a state of mind, is a feeling, is positive, is a mood, decreases with age, can be lost, felt in solitude, felt with others, is desired, is fleeting"
+happiness,80,2106,"is an emotion, has a smile, makes you feel good, has feelings, makes you cheerful, makes you feel excited, is a positive emotion, is pleasant, is a mood, is a positive feeling, is a strong emotion, is a state of being, is a state of mind, is a feel.
+airplane: is an aircraft, is a type of","is an emotion, has a smile, makes you feel good, has feelings, makes you cheerful, makes you feel excited, is a positive emotion, is pleasant, is a mood, is a positive feeling, is a strong emotion, is a state of being, is a state of mind, is a feel."
+happiness,81,2107,"is a feeling, is a state of mind, is enjoyable, makes you happy, makes you sad, is difficult to achieve, is real, is fake
+squirrel: is a mammal, is furry, climbs trees, has a tail, is acrobatic, sleeps in trees, is an animal, has four legs, feeds","is a feeling, is a state of mind, is enjoyable, makes you happy, makes you sad, is difficult to achieve, is real, is fake"
+happiness,82,2108,"is a feeling, is a mood, doesn't look like anything, is abstract, is temporary, is emotional, is subjective, involves thoughts, involves dreams
+wind: is a weather phenomenon, is a gas, has a force, changes directions, causes trees to bend, changes temperature, flows through objects, has no weight, creates waves, causes humming
+salamander:","is a feeling, is a mood, doesn't look like anything, is abstract, is temporary, is emotional, is subjective, involves thoughts, involves dreams"
+happiness,83,2109,"is a feeling, is a mood, is a sensation, is an emotion, is positive, is personality trait, is subjective, is an attitude, is a quality.
+measles: is a disorder, is a disease, is contagious, is spread by air, is spread through the air, is spread without contact, is a child disease, is a rash, makes its own vaccine,","is a feeling, is a mood, is a sensation, is an emotion, is positive, is personality trait, is subjective, is an attitude, is a quality."
+happiness,84,2110,"is a feeling, is a state of mind, always desirable, is pleasant, elevates mood, is a sensation, has no cause, is a state of complete health, is the best form of well being, is rare, psychologically very complex, requires mental, social, and physical well being
+maid: is a servant, does cleaning,","is a feeling, is a state of mind, always desirable, is pleasant, elevates mood, is a sensation, has no cause, is a state of complete health, is the best form of well being, is rare, psychologically very complex, requires mental, social, and physical well being"
+happiness,85,2111,"is a feeling, is a mood, is a state of mind, is a goal, is a state of being, lasts a long time, can't be seen, is experienced by everyone, can be felt, doesn't have a body
+congenial: is a adjective, is a noun, is a modifier, is a permanent quality, is a characteristic, is a good trait,","is a feeling, is a mood, is a state of mind, is a goal, is a state of being, lasts a long time, can't be seen, is experienced by everyone, can be felt, doesn't have a body"
+happiness,86,2112,"is a state, is always desired, is positive, is a feeling, is experienced, is achieved, is defined
+soldiers: are people, are men, fight wars, serve in armies, are soldiers, have guns, escort businesses, have bicycles, have horses, have boots, ride horses, fight, are violent, protect, defend, are armed, be brave
+
+S","is a state, is always desired, is positive, is a feeling, is experienced, is achieved, is defined"
+happiness,87,2113,"is an emotion, is a feeling, is inclusive, is beneficial, is intense, is enjoyable, is short-term, is long-term, is common, is abnormal, is positive, has causes, is recurrent, is related to actions, has health benefits, has relationships with others
+Soku, Tsukino, Maejima, Aoi: 's occupation: H","is an emotion, is a feeling, is inclusive, is beneficial, is intense, is enjoyable, is short-term, is long-term, is common, is abnormal, is positive, has causes, is recurrent, is related to actions, has health benefits, has relationships with others"
+happiness,88,2114,"is a feeling, is desired, is positive, is subjective, is psychological, is emotional, is psychological state, is mood, is desirable, is subjective, is emotional state, is attitude, is affective state, is well-being, is worth having, is quality, is state","is a feeling, is desired, is positive, is subjective, is psychological, is emotional, is psychological state, is mood, is desirable, is subjective, is emotional state, is attitude, is affective state, is well-being, is worth having, is quality, is state"
+happiness,89,2115,"is an emotion, causes anxiety, causes depression, causes fear
+gulp: is a gesture, is a sound, makes a noise
+peach: is a fruit, is a vegetable, is an edible, is good for you
+roller coaster: is an attraction, is at amusement parks, has metal tracks, allows you to ride,","is an emotion, causes anxiety, causes depression, causes fear"
+happiness,90,2116,"is a state of mind, is a feeling, is an emotion, is pleasant, is beneficial, is important, is necessary, is valued, is self-fulfilling, can be attained, can be lost
+$30 bill: is money, is cash, is a currency bill, is a dollar, has $30 on it, is a federal reserve note, is short o","is a state of mind, is a feeling, is an emotion, is pleasant, is beneficial, is important, is necessary, is valued, is self-fulfilling, can be attained, can be lost"
+happiness,91,2117,"is a state, is an emotion, is a feeling, is experienced, is a value, is good, is beneficial, increases well-being, is desired, is beneficial, is important, is positive, is important, is felt, improves quality of life, works as a reward, last a moment, lasts a moment
+machete: is a machete, is a weapon","is a state, is an emotion, is a feeling, is experienced, is a value, is good, is beneficial, increases well-being, is desired, is beneficial, is important, is positive, is important, is felt, improves quality of life, works as a reward, last a moment, lasts a moment"
+happiness,92,2118,"is a feeling, is a mood, makes you happy, feels good, is important, is good for you, is difficult, is difficult to have all the time, is a goal
+nurse: is a person, is a female person, is a male person, is a health worker, has a job, has training, has a diploma, has medicine, works in a","is a feeling, is a mood, makes you happy, feels good, is important, is good for you, is difficult, is difficult to have all the time, is a goal"
+happiness,93,2119,"is an emotion, judged by what people do, alters behavior, leads to well-being, affects people all over the world, makes people better, makes people happy, feels good, gives people energy, makes things bad
+myelin: is a substance, found in nervous system, made by glial cells, found in the central nervous system, found in the peripheral nervous system","is an emotion, judged by what people do, alters behavior, leads to well-being, affects people all over the world, makes people better, makes people happy, feels good, gives people energy, makes things bad"
+happiness,94,2120,"is a feeling, is an emotion, makes people feel good, is positive, is a desire
+lawn mower: is a machine, has blades, has engine, cuts grass, is used for gardening, is used for lawn maintenance, has handle bars, pushed, is useful, provides green looks in the spring, is used on lawns, in backyards,","is a feeling, is an emotion, makes people feel good, is positive, is a desire"
+happiness,95,2121,"is a subjective feeling, is a personal emotion, is a state of mind, means contentment, means joy, is pleasurable, is positive, is a pleasant mood, is a mood, is fun, is exciting, is a state of wellbeing
+
+Q: Do a backflip, an acrobatic move, for the beach
+A:
+is an acrob","is a subjective feeling, is a personal emotion, is a state of mind, means contentment, means joy, is pleasurable, is positive, is a pleasant mood, is a mood, is fun, is exciting, is a state of wellbeing"
+happiness,96,2122,"is a mood, is an emotion, is a feeling, is a subjective experience, is a human emotion, can lead to a good life, can lead to a satisfying life, is a positive feeling, can bring a smile, can improve quality of life
+riding: is a way of travel, is a mode of transport, involves riding on a horse,","is a mood, is an emotion, is a feeling, is a subjective experience, is a human emotion, can lead to a good life, can lead to a satisfying life, is a positive feeling, can bring a smile, can improve quality of life"
+happiness,97,2123,"equality with others, experience of joy, self-satisfaction, self-fulfillment, state of mind, feeling of pleasure, feeling of happiness, self-contentment, emotional state, fulfillment, value in life, good health, purpose in life, good personal relationships, warmth in relationships, frank discussions, ease in expressing emotions, grate","equality with others, experience of joy, self-satisfaction, self-fulfillment, state of mind, feeling of pleasure, feeling of happiness, self-contentment, emotional state, fulfillment, value in life, good health, purpose in life, good personal relationships, warmth in relationships, frank discussions, ease in expressing emotions, grate"
+happiness,98,2124,"is a feeling, is a belief, is overrated, is a feeling, is felt, is fleeting, is a state of mind, has no objective meaning, is measured by income, is judgemental, no money, is an unobtainium
+llama: is a meme, is a type of animal, is a mammal, is large, is gray, is","is a feeling, is a belief, is overrated, is a feeling, is felt, is fleeting, is a state of mind, has no objective meaning, is measured by income, is judgemental, no money, is an unobtainium"
+happiness,99,2125,"is an emotion, used often, avoids problems, is one the people want, is good, makes people happy, is one of nine big emotions, is the opposite of sadness, is felt
+emperor: is a king, is very large, is very old, is mighty, is a male, is a leader, is a king of a country, is a ruler,","is an emotion, used often, avoids problems, is one the people want, is good, makes people happy, is one of nine big emotions, is the opposite of sadness, is felt"
