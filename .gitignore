@@ -55,3 +55,5 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+SCiP_2026/models/comma-v0.1-2t-4bit/model.safetensors.index.json
+SCiP_2026/models/comma-v0.1-2t-4bit/model.safetensors
