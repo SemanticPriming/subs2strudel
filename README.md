@@ -2,6 +2,10 @@
 
 Creating semantic concept-feature norms using STRUDEL
 
+## Human feature norms
+
+`data/human/english_flt.csv` holds the human concept-feature norms used as the comparison. They come from the reprocessed feature listing data in [doomlab/FLT-Projects](https://github.com/doomlab/FLT-Projects) (no frequency cutoff), not from the published 2019 file. See `data/human/README.md` for the columns.
+
 # Collecting the Data
 
 Below is the process you need to run in order to contribute a language to the collection.
