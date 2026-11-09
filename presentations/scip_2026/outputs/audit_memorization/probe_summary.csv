@@ -1,2 +1,0 @@
-file,rows_scored,exact_rows_%,similarity_model,similarity_copy,"feature match % (model / copy, n)","normalized_feature match % (model / copy, n)","FSG match % (model / copy, n)","BSG match % (model / copy, n)"
-buchanan,60,0.0,0.65,0.64,2 / 2  (n=60),12 / 10  (n=60),18 / 18  (n=22),38 / 38  (n=21)

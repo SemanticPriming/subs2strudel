@@ -23,7 +23,7 @@ import process_text as p
 from pathlib import Path
 
 RESULTS = Path(__file__).resolve().parent.parent / "results"
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(__file__).resolve().parents[2]
 rng = np.random.default_rng(2026)
 
 cues = pd.read_csv(RESULTS / "cues.csv", keep_default_na=False)

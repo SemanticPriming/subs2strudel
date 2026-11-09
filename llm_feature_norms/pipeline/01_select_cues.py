@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[2]                      # repo root
+ROOT = HERE.parents[1]                      # repo root
 OUT = HERE.parent / "results"
 SEED = 2026
 
