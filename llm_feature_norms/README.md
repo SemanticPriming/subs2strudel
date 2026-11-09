@@ -10,12 +10,18 @@ The design follows `no_sync/` proposal v2 (feature norms only). Human benchmark:
 |---|---|
 | `01_select_cues.py` | Picks the cues: 2,719 eligible FLT cues (30+ people, a concreteness rating, one word, not a stop word) split by concreteness quintile into test, calibration and train. Also builds the pool of human answers for the few-shot prompt |
 | `02_generate.py` | Each model run is one virtual participant: one independent sample of a comma-separated list, with the Buchanan et al. (2019) instructions and worked examples. **zero** = instructions only; **few** = plus 8 real human lists from train cues. Models run through Ollama; output is appended to `results/generations.csv` and the script resumes where it stopped |
-| `process_text.py` | Processes model output the way the human answers were processed (clean, contractions, abbreviations, spaCy lemmas, numbers, stop words, cue word removed, one word per row). The rules are copied from the FLT-Projects notebooks; spelling is skipped. `validate_processing.py` checks it against the human pipeline (93.4% of 3,000 answers identical, differences are spelling) |
+| `process_text.py` | Processes model output the way the human answers were processed (clean, contractions, abbreviations, spaCy lemmas, numbers, stop words, cue word removed, one word per row, then related words merged into one lemma by `merge_lemmas.py`). The rules are copied from the FLT-Projects notebooks (step 12 for the merge); spelling is skipped. `validate_processing.py` checks it against the human pipeline (93.4% of 3,000 answers identical, differences are spelling) |
 | `04_calibrate.py` | Chooses the sampling temperature: the one where 20 runs give a number of different features closest to 20 people, on the calibration cues |
-| `05_score.py` | Scores the test cues: top-10 feature-mass coverage against the human norms, the human ceiling (20 random people against the rest), feature-level correlation, and a mixed model of coverage on concreteness, frequency and length |
+| `05_score.py` | Scores the test cues: top-10 feature-mass coverage against the human norms, the human ceiling (20 random people against the rest), feature-level correlation (all features, and with the 16% cutoff on both lists), coverage at every cutoff from 1 to 10 runs (`coverage_by_threshold.csv`), and a mixed model of coverage on concreteness, frequency and length |
+| `06_figures.py` | Draws the poster figures (PNG and SVG) into `presentations/scip_2026/figures/` from the files `05_score.py` wrote |
+| `merge_lemmas.py` | Merges related words into one lemma: the 2019 translation dictionary without its odd pairs, plus affix rules checked against WordNet. Same file as in FLT-Projects (step 12); its dictionaries are in `results/inputs/` (`translation_2019.csv`, `lemma_keep_separate.csv`, `lemma_force_merge.csv`, ...) |
 | `run_pipeline.sh` | Runs calibration, test generation for each model and condition, and scoring |
 
 Requirements: Ollama (`OLLAMA_NUM_PARALLEL=6 ollama serve`) with `llama3.1` and `qwen2.5:1.5b` pulled, and the `flt-nlp` conda environment from FLT-Projects plus `statsmodels`. Run `01_select_cues.py` first, then `run_pipeline.sh`.
+
+## Results
+
+See `presentations/scip_2026/RESULTS.md` (60 test cues): Llama 3.1 few-shot recovers about 86% of the human top-10 features when a feature found in any run counts, against about 90% for 20 people; with a stricter bar of 4 of 20 runs the models are above 20 people because they repeat words. Re-run `05_score.py` and `06_figures.py` after changing the merge rules.
 
 ## Metrics
 
