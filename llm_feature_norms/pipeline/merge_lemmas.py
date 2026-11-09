@@ -67,8 +67,9 @@ class Merger:
         self._cache = {}
         force = pd.read_csv(folder / "lemma_force_merge.csv", keep_default_na=False)
         self.force = dict(zip(force["word"], force["merge_to"]))
-        # the 2019 pairs we do not merge (meaning changes); kept so they are not re-merged by the affix rules
-        self.rejected = {w: t for w, t in self.table.items() if w not in self.force and not self.plausible(w, t)}
+        # the 2019 pairs we do not merge (meaning changes, or the word is on the keep-separate list); kept so they are not re-merged by the affix rules
+        self.rejected = {w: t for w, t in self.table.items()
+                         if w not in self.force and (w in self.keep or not self.plausible(w, t))}
         self.table = {w: t for w, t in self.table.items() if w not in self.rejected}
 
     @staticmethod
