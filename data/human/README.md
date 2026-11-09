@@ -2,19 +2,23 @@
 
 Concept-feature norms from the feature listing task, reprocessed from the raw participant answers. They replace the published 2019 norms file (`english_Buchanan2019.csv`) that was here before.
 
-Source: the processing pipeline in [doomlab/FLT-Projects](https://github.com/doomlab/FLT-Projects), file `processed/09_cue_feature_counts.csv` (README and `COMPARISON.md` there describe every step and how close these are to the 2019 norms). Answers flagged as dictionary or web text, answers from rejected MTurk assignments and other bad rows were left out before counting. **No frequency cutoff was applied**: every cue-feature pair is here, including features only one person listed.
+Source: the processing pipeline in [doomlab/FLT-Projects](https://github.com/doomlab/FLT-Projects), file `processed/12_cue_feature_counts_merged.csv` (README and `COMPARISON.md` there describe every step and how close these are to the 2019 norms). Answers flagged as dictionary or web text, answers from rejected MTurk assignments and other bad rows were left out before counting. **No frequency cutoff was applied**: every cue-feature pair is here, including features only one person listed.
 
 | Column | Meaning |
 |---|---|
 | `cue` | the concept word |
-| `feature` | the feature word (lemma, stop words removed) |
-| `frequency_feature` | number of people who listed the feature for this cue |
+| `feature` | the feature word as processed (lemma, stop words removed) |
+| `lemma` | the word it is merged into: inflected forms are folded into the base word (`gambling` → `gamble`); same as `feature` when nothing is merged. Rules in `llm_feature_norms/results/inputs/lemma_merge.csv` |
+| `frequency_feature` | number of people who listed `feature` for this cue |
+| `frequency_lemma` | number of people who listed `lemma` or anything merged into it (a person who wrote both counts once) |
 | `n` | number of people with at least one feature for this cue |
-| `normalized_feature` | `frequency_feature / n * 100` (same scoring as the LLM norms in `llm_norms/output/`) |
+| `normalized_feature`, `normalized_lemma` | the two frequencies divided by `n`, times 100 |
 | `n_answered` | people who answered the cue before any exclusions |
 | `pos` | most common part of speech for the feature under this cue |
 | `mean_position` | average position in people's lists (1 = listed first) |
 | `original_words` | the forms people actually typed, separated by `|` |
+
+The layout follows the 2019 norms (`feature`/`lemma`). Source file: `processed/12_cue_feature_counts_merged.csv` in FLT-Projects (step 12).
 
 `cue`, `feature`, `frequency_feature`, `n` and `normalized_feature` match the column names of the LLM-elicited and corpus norms, so the files can be compared directly.
 

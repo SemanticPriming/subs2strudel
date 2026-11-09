@@ -274,7 +274,8 @@ def main():
     mm = pd.read_csv(res / "mixed_model.csv", index_col=0).rename(columns={"Unnamed: 0": "term"})
     mm = mm.rename(columns={"estimate": "estimate"})
     mf = pd.read_csv(res / "model_features.csv", keep_default_na=False)
-    human = pd.read_csv(ROOT / "data/human/english_flt.csv", usecols=["cue", "feature", "normalized_feature"], keep_default_na=False)
+    human = pd.read_csv(ROOT / "data/human/english_flt.csv", usecols=["cue", "lemma", "normalized_lemma"], keep_default_na=False)
+    human = human.drop_duplicates(["cue", "lemma"]).rename(columns={"lemma": "feature", "normalized_lemma": "normalized_feature"})
     human = human[human.cue.isin(set(cov.cue))]
 
     fig_overview(out)

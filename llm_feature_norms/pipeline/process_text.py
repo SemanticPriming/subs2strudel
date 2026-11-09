@@ -21,6 +21,8 @@ from num2words import num2words
 INPUTS = Path(__file__).resolve().parent.parent / "results" / "inputs"
 STOP = set(INPUTS.joinpath("stopwords.txt").read_text().split())
 EXEMPT = set(pd.read_csv(INPUTS / "exempt_cues.csv")["cue"])
+# step 12 of the FLT pipeline: inflected forms merged into their base word (gambling -> gamble)
+MERGE = dict(pd.read_csv(INPUTS / "lemma_merge.csv")[["word", "merge_to"]].values)
 FRAGMENTS = {"d", "t", "s", "m", "re", "ll", "ve", "y", "o", "ma"}
 nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
 
@@ -185,6 +187,7 @@ def process_answer(cue, text):
         pieces = [(original, w, "NUM") for w in spelled.split()] if spelled is not None else [(original, lemma, pos)]
         for orig, lem, p in pieces:
             for w in tidy(lem):
+                w = MERGE.get(w, w)
                 if w in own or orig.lower() in own or w in FRAGMENTS:
                     continue
                 if not keep_all and (w in STOP or orig.lower() in STOP):

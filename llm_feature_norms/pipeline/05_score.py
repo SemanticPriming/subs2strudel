@@ -50,7 +50,8 @@ feats.round(3).to_csv(RESULTS / "model_features.csv", index=False)
 # 2. human norms
 done = set(feats.cue)                                   # test cues that have model runs so far
 test = test[test.cue.isin(done)]
-flt = pd.read_csv(ROOT / "data/human/english_flt.csv", usecols=["cue", "feature", "normalized_feature"], keep_default_na=False)
+flt = pd.read_csv(ROOT / "data/human/english_flt.csv", usecols=["cue", "lemma", "normalized_lemma"], keep_default_na=False)
+flt = flt.drop_duplicates(["cue", "lemma"]).rename(columns={"lemma": "feature", "normalized_lemma": "normalized_feature"})
 flt = flt[flt.cue.isin(done)]
 people = pd.read_csv(RESULTS / "inputs/human_person_lists.csv", dtype=str, keep_default_na=False)
 people = people[people.cue.isin(done)]
