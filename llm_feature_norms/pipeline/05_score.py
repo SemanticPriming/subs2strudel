@@ -23,6 +23,12 @@ import pandas as pd
 import process_text as p
 from pathlib import Path
 
+import argparse
+ap = argparse.ArgumentParser()
+ap.add_argument("--first", type=int, default=0, help="score only the first N processed words of each run (people write about 5); outputs get a _firstN suffix")
+FIRST = ap.parse_args().first
+SUF = f"_first{FIRST}" if FIRST else ""
+
 RESULTS = Path(__file__).resolve().parent.parent / "results"
 ROOT = Path(__file__).resolve().parents[2]
 rng = np.random.default_rng(2026)
@@ -32,7 +38,13 @@ test = cues[cues.split == "test"]
 gens = pd.read_csv(RESULTS / "generations.csv", keep_default_na=False)
 temp = __import__("json").loads((RESULTS / "temperature.json").read_text())["temperature"]
 gens = gens[gens.cue.isin(set(test.cue)) & (gens.temperature.astype(float) == temp)]
-print(f"{len(gens):,} test runs at temperature {temp}", flush=True)
+# only complete sets of runs: every model x condition must have all runs for a cue, so partial waves are not scored
+size = gens.groupby(["model", "condition", "cue"]).size().rename("runs").reset_index()
+full = size[size.runs == size.runs.max()]
+n_methods = size[["model", "condition"]].drop_duplicates().shape[0]
+ok_cues = set(full.groupby("cue").size()[lambda s: s == n_methods].index)
+gens = gens[gens.cue.isin(ok_cues)]
+print(f"{len(gens):,} test runs at temperature {temp}, {len(ok_cues)} complete cues" + (f", first {FIRST} words of each run" if FIRST else ""), flush=True)
 
 # 1. process the model output like the human answers
 feature_rows, phrase_rows = [], {}
@@ -40,13 +52,15 @@ for (model, cond, cue), g in gens.groupby(["model", "condition", "cue"]):
     n_runs = len(g)
     counts = {}
     for text in g.text:
-        for _, w, _, _ in p.process_answer(cue, text):
+        for pos, w, _, _ in p.process_answer(cue, text):
+            if FIRST and pos > FIRST:
+                continue
             counts[w] = counts.get(w, 0) + 1
     for w, c in counts.items():
         feature_rows.append((model, cond, cue, w, c, n_runs, 100 * c / n_runs))
-    phrase_rows[(model, cond, cue)] = {f.strip().lower() for t in g.text for f in t.split(",") if f.strip()}
+    phrase_rows[(model, cond, cue)] = {f.strip().lower() for t in g.text for f in (t.split(",")[:FIRST] if FIRST else t.split(",")) if f.strip()}
 feats = pd.DataFrame(feature_rows, columns=["model", "condition", "cue", "feature", "frequency_feature", "n", "normalized_feature"])
-feats.round(3).to_csv(RESULTS / "model_features.csv", index=False)
+feats.round(3).to_csv(RESULTS / f"model_features{SUF}.csv", index=False)
 
 # 2. human norms
 done = set(feats.cue)                                   # test cues that have model runs so far
@@ -121,17 +135,17 @@ for cue, g in people.groupby("cue"):
 ceil = pd.DataFrame(ceil)
 
 sweep = pd.DataFrame(sweep_rows).merge(pd.DataFrame(ceil_sweep), on=["cue", "min_runs"])
-sweep.round(3).to_csv(RESULTS / "coverage_by_threshold.csv", index=False)
+sweep.round(3).to_csv(RESULTS / f"coverage_by_threshold{SUF}.csv", index=False)
 out = cov.merge(ceil, on="cue").merge(test[["cue", "quintile", "concreteness", "log_frequency", "length", "n"]], on="cue")
-out.round(3).to_csv(RESULTS / "coverage_by_cue.csv", index=False)
+out.round(3).to_csv(RESULTS / f"coverage_by_cue{SUF}.csv", index=False)
 
 # 4. summaries
 out["method"] = out.model + " / " + out.condition
 tab = out.groupby("method")[["coverage_any", "coverage_4runs", "coverage_phrase", "ceiling_any", "ceiling_4runs", "r_percent", "r_percent_16", "n_features", "words_per_run"]].mean().round(1)
-tab.to_csv(RESULTS / "summary_by_method.csv")
+tab.to_csv(RESULTS / f"summary_by_method{SUF}.csv")
 byq = out.pivot_table(index="quintile", columns="method", values="coverage_any", aggfunc="mean").round(1)
 byq["human ceiling (20 people)"] = out.groupby("quintile")["ceiling_any"].mean().round(1)
-byq.to_csv(RESULTS / "summary_by_concreteness.csv")
+byq.to_csv(RESULTS / f"summary_by_concreteness{SUF}.csv")
 print(tab.to_string()); print(); print(byq.to_string())
 
 # 5. what predicts coverage?
@@ -140,5 +154,5 @@ for col in ["concreteness", "log_frequency", "length"]:
     out[col + "_z"] = (out[col] - out[col].mean()) / out[col].std()
 fit = smf.mixedlm("coverage_any ~ concreteness_z + log_frequency_z + length_z + C(method)", out, groups=out["cue"]).fit()
 coefs = pd.DataFrame({"estimate": fit.params, "se": fit.bse, "z": fit.tvalues, "p": fit.pvalues}).round(3)
-coefs.to_csv(RESULTS / "mixed_model.csv")
+coefs.to_csv(RESULTS / f"mixed_model{SUF}.csv")
 print(); print(coefs.to_string())
