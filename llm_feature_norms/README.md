@@ -19,7 +19,7 @@ Requirements: Ollama (`OLLAMA_NUM_PARALLEL=6 ollama serve`) with `llama3.1` and 
 
 ## Metrics
 
-- **Coverage** (top-10 feature-mass coverage): take the human top-10 features for a cue (largest percent of people first) and report the share of their summed percentages that the model also produced. `coverage_any` counts a feature if one or more runs produced it, `coverage_10pct` if at least 10% of runs did, `coverage_phrase` is the pilot's substring rule on the raw model phrases.
+- **Coverage** (top-10 feature-mass coverage): take the human top-10 features for a cue (largest percent of people first) and report the share of their summed percentages that the model also produced. `coverage_any` counts a feature if one or more runs produced it, `coverage_4runs` if at least 4 of the 20 runs (16%, the McRae et al. cutoff of 5 of 30 people) did, `coverage_phrase` is the pilot's substring rule on the raw model phrases.
 - **Ceiling:** the same score for 20 random people against the top-10 of the remaining people, i.e. how well a human sample the size of the model's 20 runs does.
 
 ## Not included (planned, see the proposal)
@@ -28,4 +28,4 @@ Requirements: Ollama (`OLLAMA_NUM_PARALLEL=6 ollama serve`) with `llama3.1` and 
 - LoRA fine-tuning (only few-shot prompting is used) and the Strudel corpus arm.
 - Only part of the 200 test cues have been run.
 
-Model lists are much longer than people's (about 20 features per run against about 5 words per person), so `coverage_any` is generous; read it together with `coverage_10pct` and the ceiling.
+Model lists are much longer than people's (about 20 features per run against about 5 words per person), so `coverage_any` is generous; read it together with `coverage_4runs` and the ceiling.

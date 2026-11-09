@@ -10,6 +10,7 @@ type, direct labels, one idea per figure.
   fig3_concreteness.png    the same, by how concrete the cue is
   fig4_predictors.png      what predicts coverage (concreteness, frequency, length)
   fig5_examples.png        one concrete and one abstract cue, human vs model features
+  fig6_threshold.png       coverage as the bar rises: found in at least 1, 2, ... 10 of 20 runs
 
   python 06_figures.py [--results DIR] [--out DIR]
 """
@@ -90,7 +91,7 @@ def methods_present(cov):
 def fig_coverage(cov, out):
     methods = methods_present(cov)
     panels = [("coverage_any", "ceiling_any", "Found in at least 1 of 20 runs"),
-              ("coverage_10pct", "ceiling_10pct", "Found in at least 10% of runs")]
+              ("coverage_4runs", "ceiling_4runs", "Found in at least 4 of 20 runs (16%)")]
     fig, axes = plt.subplots(1, 2, figsize=(15, 5.8), sharey=True)
     ypos = np.arange(len(methods))[::-1]
     for ax, (col, ceil_col, title) in zip(axes, panels):
@@ -126,7 +127,7 @@ def fig_concreteness(cov, out):
     methods = methods_present(cov)
     q = cov.groupby("quintile")["concreteness"].mean()
     panels = [("coverage_any", "ceiling_any", "Found in at least 1 of 20 runs"),
-              ("coverage_10pct", "ceiling_10pct", "Found in at least 10% of runs")]
+              ("coverage_4runs", "ceiling_4runs", "Found in at least 4 of 20 runs (16%)")]
     fig, axes = plt.subplots(1, 2, figsize=(15, 6.4), sharey=True)
     for ax, (col, ceil_col, title) in zip(axes, panels):
         ends = {}
@@ -262,6 +263,44 @@ def fig_overview(out):
     save(fig, out, "fig1_overview")
 
 
+# ------------------------------------------------------------------ figure 6
+def fig_threshold(sweep, out):
+    sweep = sweep.assign(method=list(zip(sweep.model, sweep.condition)))
+    fig, ax = plt.subplots(figsize=(13, 7))
+    ends = {}
+    for m, c in methods_present(sweep):
+        g = sweep[(sweep.model == m) & (sweep.condition == c)].groupby("min_runs")["coverage"]
+        mean, se = g.mean(), g.sem()
+        ax.fill_between(mean.index, mean - 1.96 * se, mean + 1.96 * se, color=color_for(m, c), alpha=0.16, lw=0, zorder=2)
+        ax.plot(mean.index, mean, color=color_for(m, c), lw=4, marker="o", ms=9, mec="white", mew=2, zorder=4,
+                ls="-" if c == "few" else (0, (1.2, 1.6)))
+        ends[(m, c)] = mean.iloc[-1]
+    cg = sweep.drop_duplicates(["cue", "min_runs"]).groupby("min_runs")["ceiling"].mean()
+    ax.plot(cg.index, cg, color=HUMAN, lw=3.5, ls=(0, (5, 3)), zorder=3)
+    ends["human"] = cg.iloc[-1]
+    keys = list(ends)
+    ys = spread([ends[k] for k in keys], 5.2)
+    for k, y in zip(keys, ys):
+        if k == "human":
+            ax.text(10.25, y, "20 people", color=HUMAN, va="center", fontsize=17, fontweight="bold")
+        else:
+            ax.text(10.25, y, f"{MODEL_NAME[k[0]].split(' (')[0]}, {COND_NAME[k[1]]}", color=INK, va="center", fontsize=15)
+    for x, txt in [(1, "at least 1 run"), (4, "at least 4 runs\n(16%, McRae cutoff)")]:
+        ax.axvline(x, color=MUTED, lw=1.4, ls=":", zorder=1)
+        ax.text(x + 0.12, 3, txt, color=SUB, fontsize=14, va="bottom")
+    ax.set_xlim(0.7, 12.6)
+    ax.set_xticks(range(1, 11))
+    ax.set_ylim(0, 100)
+    ax.yaxis.grid(True, color=GRID, lw=1, zorder=0)
+    ax.set_axisbelow(True)
+    ax.set_xlabel("A feature counts if it appears in at least this many of the 20 runs (or of the 20 people)")
+    ax.set_ylabel("Share of the human top-10\nfeatures recovered (%)")
+    ax.set_title("Coverage as the bar for counting a feature rises", loc="left", pad=14)
+    fig.text(0.5, -0.03, "Solid lines: few-shot.  Dotted lines: zero-shot.  Dashed grey line: 20 randomly chosen people.  Bands: 95% confidence interval across cues.",
+             ha="center", fontsize=13, color=SUB)
+    save(fig, out, "fig6_threshold")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--results", default=str(HERE.parent / "results"))
@@ -283,6 +322,8 @@ def main():
     fig_concreteness(cov, out)
     fig_predictors(mm, out)
     fig_examples(cov, mf, human, out)
+    if (res / "coverage_by_threshold.csv").exists():
+        fig_threshold(pd.read_csv(res / "coverage_by_threshold.csv"), out)
 
 
 if __name__ == "__main__":
