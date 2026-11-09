@@ -1,0 +1,196 @@
+=== wave 2 started Mon Nov  9 18:51:44 CET 2026
+llama3.1 / zero / test: 40 cues, 800 runs to do (5400 already done)
+  100/800
+  200/800
+  300/800
+  400/800
+  500/800
+  600/800
+  700/800
+  800/800
+done
+llama3.1 / few / test: 40 cues, 800 runs to do (6200 already done)
+  100/800
+  200/800
+  300/800
+  400/800
+  500/800
+  600/800
+  700/800
+  800/800
+done
+qwen2.5:1.5b / zero / test: 40 cues, 800 runs to do (7000 already done)
+  100/800
+  200/800
+  300/800
+  400/800
+  500/800
+  600/800
+  700/800
+  800/800
+done
+qwen2.5:1.5b / few / test: 40 cues, 800 runs to do (7800 already done)
+  100/800
+  200/800
+  300/800
+  400/800
+  500/800
+  600/800
+  700/800
+  800/800
+done
+=== wave 2 generated Mon Nov  9 20:29:01 CET 2026; scoring
+8,000 test runs at temperature 0.7, 100 complete cues
+                     coverage_any  coverage_4runs  coverage_phrase  ceiling_any  ceiling_4runs  r_percent  r_percent_16  n_features  words_per_run
+method                                                                                                                                            
+llama3.1 / few               86.5            71.9             84.4         88.8           55.9        0.3           0.2       140.0           27.8
+llama3.1 / zero              84.0            68.4             81.5         88.8           55.9        0.3           0.1       147.6           29.0
+qwen2.5:1.5b / few           80.0            64.7             78.3         88.8           55.9        0.3           0.1       151.8           25.3
+qwen2.5:1.5b / zero          78.9            62.6             76.8         88.8           55.9        0.3           0.1       166.2           28.0
+
+method    llama3.1 / few  llama3.1 / zero  qwen2.5:1.5b / few  qwen2.5:1.5b / zero  human ceiling (20 people)
+quintile                                                                                                     
+1                   84.2             81.1                76.4                 73.7                       85.8
+2                   85.6             82.5                79.7                 81.1                       86.3
+3                   84.5             82.8                79.1                 79.9                       89.1
+4                   89.2             86.5                84.5                 79.0                       91.9
+5                   88.9             86.8                80.1                 81.1                       91.1
+
+                                  estimate     se       z      p
+Intercept                           86.503  1.378  62.752  0.000
+C(method)[T.llama3.1 / zero]        -2.550  1.363  -1.870  0.061
+C(method)[T.qwen2.5:1.5b / few]     -6.548  1.363  -4.804  0.000
+C(method)[T.qwen2.5:1.5b / zero]    -7.557  1.363  -5.543  0.000
+concreteness_z                       1.974  1.164   1.696  0.090
+log_frequency_z                      1.967  1.266   1.555  0.120
+length_z                            -0.088  1.277  -0.069  0.945
+Group Var                            1.045  0.215   4.860  0.000
+wrote fig1_overview
+wrote fig2_coverage
+wrote fig3_concreteness
+wrote fig4_predictors
+wrote fig5_examples
+wrote fig6_threshold
+=== wave 2 done Mon Nov  9 20:29:36 CET 2026
+=== wave 3 started Mon Nov  9 20:29:36 CET 2026
+llama3.1 / zero / test: 100 cues, 2000 runs to do (8600 already done)
+  100/2000
+  200/2000
+  300/2000
+  400/2000
+  500/2000
+  600/2000
+  700/2000
+  800/2000
+  900/2000
+  1000/2000
+  1100/2000
+  1200/2000
+  1300/2000
+  1400/2000
+  1500/2000
+  1600/2000
+  1700/2000
+  1800/2000
+  1900/2000
+  2000/2000
+done
+llama3.1 / few / test: 100 cues, 2000 runs to do (10600 already done)
+  100/2000
+  200/2000
+  300/2000
+  400/2000
+  500/2000
+  600/2000
+  700/2000
+  800/2000
+  900/2000
+  1000/2000
+  1100/2000
+  1200/2000
+  1300/2000
+  1400/2000
+  1500/2000
+  1600/2000
+  1700/2000
+  1800/2000
+  1900/2000
+  2000/2000
+done
+qwen2.5:1.5b / zero / test: 100 cues, 2000 runs to do (12600 already done)
+  100/2000
+  200/2000
+  300/2000
+  400/2000
+  500/2000
+  600/2000
+  700/2000
+  800/2000
+  900/2000
+  1000/2000
+  1100/2000
+  1200/2000
+  1300/2000
+  1400/2000
+  1500/2000
+  1600/2000
+  1700/2000
+  1800/2000
+  1900/2000
+  2000/2000
+done
+qwen2.5:1.5b / few / test: 100 cues, 2000 runs to do (14600 already done)
+  100/2000
+  200/2000
+  300/2000
+  400/2000
+  500/2000
+  600/2000
+  700/2000
+  800/2000
+  900/2000
+  1000/2000
+  1100/2000
+  1200/2000
+  1300/2000
+  1400/2000
+  1500/2000
+  1600/2000
+  1700/2000
+  1800/2000
+  1900/2000
+  2000/2000
+done
+=== wave 3 generated Mon Nov  9 23:47:47 CET 2026; scoring
+16,000 test runs at temperature 0.7, 200 complete cues
+                     coverage_any  coverage_4runs  coverage_phrase  ceiling_any  ceiling_4runs  r_percent  r_percent_16  n_features  words_per_run
+method                                                                                                                                            
+llama3.1 / few               85.7            71.5             83.4         89.1           56.0        0.3           0.2       138.6           27.4
+llama3.1 / zero              82.9            67.4             81.0         89.1           56.0        0.3           0.1       145.2           28.3
+qwen2.5:1.5b / few           78.8            63.1             77.5         89.1           56.0        0.3           0.1       157.9           25.5
+qwen2.5:1.5b / zero          77.8            61.2             76.2         89.1           56.0        0.3           0.1       167.2           27.5
+
+method    llama3.1 / few  llama3.1 / zero  qwen2.5:1.5b / few  qwen2.5:1.5b / zero  human ceiling (20 people)
+quintile                                                                                                     
+1                   79.5             76.3                70.8                 68.9                       84.4
+2                   86.1             80.3                78.9                 77.9                       87.9
+3                   84.8             82.6                78.0                 79.6                       89.5
+4                   88.9             88.5                84.8                 80.8                       91.5
+5                   89.3             87.1                81.5                 81.7                       92.4
+
+                                  estimate     se       z      p
+Intercept                           85.723  1.077  79.583  0.000
+C(method)[T.llama3.1 / zero]        -2.777  1.011  -2.748  0.006
+C(method)[T.qwen2.5:1.5b / few]     -6.910  1.011  -6.838  0.000
+C(method)[T.qwen2.5:1.5b / zero]    -7.914  1.011  -7.831  0.000
+concreteness_z                       3.510  0.931   3.768  0.000
+log_frequency_z                     -0.291  0.966  -0.302  0.763
+length_z                            -0.648  0.973  -0.666  0.506
+Group Var                            1.272  0.177   7.179  0.000
+wrote fig1_overview
+wrote fig2_coverage
+wrote fig3_concreteness
+wrote fig4_predictors
+wrote fig5_examples
+wrote fig6_threshold
+=== wave 3 done Mon Nov  9 23:48:54 CET 2026

@@ -1,0 +1,41 @@
+=== waves finished Mon Nov  9 23:49:54 CET 2026
+16,000 test runs at temperature 0.7, 200 complete cues, first 5 words of each run
+                     coverage_any  coverage_4runs  coverage_phrase  ceiling_any  ceiling_4runs  r_percent  r_percent_16  n_features  words_per_run
+method                                                                                                                                            
+llama3.1 / few               60.6            41.9             66.6         89.1           56.0        0.4          -0.1        22.1            5.0
+llama3.1 / zero              55.3            36.1             62.9         89.1           56.0        0.3          -0.2        23.3            5.0
+qwen2.5:1.5b / few           57.9            37.5             67.1         89.1           56.0        0.3          -0.2        29.2            5.0
+qwen2.5:1.5b / zero          53.4            34.3             64.3         89.1           56.0        0.3          -0.2        28.2            5.0
+
+method    llama3.1 / few  llama3.1 / zero  qwen2.5:1.5b / few  qwen2.5:1.5b / zero  human ceiling (20 people)
+quintile                                                                                                     
+1                   60.2             49.4                56.7                 48.8                       84.4
+2                   62.1             54.8                59.2                 55.0                       87.8
+3                   60.5             58.6                57.9                 52.2                       89.6
+4                   62.0             61.3                60.4                 58.1                       91.5
+5                   58.5             52.2                55.3                 53.0                       92.4
+
+                                  estimate     se       z      p
+Intercept                           60.638  1.296  46.782  0.000
+C(method)[T.llama3.1 / zero]        -5.370  1.301  -4.126  0.000
+C(method)[T.qwen2.5:1.5b / few]     -2.743  1.301  -2.108  0.035
+C(method)[T.qwen2.5:1.5b / zero]    -7.242  1.301  -5.565  0.000
+concreteness_z                       0.560  1.080   0.519  0.604
+log_frequency_z                     -0.669  1.120  -0.597  0.550
+length_z                            -0.441  1.128  -0.391  0.696
+Group Var                            0.984  0.144   6.850  0.000
+llama3.1 / zero / calibration: 10 cues, 400 runs to do (16600 already done)
+  100/400
+  200/400
+  300/400
+  400/400
+done
+ temperature  cues  distinct_features  distinct_first5  human_distinct_20  words_per_run  human_words_per_person  mean_log_ratio_distinct  mean_abs_log_ratio_distinct  mean_abs_log_ratio_first5
+         0.3    10              112.9             15.5             58.947         25.795                   4.933                    0.656                        0.656                      1.401
+         0.5    10              132.7             19.3             58.947         26.320                   4.933                    0.814                        0.814                      1.183
+         0.7    10              147.4             23.8             58.947         26.755                   4.933                    0.920                        0.920                      0.961
+         0.9    10              163.6             27.1             58.947         27.240                   4.933                    1.024                        1.024                      0.803
+         1.1    10              174.9             30.0             58.947         28.195                   4.933                    1.084                        1.084                      0.696
+candidate temperature (all words): 0.3 | (first 5 words): 1.1
+temperature.json (used for test runs) is unchanged
+=== done Tue Nov 10 00:08:04 CET 2026

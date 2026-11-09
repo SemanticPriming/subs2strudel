@@ -110,16 +110,17 @@ text(LX, y + 1.3, LW, 6.4, [
     "Feature norms (people list what a word means) are slow and expensive to collect.",
     "Can open language models write them? We gave two models the same instructions people had, "
     "and treated each model run as one virtual participant (20 per word).",
-    "We compared the lists with human norms for 60 words, each listed by 30 or more people.",
+    "We compared the lists with human norms for 200 words, each listed by 30 or more people.",
 ], size=31)
 
 y = 16.0
 heading(LX, y, LW, "WHAT WE FOUND")
 text(LX, y + 1.3, LW, 9.2, [
-    ("Llama 3.1 (8B) recovers 86% of the features people list most. A sample of 20 people recovers 90%.", dict(bold=True)),
-    "A much smaller model (Qwen 2.5, 1.5B) recovers 79%.",
+    ("Llama 3.1 (8B) recovers 86% of the features people list most. A sample of 20 people recovers 89%.", dict(bold=True)),
+    "A much smaller model (Qwen 2.5, 1.5B) recovers 78-79%.",
+    "But count only each model's first 5 words (what a person writes) and Llama drops to 61%.",
     "Showing the model real examples helps little (about +2 points).",
-    "Concrete and frequent words are a little easier (about +3 points per SD).",
+    "Concrete words are a little easier (about +3.5 points per SD); word frequency and length do not matter.",
 ], size=31)
 
 y = 27.0
@@ -127,7 +128,7 @@ heading(LX, y, LW, "LIMITS")
 text(LX, y + 1.3, LW, 6.6, [
     "Models write about 27 words per run, people about 5.",
     "The models were not checked for having seen these norms.",
-    "Two models, 60 of 200 test words so far.",
+    "Two models, 200 test words, one temperature (0.7).",
 ], size=28)
 
 # ---------------------------------------------------------------- right area (figures)
@@ -140,7 +141,7 @@ STEPS = [
     ("1  The task", "Same instructions people had: list the properties of the word (alone, or with 8 real human lists)"),
     ("2  20 virtual people", "Each model answers 20 times; every run is one participant"),
     ("3  Cleaned like people", "Spelling, numbers, stop words; related words merged (gambling = gamble)"),
-    ("4  Feature norms", "Percent of runs that listed each feature, for each of 60 test words"),
+    ("4  Feature norms", "Percent of runs that listed each feature, for each of 200 test words"),
     ("5  Compared with people", "Share of the human top-10 features the model also lists; ceiling = 20 real people"),
 ]
 bw, gap, by, bh = 5.8, 0.85, y + 2.1, 4.5
@@ -168,7 +169,7 @@ text(RX, y + 2.0 + hB + 0.1, wB, 1.2,
 y = 25.2
 heading(RX, y, RW, "WHAT HELPS, AND WHAT IT LOOKS LIKE")
 wC, hC = picture("fig4_predictors", RX, y + 1.5, w=15.4, h=6.6)
-text(RX, y + 1.6 + hC, wC, 1.4, ["Coverage rises a little with concreteness and word frequency; word length does not matter."], size=22, color=SUB)
+text(RX, y + 1.6 + hC, wC, 1.4, ["Coverage rises a little with concreteness; word frequency and length do not matter."], size=22, color=SUB)
 picture("fig5_examples", RX + wC + 0.6, y + 1.4, w=RW - wC - 0.6, h=8.0)
 
 # ---------------------------------------------------------------- QR / links (placeholder)
