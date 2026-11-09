@@ -1,0 +1,24 @@
+method,cue,human_source,coverage_phrase,coverage_lemma,human_top10
+elicited (virtual participants),dog,mcrae,93.7,77.8,leg bark four animal friend fur chase pet best man
+elicited (virtual participants),dog,vinson,100.0,86.5,animal pet fur bark friend four leg mammal domestic hair
+elicited (virtual participants),chair,flt,93.6,80.2,sit wood furniture leg table comfortable place plastic relax piece
+elicited (virtual participants),chair,mcrae,100.0,79.3,leg on sit four wood comfort furniture table armrest back
+elicited (virtual participants),chair,vinson,93.0,76.1,sit four leg relax furniture wood back comfort human table
+elicited (virtual participants),apple,flt,91.4,91.4,red fruit green tree yellow juicy seed grow food healthy
+elicited (virtual participants),apple,mcrae,100.0,93.1,red fruit grow tree green crunch eat pie juice seed
+elicited (virtual participants),apple,vinson,85.4,85.4,fruit red tree grow green heal food sweet seed juice
+elicited (virtual participants),happiness,flt,78.1,78.1,joy happy smile feeling content opposite good sadness state emotion
+corpus sentences,dog,mcrae,26.6,26.6,leg bark four animal friend fur chase pet best man
+corpus sentences,dog,vinson,30.3,30.3,animal pet fur bark friend four leg mammal domestic hair
+corpus sentences,chair,flt,42.8,42.8,sit wood furniture leg table comfortable place plastic relax piece
+corpus sentences,chair,mcrae,45.8,31.3,leg on sit four wood comfort furniture table armrest back
+corpus sentences,chair,vinson,35.2,35.2,sit four leg relax furniture wood back comfort human table
+corpus sentences,apple,flt,31.6,31.6,red fruit green tree yellow juicy seed grow food healthy
+corpus sentences,apple,mcrae,25.6,25.6,red fruit grow tree green crunch eat pie juice seed
+corpus sentences,apple,vinson,37.1,37.1,fruit red tree grow green heal food sweet seed juice
+corpus sentences,happiness,flt,0.0,0.0,joy happy smile feeling content opposite good sadness state emotion
+corpus cleaned,art,flt,0.0,0.0,painting color paint drawing expression beautiful many express music picture
+corpus cleaned,band,flt,0.0,0.0,music instrument play group rock people drum guitar musician together
+corpus cleaned,concert,flt,0.0,0.0,music loud fun band people performance ticket crowd light singer
+corpus cleaned,radio,flt,11.3,11.3,music car show talk listen station commercial communication song speaker
+corpus cleaned,radio,mcrae,0.0,0.0,listen play music new electric station fm am adjust control
