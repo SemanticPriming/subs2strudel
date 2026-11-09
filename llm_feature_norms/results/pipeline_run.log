@@ -1,0 +1,96 @@
+3,722 FLT cues -> 2,719 eligible
+{'train': 2499, 'test': 200, 'calibration': 20}
+          concreteness  log_frequency  length      n
+quintile                                            
+1                 2.08           3.08    6.45  60.00
+2                 2.82           3.09    6.12  54.88
+3                 3.70           2.62    5.88  59.08
+4                 4.35           2.64    5.70  58.40
+5                 4.84           2.87    5.38  65.68
+few-shot pool: 3,000 answers from 1,455 train cues
+ temperature  cues  distinct_features  human_distinct_20  words_per_run  human_words_per_person  mean_log_ratio_distinct  mean_abs_log_ratio_distinct
+         0.7    10              158.1             61.464         27.095                   4.963                    0.950                        0.950
+         0.9    10              176.4             61.464         27.665                   4.963                    1.059                        1.059
+         1.1    10              187.6             61.464         28.580                   4.963                    1.115                        1.115
+chosen temperature: 0.7
+llama3.1 / zero / test: 60 cues, 1200 runs to do (600 already done)
+  100/1200
+  200/1200
+  300/1200
+  400/1200
+  500/1200
+  600/1200
+  700/1200
+  800/1200
+  900/1200
+  1000/1200
+  1100/1200
+  1200/1200
+done
+llama3.1 / few / test: 60 cues, 1200 runs to do (1800 already done)
+  100/1200
+  200/1200
+  300/1200
+  400/1200
+  500/1200
+  600/1200
+  700/1200
+  800/1200
+  900/1200
+  1000/1200
+  1100/1200
+  1200/1200
+done
+qwen2.5:1.5b / zero / test: 60 cues, 1200 runs to do (3000 already done)
+  100/1200
+  200/1200
+  300/1200
+  400/1200
+  500/1200
+  600/1200
+  700/1200
+  800/1200
+  900/1200
+  1000/1200
+  1100/1200
+  1200/1200
+done
+qwen2.5:1.5b / few / test: 60 cues, 1200 runs to do (4200 already done)
+  100/1200
+  200/1200
+  300/1200
+  400/1200
+  500/1200
+  600/1200
+  700/1200
+  800/1200
+  900/1200
+  1000/1200
+  1100/1200
+  1200/1200
+done
+4,800 test runs at temperature 0.7
+                     coverage_any  coverage_10pct  coverage_phrase  ceiling_any  ceiling_10pct  r_percent  n_features  words_per_run
+method                                                                                                                              
+llama3.1 / few               83.1            74.6             83.6         88.3           76.1        0.3       147.3           27.6
+llama3.1 / zero              81.2            71.3             81.4         88.3           76.1        0.2       155.0           29.0
+qwen2.5:1.5b / few           75.4            68.2             77.7         88.3           76.1        0.3       166.3           25.7
+qwen2.5:1.5b / zero          76.1            65.2             77.0         88.3           76.1        0.2       182.9           28.4
+
+method    llama3.1 / few  llama3.1 / zero  qwen2.5:1.5b / few  qwen2.5:1.5b / zero  human ceiling (20 people)
+quintile                                                                                                     
+1                   79.9             76.7                73.5                 71.1                       83.0
+2                   78.8             76.4                72.3                 72.3                       87.1
+3                   81.7             81.2                74.9                 77.4                       89.7
+4                   88.8             88.0                82.0                 81.4                       90.1
+5                   86.5             83.6                74.1                 78.2                       91.5
+
+                                  estimate     se       z      p
+Intercept                           83.115  1.791  46.411  0.000
+C(method)[T.llama3.1 / zero]        -1.960  1.981  -0.989  0.323
+C(method)[T.qwen2.5:1.5b / few]     -7.748  1.981  -3.910  0.000
+C(method)[T.qwen2.5:1.5b / zero]    -7.044  1.981  -3.555  0.000
+concreteness_z                       3.442  1.418   2.427  0.015
+log_frequency_z                      3.650  1.505   2.425  0.015
+length_z                             1.284  1.564   0.820  0.412
+Group Var                            0.634  0.192   3.307  0.001

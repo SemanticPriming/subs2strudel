@@ -1,0 +1,4 @@
+temperature,cues,distinct_features,human_distinct_20,words_per_run,human_words_per_person,mean_log_ratio_distinct,mean_abs_log_ratio_distinct
+0.7,10,158.1,61.464,27.095,4.963,0.95,0.95
+0.9,10,176.4,61.464,27.665,4.963,1.059,1.059
+1.1,10,187.6,61.464,28.58,4.963,1.115,1.115
