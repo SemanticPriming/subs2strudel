@@ -6,6 +6,10 @@ Creating semantic concept-feature norms using STRUDEL
 
 `data/human/english_flt.csv` holds the human concept-feature norms used as the comparison. They come from the reprocessed feature listing data in [doomlab/FLT-Projects](https://github.com/doomlab/FLT-Projects) (no frequency cutoff), not from the published 2019 file. See `data/human/README.md` for the columns.
 
+## Toy examples
+
+`toy_examples/` holds the small LLM pilots (LLM-elicited and corpus-derived norms) with their data, outputs and run instructions; see `toy_examples/README.md`.
+
 # Collecting the Data
 
 Below is the process you need to run in order to contribute a language to the collection.

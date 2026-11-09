@@ -4,7 +4,7 @@ Approach 2: LLM-cleaned corpus-derived concept-feature norms.
 Rather than re-running Strudel's brittle POS pattern-grammar, or downloading
 a fresh OpenSubtitles dump, this reuses the dependency-parsed OpenSubtitles-
 derived corpus counts already produced in this project
-(archive/example/english_backward.csv, concept -> dependent-word frequency
+(data/english_backward.csv, a copy of archive/example/english_backward.csv, concept -> dependent-word frequency
 via UDPipe dependency parsing) and asks an open-source LLM to do what the
 Strudel pattern-grammar / stopword lists tried to do by hand: separate real
 semantic properties from noisy collocations (e.g. "martial" for "art", which
@@ -15,10 +15,13 @@ share of the surviving corpus frequency mass.
 """
 
 import argparse
+from pathlib import Path
 import csv
 import json
 import urllib.request
 from collections import defaultdict
+
+HERE = Path(__file__).resolve().parent   # this folder, so the scripts run from anywhere
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "llama3.1"
@@ -88,9 +91,9 @@ def clean_concept(concept: str, candidates: list[tuple[str, int]]) -> list[dict]
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--concepts", nargs="+", default=["art", "band", "concert", "radio"])
-    parser.add_argument("--corpus", default="archive/example/english_backward.csv")
+    parser.add_argument("--corpus", default=str(HERE / "data" / "english_backward.csv"))
     parser.add_argument("--top-n", type=int, default=40, help="candidate words considered per concept before filtering")
-    parser.add_argument("--out", default="llm_norms/output/llm_corpus_cleaned_norms.csv")
+    parser.add_argument("--out", default=str(HERE / "output" / "llm_corpus_cleaned_norms.csv"))
     args = parser.parse_args()
 
     all_rows = []

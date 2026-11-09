@@ -2,7 +2,7 @@
 Approach 1: LLM-elicited concept-feature norms.
 
 Mimics the human feature-listing task (Buchanan et al., 2019 instructions,
-see materials/human/english_Buchanan2019.html) by repeatedly prompting an
+see ../materials/human/english_Buchanan2019.html) by repeatedly prompting an
 open-source LLM (llama3.1, via a local Ollama server) as if it were a
 "virtual participant," then aggregating the produced features into
 frequency-based norms the same way the human norming study does:
@@ -10,17 +10,20 @@ normalized_feature = (# virtual participants producing the feature) / N * 100
 """
 
 import argparse
+from pathlib import Path
 import csv
 import json
 import re
 import urllib.request
 from collections import Counter
 
+HERE = Path(__file__).resolve().parent   # this folder, so the scripts run from anywhere
+
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "llama3.1"
 
 # Condensed version of the original Buchanan et al. (2019) participant
-# instructions (materials/human/english_Buchanan2019.html), including the
+# instructions (../materials/human/english_Buchanan2019.html), including the
 # same worked examples shown to human participants.
 PROMPT_TEMPLATE = """This is a psychology feature-listing task. We need information on what people know about different things in the world.
 
@@ -111,7 +114,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--concepts", nargs="+", default=["dog", "chair", "apple", "happiness"])
     parser.add_argument("--n", type=int, default=20, help="number of virtual participants per concept")
-    parser.add_argument("--out", default="llm_norms/output/llm_elicited_norms.csv")
+    parser.add_argument("--out", default=str(HERE / "output" / "llm_elicited_norms.csv"))
     args = parser.parse_args()
 
     all_rows = []

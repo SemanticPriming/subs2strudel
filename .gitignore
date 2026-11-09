@@ -8,7 +8,7 @@ archive/data/*/*.txt
 archive/data/*/*.zip
 
 # raw subtitle corpus samples (large, not ours to redistribute)
-data/subs/
+toy_examples/data/subs/
 
 # models
 *.udpipe
@@ -57,3 +57,9 @@ vignettes/*.pdf
 .Renviron
 SCiP_2026/models/comma-v0.1-2t-4bit/model.safetensors.index.json
 SCiP_2026/models/comma-v0.1-2t-4bit/model.safetensors
+
+# local-only files
+no_sync/
+
+# Python
+__pycache__/

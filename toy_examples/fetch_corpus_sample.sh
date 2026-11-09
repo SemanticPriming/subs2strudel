@@ -5,6 +5,7 @@
 # subtitle line per line, gitignored (data/subs/) since it's a corpus we
 # don't have redistribution rights to.
 set -euo pipefail
+cd "$(dirname "$0")"   # run from this folder
 
 OUT_DIR="data/subs"
 URL="https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2024/mono/en.txt.gz"

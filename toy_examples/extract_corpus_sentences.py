@@ -10,17 +10,20 @@ instead of a regex-based connector-pattern grammar.
 
 Corpus: a small local slice of OPUS-OpenSubtitles v2024 (English), see
 fetch_corpus_sample.sh. Only ~8MB is pulled from the ~9.5GB file and it is
-never committed (data/subs/ is gitignored) - this is a toy sample, not a
+never committed (toy_examples/data/subs/ is gitignored) - this is a toy sample, not a
 redistribution of the corpus.
 """
 
 import argparse
+from pathlib import Path
 import csv
 import json
 import random
 import re
 import urllib.request
 from collections import Counter
+
+HERE = Path(__file__).resolve().parent   # this folder, so the scripts run from anywhere
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "llama3.1"
@@ -101,10 +104,10 @@ def extract_concept(concept: str, sentences: list[str], n_sentences: int, seed: 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--concepts", nargs="+", default=["dog", "chair", "apple", "happiness"])
-    parser.add_argument("--corpus", default="data/subs/opensubtitles_v2024_en_sample.txt")
+    parser.add_argument("--corpus", default=str(HERE / "data" / "subs" / "opensubtitles_v2024_en_sample.txt"))
     parser.add_argument("--n-sentences", type=int, default=25, help="sentences sampled per concept")
     parser.add_argument("--seed", type=int, default=13)
-    parser.add_argument("--out", default="llm_norms/output/llm_corpus_sentences_norms.csv")
+    parser.add_argument("--out", default=str(HERE / "output" / "llm_corpus_sentences_norms.csv"))
     args = parser.parse_args()
 
     all_rows = []
