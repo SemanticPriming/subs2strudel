@@ -1,0 +1,5 @@
+method,coverage_any,coverage_4runs,coverage_phrase,ceiling_any,ceiling_4runs,r_percent,r_percent_16,n_features,words_per_run
+llama3.1 / few,60.6,41.9,66.6,89.1,56.0,0.4,-0.1,22.1,5.0
+llama3.1 / zero,55.3,36.1,62.9,89.1,56.0,0.3,-0.2,23.3,5.0
+qwen2.5:1.5b / few,57.9,37.5,67.1,89.1,56.0,0.3,-0.2,29.2,5.0
+qwen2.5:1.5b / zero,53.4,34.3,64.3,89.1,56.0,0.3,-0.2,28.2,5.0

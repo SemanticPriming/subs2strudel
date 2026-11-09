@@ -3,13 +3,10 @@ people,person,6650,5109,translation_2019
 different,differ,2472,50,translation_2019
 feeling,feel,1406,1684,translation_2019
 action,act,1327,1259,translation_2019
-building,build,1004,599,translation_2019
-clothes,cloth,960,440,translation_2019
 dangerous,danger,883,293,translation_2019
 math,mathematics,785,116,translation_2019
 information,inform,777,97,translation_2019
 dirty,dirt,770,575,translation_2019
-clothing,cloth,722,440,translation_2019
 negative,negate,718,7,translation_2019
 beautiful,beauty,696,221,translation_2019
 government,govern,626,58,translation_2019
@@ -75,7 +72,6 @@ organization,organize,263,267,translation_2019
 expression,express,257,318,translation_2019
 messy,mess,255,180,translation_2019
 competition,compete,252,53,translation_2019
-states,state,248,1228,translation_2019
 exciting,excite,246,45,translation_2019
 sadness,sad,246,637,translation_2019
 beginning,begin,245,205,translation_2019
@@ -114,7 +110,6 @@ argument,argue,191,100,translation_2019
 sneaky,sneak,191,44,translation_2019
 warmth,warm,191,953,translation_2019
 careful,care,190,807,translation_2019
-glasses,glass,190,419,translation_2019
 growth,grow,190,1070,translation_2019
 player,play,190,1234,translation_2019
 security,secure,190,181,translation_2019
@@ -244,7 +239,6 @@ parking,park,105,212,translation_2019
 absence,absent,104,30,translation_2019
 fuzzy,fuzz,104,15,translation_2019
 protector,protect,104,630,translation_2019
-jeans,jean,103,9,translation_2019
 loving,love,103,1709,translation_2019
 operation,operate,103,102,translation_2019
 playful,play,103,1234,translation_2019
@@ -296,7 +290,6 @@ outgoing,outgo,88,10,translation_2019
 central,center,87,302,translation_2019
 creepy,creep,87,29,translation_2019
 holder,hold,87,2040,translation_2019
-opportunity,opportune,87,0,translation_2019
 rocky,rock,87,817,translation_2019
 bodily,body,86,2455,translation_2019
 golden,gold,86,280,translation_2019
@@ -335,7 +328,6 @@ embarrassed,embarrass,80,40,translation_2019
 fully,full,80,575,translation_2019
 discussion,discuss,79,61,translation_2019
 dusty,dust,79,152,translation_2019
-scissors,scissor,79,2,translation_2019
 diving,dive,78,35,translation_2019
 functional,function,78,285,affix_rules
 lost,lose,78,589,translation_2019
@@ -388,7 +380,6 @@ slightly,slight,70,60,translation_2019
 belongings,belong,69,300,translation_2019
 childish,child,69,1587,translation_2019
 dependent,depend,69,161,translation_2019
-dressing,dress,69,575,translation_2019
 sensitive,sense,69,435,translation_2019
 sweaty,sweat,69,183,translation_2019
 tension,tense,69,141,translation_2019
@@ -417,7 +408,6 @@ metallic,metal,65,1543,translation_2019
 walking,walk,65,896,translation_2019
 wilderness,wild,65,424,translation_2019
 ethnicity,ethnic,64,46,translation_2019
-minded,mind,64,692,translation_2019
 recognition,recognize,64,76,translation_2019
 adhesive,adhere,63,31,translation_2019
 charming,charm,63,24,translation_2019
@@ -426,7 +416,6 @@ engagement,engage,63,109,translation_2019
 itchy,itch,63,26,translation_2019
 jewish,jew,63,8,translation_2019
 offensive,offend,63,32,translation_2019
-topping,top,63,853,translation_2019
 badly,bad,62,2711,translation_2019
 precipitation,precipitate,62,1,translation_2019
 socially,social,62,404,translation_2019
@@ -435,7 +424,6 @@ constantly,constant,61,87,translation_2019
 robber,rob,61,35,translation_2019
 silky,silk,61,77,translation_2019
 spanish,spain,61,50,translation_2019
-blooded,blood,60,596,translation_2019
 camping,camp,60,47,affix_rules
 faithful,faith,60,191,translation_2019
 genetic,gene,60,43,translation_2019
@@ -462,7 +450,6 @@ extent,extend,56,82,translation_2019
 gooey,goo,56,23,translation_2019
 intention,intend,56,105,translation_2019
 politician,politics,56,151,translation_2019
-sporting,sport,56,1185,translation_2019
 subtraction,subtract,56,63,translation_2019
 yelling,yell,56,106,translation_2019
 builder,build,55,599,translation_2019
@@ -486,9 +473,7 @@ manager,manage,53,59,translation_2019
 needy,need,53,1612,translation_2019
 organized,organize,53,267,translation_2019
 pollution,pollute,53,18,translation_2019
-shorts,short,53,1004,translation_2019
 sufficient,suffice,53,4,translation_2019
-armed,arm,52,438,translation_2019
 bravery,brave,52,172,translation_2019
 calculation,calculate,52,63,translation_2019
 embarrassing,embarrass,52,40,translation_2019
@@ -508,7 +493,6 @@ approval,approve,50,40,translation_2019
 beginner,begin,50,205,translation_2019
 consumer,consume,50,151,translation_2019
 eating,eat,50,1738,translation_2019
-fashioned,fashion,50,227,translation_2019
 fatty,fat,50,514,translation_2019
 logical,logic,50,34,translation_2019
 repetitive,repeat,50,152,translation_2019
