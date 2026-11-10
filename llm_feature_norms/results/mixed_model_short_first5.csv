@@ -1,0 +1,13 @@
+,estimate,se,z,p
+Intercept,60.638,1.299,46.695,0.0
+C(method)[T.llama3.1 / few5],-0.378,1.299,-0.291,0.771
+C(method)[T.llama3.1 / zero],-5.37,1.299,-4.134,0.0
+C(method)[T.llama3.1 / zero5],-6.888,1.299,-5.302,0.0
+C(method)[T.qwen2.5:1.5b / few],-2.743,1.299,-2.112,0.035
+C(method)[T.qwen2.5:1.5b / few5],-2.928,1.299,-2.254,0.024
+C(method)[T.qwen2.5:1.5b / zero],-7.242,1.299,-5.575,0.0
+C(method)[T.qwen2.5:1.5b / zero5],-9.064,1.299,-6.978,0.0
+concreteness_z,2.061,1.028,2.004,0.045
+log_frequency_z,-0.53,1.067,-0.497,0.619
+length_z,-0.365,1.074,-0.34,0.734
+Group Var,0.999,0.121,8.238,0.0

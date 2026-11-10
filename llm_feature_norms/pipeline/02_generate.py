@@ -8,6 +8,9 @@ worked examples the human participants saw. Two prompt conditions:
   zero  the instructions and the three worked examples only
   few   the same, plus 8 lists written by real participants for other (train)
         cues, as extra examples
+  zero5 / few5  the same, but the instructions ask for about 5 properties and
+        every worked example is cut to its first 5 (a separate condition: the
+        instructions differ from the ones the people had)
 
 Models are run with Ollama (http://localhost:11434). Output rows are appended
 to results/generations.csv, and runs already there are skipped, so the script
@@ -64,12 +67,25 @@ def fewshot_examples(n_total=8):
     return ex
 
 
+def first_n_items(line, n=5):
+    head, _, items = line.partition(":")
+    return head + ":" + ",".join(items.split(",")[:n])
+
+
 def build_prompt(condition, cue):
+    short = condition.endswith("5")  # zero5 / few5: ask for about 5 properties, like the people wrote
     text = INSTRUCTIONS
-    if condition == "few":
+    if short:
+        text = text.replace("list as many properties of the concept as you can think of", "list about 5 properties of the concept (the 5 that come to mind first)")
+        text = "\n".join(first_n_items(l) if l.split(":")[0] in ("duck", "cucumber", "stove") else l for l in text.split("\n"))
+    if condition.startswith("few"):
         ex = fewshot_examples()
-        text += FEW_BLOCK.format(examples="\n".join(f"{c}: {a}" for c, a in zip(ex.cue, ex.answer)))
-    return text + ENDING.format(cue=cue)
+        lines = [f"{c}: {a}" for c, a in zip(ex.cue, ex.answer)]
+        if short:
+            lines = [first_n_items(l) for l in lines]
+        text += FEW_BLOCK.format(examples="\n".join(lines))
+    ending = ENDING.replace("list of properties", "list of about 5 properties") if short else ENDING
+    return text + ending.format(cue=cue)
 
 
 def call(model, prompt, temperature, seed):
@@ -90,7 +106,7 @@ def first_list(text):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True)
-    ap.add_argument("--condition", choices=["zero", "few"], required=True)
+    ap.add_argument("--condition", choices=["zero", "few", "zero5", "few5"], required=True)
     ap.add_argument("--split", choices=["calibration", "test"], required=True)
     ap.add_argument("--temps", nargs="+", type=float, default=[0.9])
     ap.add_argument("--runs", type=int, default=20)

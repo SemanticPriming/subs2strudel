@@ -31,11 +31,11 @@ See `presentations/scip_2026/RESULTS.md` (60 test cues): Llama 3.1 few-shot reco
 
 ## Open follow-ups (read this before the next run)
 
-**Length mismatch.** A model run lists about 27 words, a person about 5, so "found in any run" is generous and 20 runs give far more distinct features than 20 people (about 160 vs 60). On the first 60 cues, scoring only the **first 5 words of each run** drops coverage to 54-59% (vs 90% for 20 people; `summary_by_method_first5.csv`), so the length-matched comparison favours people. Plan, in order:
+**Length mismatch (checked on all 200 cues).** A model run lists about 27 words, a person about 5, so "found in any run" is generous. Scoring only the **first 5 words of each run** drops coverage to 51-61% (vs 89% for 20 people; `summary_by_method_first5.csv`), so the length-matched comparison favours people. What was done:
 
-1. **Lower temperatures.** The calibration winner (0.7) was the lowest value tried. `run_after_waves.sh` adds 0.3 and 0.5 to the calibration (Llama zero-shot, 20 calibration cues) and writes `results/calibration.csv` and `temperature_candidate.json`. It does **not** change `temperature.json`, so the 200 test cues stay at 0.7. Expect little change: most of the gap is length, not randomness. Only if a lower temperature clearly wins on both the all-words and the first-5-words column, regenerate the test cues at that temperature.
-2. **Score both ways.** Every score exists at full length and on the first 5 words (`05_score.py` and `05_score.py --first 5`; files with a `_first5` suffix). Compare them for all 200 cues.
-3. **If the first-5 gap holds: ask for shorter lists** (add "about 5 properties" to the prompt) as an extra prompt condition. This changes the instructions relative to the people, so report it as its own condition, not a replacement. Not started.
+1. **Lower temperatures: done, no change.** The calibration (`calibration.csv`, `temperature_candidate.json`) picks 0.3 on all words but 1.1 on the first 5 words, so no lower temperature wins on both and the test cues stay at 0.7.
+2. **Score both ways: done.** Full length and first 5 words (`_first5` files) agree that the gap is real. The concreteness effect disappears when only the first 5 words are scored.
+3. **Ask for shorter lists: done, did not help.** Extra conditions `zero5` and `few5` ask for "about 5 properties" and cut the worked examples to 5 items (`run_short.sh`; scored with `05_score.py --short`, files with a `_short` suffix). This changes the instructions relative to the people, so it is its own condition. Runs were still about 10 words long. On the first 5 words coverage is unchanged (Llama few 60.6 vs few5 60.3; zero 55.3 vs zero5 53.8; Qwen 57.9 vs 57.7 and 53.4 vs 51.6), and at full length it drops 11-20 points. So length is not what separates models from people: 20 model runs recover about 52-60% of what people said, 20 people 89%.
 
 ## Not included (planned, see the proposal)
 

@@ -26,8 +26,10 @@ from pathlib import Path
 import argparse
 ap = argparse.ArgumentParser()
 ap.add_argument("--first", type=int, default=0, help="score only the first N processed words of each run (people write about 5); outputs get a _firstN suffix")
-FIRST = ap.parse_args().first
-SUF = f"_first{FIRST}" if FIRST else ""
+ap.add_argument("--short", action="store_true", help="also score the 'about 5 properties' conditions (zero5, few5) next to zero and few; outputs get a _short suffix. Without this flag those conditions are left out, so the main results stay as they were")
+_a = ap.parse_args()
+FIRST, SHORT = _a.first, _a.short
+SUF = ("_short" if SHORT else "") + (f"_first{FIRST}" if FIRST else "")
 
 RESULTS = Path(__file__).resolve().parent.parent / "results"
 ROOT = Path(__file__).resolve().parents[2]
@@ -38,6 +40,7 @@ test = cues[cues.split == "test"]
 gens = pd.read_csv(RESULTS / "generations.csv", keep_default_na=False)
 temp = __import__("json").loads((RESULTS / "temperature.json").read_text())["temperature"]
 gens = gens[gens.cue.isin(set(test.cue)) & (gens.temperature.astype(float) == temp)]
+gens = gens[SHORT | ~gens.condition.str.endswith("5")]
 # only complete sets of runs: every model x condition must have all runs for a cue, so partial waves are not scored
 size = gens.groupby(["model", "condition", "cue"]).size().rename("runs").reset_index()
 full = size[size.runs == size.runs.max()]
