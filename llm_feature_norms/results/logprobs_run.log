@@ -1,0 +1,90 @@
+qwen2.5:1.5b / zero: 60 cues, 1200 runs to do (0 already done)
+  100/1200
+  200/1200
+  300/1200
+  400/1200
+  500/1200
+  600/1200
+  700/1200
+  800/1200
+  900/1200
+  1000/1200
+  1100/1200
+  1200/1200
+done
+qwen2.5:1.5b / few: 60 cues, 1200 runs to do (1200 already done)
+  100/1200
+  200/1200
+  300/1200
+  400/1200
+  500/1200
+  600/1200
+  700/1200
+  800/1200
+  900/1200
+  1000/1200
+  1100/1200
+  1200/1200
+done
+llama3.1 / zero: 60 cues, 1200 runs to do (2400 already done)
+  100/1200
+  200/1200
+  300/1200
+  400/1200
+  500/1200
+  600/1200
+  700/1200
+  800/1200
+  900/1200
+  1000/1200
+  1100/1200
+  1200/1200
+done
+llama3.1 / few: 60 cues, 1200 runs to do (3600 already done)
+  100/1200
+  200/1200
+  300/1200
+  400/1200
+  500/1200
+  600/1200
+  700/1200
+  800/1200
+  900/1200
+  1000/1200
+  1100/1200
+  1200/1200
+done
+4,800 runs, 130,089 words; 0.0% could not be traced to tokens
+
+words the model produced (human 0 if no person listed it):
+                     cues  n_model_words  mw_r_pct  mw_r_prob  mw_r_logprob  mw_r_expected  mw_rho_pct  mw_rho_prob  mw_rho_expected
+method                                                                                                                              
+llama3.1 / few         60        137.367     0.438      0.126         0.141          0.454       0.371        0.135            0.320
+llama3.1 / zero        60        142.867     0.380      0.117         0.131          0.394       0.321        0.137            0.294
+qwen2.5:1.5b / few     60        154.800     0.428      0.110         0.137          0.414       0.336        0.149            0.293
+qwen2.5:1.5b / zero    60        168.417     0.397      0.114         0.134          0.407       0.316        0.146            0.280
+
+all words either side produced (0 where absent):
+                     n_union  un_r_pct  un_r_prob  un_r_expected  un_rho_pct  un_rho_prob  un_rho_expected
+method                                                                                                    
+llama3.1 / few       227.500     0.357      0.078          0.396      -0.263       -0.348           -0.272
+llama3.1 / zero      234.083     0.294      0.057          0.331      -0.295       -0.360           -0.295
+qwen2.5:1.5b / few   247.967     0.312      0.041          0.330      -0.330       -0.390           -0.330
+qwen2.5:1.5b / zero  260.983     0.284      0.038          0.324      -0.340       -0.397           -0.339
+4,800 runs, 130,089 words; 0.0% could not be traced to tokens
+
+words the model produced (human 0 if no person listed it):
+                     cues  n_model_words  mw_r_pct  mw_r_prob  mw_r_logprob  mw_r_expected  mw_rho_pct  mw_rho_prob  mw_rho_expected
+method                                                                                                                              
+llama3.1 / few         60          20.55     0.407      0.243         0.246          0.427       0.360        0.277            0.385
+llama3.1 / zero        60          22.40     0.300      0.245         0.256          0.323       0.325        0.280            0.359
+qwen2.5:1.5b / few     60          28.65     0.420      0.205         0.237          0.392       0.341        0.261            0.360
+qwen2.5:1.5b / zero    60          28.20     0.385      0.228         0.243          0.365       0.346        0.262            0.351
+
+all words either side produced (0 where absent):
+                     n_union  un_r_pct  un_r_prob  un_r_expected  un_rho_pct  un_rho_prob  un_rho_expected
+method                                                                                                    
+llama3.1 / few       138.417     0.403      0.308          0.412      -0.003       -0.011            0.000
+llama3.1 / zero      140.917     0.298      0.261          0.312      -0.103       -0.105           -0.098
+qwen2.5:1.5b / few   145.550     0.349      0.207          0.337      -0.145       -0.157           -0.144
+qwen2.5:1.5b / zero  145.967     0.318      0.215          0.316      -0.181       -0.190           -0.179
